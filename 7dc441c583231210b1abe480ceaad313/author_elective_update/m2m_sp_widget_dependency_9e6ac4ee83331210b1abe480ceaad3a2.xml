@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="m2m_sp_widget_dependency">
+    <m2m_sp_widget_dependency action="DELETE">
+        <sp_dependency display_value="angularMoment">7f07b9d7db10230002157a613996198b</sp_dependency>
+        <sp_widget display_value="Copy of Test Angular Bootstrap Calendar">da6a04ee83331210b1abe480ceaad377</sp_widget>
+        <sys_class_name>m2m_sp_widget_dependency</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-02-21 05:44:35</sys_created_on>
+        <sys_id>9e6ac4ee83331210b1abe480ceaad3a2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>angularMoment.Copy of Test Angular Bootstrap Calendar</sys_name>
+        <sys_package display_value="Leave &amp;amp; Expense Tracking Management System" source="x_1583402_lems">7dc441c583231210b1abe480ceaad313</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_update_name>m2m_sp_widget_dependency_9e6ac4ee83331210b1abe480ceaad3a2</sys_update_name>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-02-21 05:44:35</sys_updated_on>
+    </m2m_sp_widget_dependency>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</application>
+        <file_path/>
+        <instance_id>72954f46ebca1a18c040fddacad0cd81</instance_id>
+        <instance_name>dev291464</instance_name>
+        <name>m2m_sp_widget_dependency_9e6ac4ee83331210b1abe480ceaad3a2</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="m2m_sp_widget_dependency"><m2m_sp_widget_dependency action="INSERT_OR_UPDATE"><sp_dependency display_value="angularMoment">7f07b9d7db10230002157a613996198b</sp_dependency><sp_widget display_value="Copy of Test Angular Bootstrap Calendar">da6a04ee83331210b1abe480ceaad377</sp_widget><sys_class_name>m2m_sp_widget_dependency</sys_class_name><sys_created_by>ankita.chaurasia</sys_created_by><sys_created_on>2025-02-21 05:44:35</sys_created_on><sys_id>9e6ac4ee83331210b1abe480ceaad3a2</sys_id><sys_mod_count>0</sys_mod_count><sys_name>angularMoment.Copy of Test Angular Bootstrap Calendar</sys_name><sys_package display_value="Leave &amp;amp; Expense Tracking Management System" source="x_1583402_lems">7dc441c583231210b1abe480ceaad313</sys_package><sys_policy/><sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope><sys_update_name>m2m_sp_widget_dependency_9e6ac4ee83331210b1abe480ceaad3a2</sys_update_name><sys_updated_by>ankita.chaurasia</sys_updated_by><sys_updated_on>2025-02-21 05:44:35</sys_updated_on></m2m_sp_widget_dependency></record_update>]]></payload>
+        <payload_hash>-985368761</payload_hash>
+        <record_name>angularMoment.Copy of Test Angular Bootstrap Calendar</record_name>
+        <reverted_from/>
+        <source>6422b58983a71210b1abe480ceaad3b9</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-02-21 05:44:35</sys_created_on>
+        <sys_id>d26ac4ee83331210b1abe480ceaad3a5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19527094c650000001</sys_recorded_at>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-02-21 05:44:35</sys_updated_on>
+        <type>Widget Dependency</type>
+        <update_guid>d66ac4ee34331210fde50f71f1f53fa4</update_guid>
+        <update_guid_history>d66ac4ee34331210fde50f71f1f53fa4:-985368761</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="angularMoment.Copy of Test Angular Bootstrap Calendar">3b1b442283731210b1abe480ceaad38c</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-02-21 05:47:41</sys_created_on>
+        <sys_db_object display_value="" name="m2m_sp_widget_dependency">m2m_sp_widget_dependency</sys_db_object>
+        <sys_id>178af2d89f3c41de80d615c4620cead9</sys_id>
+        <sys_metadata>9e6ac4ee83331210b1abe480ceaad3a2</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>angularMoment.Copy of Test Angular Bootstrap Calendar</sys_name>
+        <sys_package display_value="Leave &amp;amp; Expense Tracking Management System" source="x_1583402_lems">7dc441c583231210b1abe480ceaad313</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_scope_delete display_value="">704e279aae8d45079b49da557a873a19</sys_scope_delete>
+        <sys_update_name>m2m_sp_widget_dependency_9e6ac4ee83331210b1abe480ceaad3a2</sys_update_name>
+        <sys_update_version display_value="m2m_sp_widget_dependency_9e6ac4ee83331210b1abe480ceaad3a2">d26ac4ee83331210b1abe480ceaad3a5</sys_update_version>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-02-21 05:47:41</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

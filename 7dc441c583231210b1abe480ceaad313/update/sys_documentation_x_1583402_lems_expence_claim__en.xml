@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="" label="Expense Claim" language="en" table="x_1583402_lems_expence_claim">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element/>
+            <help/>
+            <hint/>
+            <label>Expense Claim</label>
+            <language>en</language>
+            <name>x_1583402_lems_expence_claim</name>
+            <plural>Expense Claims</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>ankita.chaurasia</sys_created_by>
+            <sys_created_on>2025-03-10 09:40:04</sys_created_on>
+            <sys_mod_count>1</sys_mod_count>
+            <sys_name>Expense Claim</sys_name>
+            <sys_package display_value="Leave &amp;amp; Expense Tracking Management System" source="x_1583402_lems">7dc441c583231210b1abe480ceaad313</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+            <sys_update_name>sys_documentation_x_1583402_lems_expence_claim__en</sys_update_name>
+            <sys_updated_by>ankita.chaurasia</sys_updated_by>
+            <sys_updated_on>2025-03-11 12:22:42</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

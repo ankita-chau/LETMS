@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_ng_template">
+    <sp_ng_template action="INSERT_OR_UPDATE">
+        <id>calendarControlsDemo.html</id>
+        <sp_widget/>
+        <sys_class_name>sp_ng_template</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-02-21 06:25:32</sys_created_on>
+        <sys_id>4773186a83731210b1abe480ceaad358</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>calendarControlsDemo.html</sys_name>
+        <sys_package display_value="Leave &amp;amp; Expense Tracking Management System" source="x_1583402_lems">7dc441c583231210b1abe480ceaad313</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_update_name>sp_ng_template_4773186a83731210b1abe480ceaad358</sys_update_name>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-02-21 06:53:34</sys_updated_on>
+        <template><![CDATA[
+      <br>
+      <div class="row">
+
+        <div class="col-md-6 text-center">
+          <div class="btn-group">
+
+            <button
+              class="btn btn-primary"
+              mwl-date-modifier
+              date="vm.viewDate"
+              decrement="vm.calendarView">
+              Previous
+            </button>
+            <button
+              class="btn btn-default"
+              mwl-date-modifier
+              date="vm.viewDate"
+              set-to-today>
+              Today
+            </button>
+            <button
+              class="btn btn-primary"
+              mwl-date-modifier
+              date="vm.viewDate"
+              increment="vm.calendarView">
+              Next
+            </button>
+          </div>
+        </div>
+
+        <br class="visible-xs visible-sm">
+
+        <div class="col-md-6 text-center">
+          <div class="btn-group">
+            <label class="btn btn-primary" ng-model="vm.calendarView" uib-btn-radio="'year'">Year</label>
+            <label class="btn btn-primary" ng-model="vm.calendarView" uib-btn-radio="'month'">Month</label>
+            <label class="btn btn-primary" ng-model="vm.calendarView" uib-btn-radio="'week'">Week</label>
+            <label class="btn btn-primary" ng-model="vm.calendarView" uib-btn-radio="'day'">Day</label>
+          </div>
+        </div>
+
+      </div>
+      <br>
+    ]]></template>
+    </sp_ng_template>
+</record_update>

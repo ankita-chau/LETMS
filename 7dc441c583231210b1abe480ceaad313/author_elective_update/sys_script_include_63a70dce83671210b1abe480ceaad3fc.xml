@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="DELETE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_1583402_lems.lemsAjax</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <mobile_callable>false</mobile_callable>
+        <name>lemsAjax</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var lemsAjax = Class.create();
+lemsAjax.prototype = {
+    initialize: function() {},
+
+    getLeaveBucket: function(userSysId) {
+        var result = {};
+        var gr = new GlideRecord('x_1583402_lems_leave_bucket');
+        gr.addQuery('employee', this.getParameter('sysparm_user'));
+        gr.addQuery('leave_type', this.getParameter('sysparm_leavetype'));
+        gr.query();
+
+        if (gr.next()) {
+			var leaveDetails = {};
+			leaveDetails.accrued = '' + gr.accrued;
+			leaveDetails.balance_leaves = '' + gr.balance_leave;
+			leaveDetails.taken = '' + gr.taken_leave;
+			return JSON.stringify(leaveDetails);
+		}
+    },
+
+    type: 'lemsAjax'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-02-07 10:54:16</sys_created_on>
+        <sys_id>63a70dce83671210b1abe480ceaad3fc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>lemsAjax</sys_name>
+        <sys_package display_value="Leave &amp;amp; Expense Tracking Management System" source="x_1583402_lems">7dc441c583231210b1abe480ceaad313</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_update_name>sys_script_include_63a70dce83671210b1abe480ceaad3fc</sys_update_name>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-02-07 10:54:16</sys_updated_on>
+    </sys_script_include>
+    <sys_es_latest_script action="DELETE">
+        <id>63a70dce83671210b1abe480ceaad3fc</id>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-02-07 10:54:15</sys_created_on>
+        <sys_id>0e0b8d0e83671210b1abe480ceaad3b3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-02-07 10:54:15</sys_updated_on>
+        <table>sys_script_include</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</application>
+        <file_path/>
+        <instance_id>72954f46ebca1a18c040fddacad0cd81</instance_id>
+        <instance_name>dev291464</instance_name>
+        <name>sys_script_include_63a70dce83671210b1abe480ceaad3fc</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_script_include"&gt;&lt;sys_script_include action="INSERT_OR_UPDATE"&gt;&lt;access&gt;package_private&lt;/access&gt;&lt;active&gt;true&lt;/active&gt;&lt;api_name&gt;x_1583402_lems.lemsAjax&lt;/api_name&gt;&lt;caller_access/&gt;&lt;client_callable&gt;false&lt;/client_callable&gt;&lt;description/&gt;&lt;mobile_callable&gt;false&lt;/mobile_callable&gt;&lt;name&gt;lemsAjax&lt;/name&gt;&lt;sandbox_callable&gt;false&lt;/sandbox_callable&gt;&lt;script&gt;&lt;![CDATA[var lemsAjax = Class.create();
+lemsAjax.prototype = {
+    initialize: function() {},
+
+    getLeaveBucket: function(userSysId) {
+        var result = {};
+        var gr = new GlideRecord('x_1583402_lems_leave_bucket');
+        gr.addQuery('employee', this.getParameter('sysparm_user'));
+        gr.addQuery('leave_type', this.getParameter('sysparm_leavetype'));
+        gr.query();
+
+        if (gr.next()) {
+			var leaveDetails = {};
+			leaveDetails.accrued = '' + gr.accrued;
+			leaveDetails.balance_leaves = '' + gr.balance_leave;
+			leaveDetails.taken = '' + gr.taken_leave;
+			return JSON.stringify(leaveDetails);
+		}
+    },
+
+    type: 'lemsAjax'
+};]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_include&lt;/sys_class_name&gt;&lt;sys_created_by&gt;ankita.chaurasia&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-02-07 10:54:16&lt;/sys_created_on&gt;&lt;sys_id&gt;63a70dce83671210b1abe480ceaad3fc&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_name&gt;lemsAjax&lt;/sys_name&gt;&lt;sys_package display_value="Leave &amp;amp;amp; Expense Tracking Management System" source="x_1583402_lems"&gt;7dc441c583231210b1abe480ceaad313&lt;/sys_package&gt;&lt;sys_policy&gt;read&lt;/sys_policy&gt;&lt;sys_scope display_value="Leave &amp;amp;amp; Expense Tracking Management System"&gt;7dc441c583231210b1abe480ceaad313&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_include_63a70dce83671210b1abe480ceaad3fc&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;ankita.chaurasia&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-02-07 10:54:16&lt;/sys_updated_on&gt;&lt;/sys_script_include&gt;&lt;sys_es_latest_script action="INSERT_OR_UPDATE"&gt;&lt;id&gt;63a70dce83671210b1abe480ceaad3fc&lt;/id&gt;&lt;sys_created_by&gt;ankita.chaurasia&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-02-07 10:54:15&lt;/sys_created_on&gt;&lt;sys_id&gt;0e0b8d0e83671210b1abe480ceaad3b3&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;ankita.chaurasia&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-02-07 10:54:15&lt;/sys_updated_on&gt;&lt;table&gt;sys_script_include&lt;/table&gt;&lt;use_es_latest&gt;true&lt;/use_es_latest&gt;&lt;/sys_es_latest_script&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>184379376</payload_hash>
+        <record_name>lemsAjax</record_name>
+        <reverted_from/>
+        <source>6422b58983a71210b1abe480ceaad3b9</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-02-07 10:54:18</sys_created_on>
+        <sys_id>760b4dc283a71210b1abe480ceaad31e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>194e00bd0bc0000001</sys_recorded_at>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-02-07 10:54:18</sys_updated_on>
+        <type>Script Include</type>
+        <update_guid>6a0b4dc295a712103d56c4e718cf7f1d</update_guid>
+        <update_guid_history>6a0b4dc295a712103d56c4e718cf7f1d:184379376</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-02-07 11:14:40</sys_created_on>
+        <sys_db_object display_value="" name="sys_script_include">sys_script_include</sys_db_object>
+        <sys_id>8241abd9a7e040bb865aa71736e2f131</sys_id>
+        <sys_metadata>63a70dce83671210b1abe480ceaad3fc</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>lemsAjax</sys_name>
+        <sys_package display_value="Leave &amp;amp; Expense Tracking Management System" source="x_1583402_lems">7dc441c583231210b1abe480ceaad313</sys_package>
+        <sys_parent/>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_scope_delete display_value="">704e279aae8d45079b49da557a873a19</sys_scope_delete>
+        <sys_update_name>sys_script_include_63a70dce83671210b1abe480ceaad3fc</sys_update_name>
+        <sys_update_version display_value="sys_script_include_63a70dce83671210b1abe480ceaad3fc">760b4dc283a71210b1abe480ceaad31e</sys_update_version>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-02-07 11:14:40</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

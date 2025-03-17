@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="DELETE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller = function($scope, $http) {
+   $scope.leave = {};
+   $scope.submitLeave = function() {
+       var request = {
+           leave_type: $scope.leave.leave_type,
+           start_date: $scope.leave.start_date,
+           end_date: $scope.leave.end_date
+       };
+       $http.post('/api/now/table/x_your_scope_leave_request', request).then(
+           function(response) {
+               alert("Leave request submitted!");
+           }, function(error) {
+               alert("Error submitting request.");
+           }
+       );
+   };
+};
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css/>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>leave_request_form</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Leave Request Form</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {  /* populate the 'data' object */  /* e.g., data.table = $sp.getValue('table'); */})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-02-14 11:39:49</sys_created_on>
+        <sys_id>ad98151883b71210b1abe480ceaad3c1</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Leave Request Form</sys_name>
+        <sys_package display_value="Leave &amp;amp; Expense Tracking Management System" source="x_1583402_lems">7dc441c583231210b1abe480ceaad313</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_update_name>sp_widget_ad98151883b71210b1abe480ceaad3c1</sys_update_name>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-02-14 11:41:38</sys_updated_on>
+        <template><![CDATA[<div>
+   <label>Leave Type</label>
+   <select ng-model="leave.leave_type">
+       <option>Sick Leave</option>
+       <option>Casual Leave</option>
+   </select>
+   <label>Start Date</label>
+   <input type="date" ng-model="leave.start_date">
+   <label>End Date</label>
+   <input type="date" ng-model="leave.end_date">
+   <button ng-click="submitLeave()">Submit Request</button>
+</div>
+]]></template>
+    </sp_widget>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</application>
+        <file_path/>
+        <instance_id>72954f46ebca1a18c040fddacad0cd81</instance_id>
+        <instance_name>dev291464</instance_name>
+        <name>sp_widget_ad98151883b71210b1abe480ceaad3c1</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sp_widget"&gt;&lt;sp_widget action="INSERT_OR_UPDATE"&gt;&lt;category&gt;custom&lt;/category&gt;&lt;client_script&gt;&lt;![CDATA[api.controller = function($scope, $http) {
+   $scope.leave = {};
+   $scope.submitLeave = function() {
+       var request = {
+           leave_type: $scope.leave.leave_type,
+           start_date: $scope.leave.start_date,
+           end_date: $scope.leave.end_date
+       };
+       $http.post('/api/now/table/x_your_scope_leave_request', request).then(
+           function(response) {
+               alert("Leave request submitted!");
+           }, function(error) {
+               alert("Error submitting request.");
+           }
+       );
+   };
+};
+]]&gt;&lt;/client_script&gt;&lt;controller_as&gt;c&lt;/controller_as&gt;&lt;css/&gt;&lt;data_table&gt;sp_instance&lt;/data_table&gt;&lt;demo_data/&gt;&lt;description/&gt;&lt;docs/&gt;&lt;field_list/&gt;&lt;has_preview&gt;true&lt;/has_preview&gt;&lt;id&gt;leave_request_form&lt;/id&gt;&lt;internal&gt;false&lt;/internal&gt;&lt;link&gt;&lt;![CDATA[function link(scope, element, attrs, controller) {  }]]&gt;&lt;/link&gt;&lt;name&gt;Leave Request Form&lt;/name&gt;&lt;option_schema/&gt;&lt;public&gt;false&lt;/public&gt;&lt;roles/&gt;&lt;script&gt;&lt;![CDATA[(function() {  /* populate the 'data' object */  /* e.g., data.table = $sp.getValue('table'); */})();]]&gt;&lt;/script&gt;&lt;servicenow&gt;false&lt;/servicenow&gt;&lt;sys_class_name&gt;sp_widget&lt;/sys_class_name&gt;&lt;sys_created_by&gt;ankita.chaurasia&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-02-14 11:39:49&lt;/sys_created_on&gt;&lt;sys_id&gt;ad98151883b71210b1abe480ceaad3c1&lt;/sys_id&gt;&lt;sys_mod_count&gt;2&lt;/sys_mod_count&gt;&lt;sys_name&gt;Leave Request Form&lt;/sys_name&gt;&lt;sys_package display_value="Leave &amp;amp;amp; Expense Tracking Management System" source="x_1583402_lems"&gt;7dc441c583231210b1abe480ceaad313&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Leave &amp;amp;amp; Expense Tracking Management System"&gt;7dc441c583231210b1abe480ceaad313&lt;/sys_scope&gt;&lt;sys_update_name&gt;sp_widget_ad98151883b71210b1abe480ceaad3c1&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;ankita.chaurasia&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-02-14 11:41:38&lt;/sys_updated_on&gt;&lt;template&gt;&lt;![CDATA[&lt;div&gt;
+   &lt;label&gt;Leave Type&lt;/label&gt;
+   &lt;select ng-model="leave.leave_type"&gt;
+       &lt;option&gt;Sick Leave&lt;/option&gt;
+       &lt;option&gt;Casual Leave&lt;/option&gt;
+   &lt;/select&gt;
+   &lt;label&gt;Start Date&lt;/label&gt;
+   &lt;input type="date" ng-model="leave.start_date"&gt;
+   &lt;label&gt;End Date&lt;/label&gt;
+   &lt;input type="date" ng-model="leave.end_date"&gt;
+   &lt;button ng-click="submitLeave()"&gt;Submit Request&lt;/button&gt;
+&lt;/div&gt;
+]]&gt;&lt;/template&gt;&lt;/sp_widget&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-2077348013</payload_hash>
+        <record_name>Leave Request Form</record_name>
+        <reverted_from/>
+        <source>6422b58983a71210b1abe480ceaad3b9</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-02-14 11:41:38</sys_created_on>
+        <sys_id>9809551883b71210b1abe480ceaad314</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1950443ab7c0000001</sys_recorded_at>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-02-14 11:41:38</sys_updated_on>
+        <type>Widget</type>
+        <update_guid>5009551845b712103767465d2bfbe214</update_guid>
+        <update_guid_history>5009551845b712103767465d2bfbe214:-2077348013,e7b8955c4ab712102c2f2c2fa751570c:62023440,f998d15c80b71210931aef8a5964ff0a:-1783826610</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Leave Request Form">97ae04e083c42210b1abe480ceaad389</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-02-27 11:11:04</sys_created_on>
+        <sys_db_object display_value="" name="sp_widget">sp_widget</sys_db_object>
+        <sys_id>0345ac49b562479f8494c5ee2cdbf939</sys_id>
+        <sys_metadata>ad98151883b71210b1abe480ceaad3c1</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Leave Request Form</sys_name>
+        <sys_package display_value="Leave &amp;amp; Expense Tracking Management System" source="x_1583402_lems">7dc441c583231210b1abe480ceaad313</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_scope_delete display_value="">704e279aae8d45079b49da557a873a19</sys_scope_delete>
+        <sys_update_name>sp_widget_ad98151883b71210b1abe480ceaad3c1</sys_update_name>
+        <sys_update_version display_value="sp_widget_ad98151883b71210b1abe480ceaad3c1">9809551883b71210b1abe480ceaad314</sys_update_version>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-02-27 11:11:04</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

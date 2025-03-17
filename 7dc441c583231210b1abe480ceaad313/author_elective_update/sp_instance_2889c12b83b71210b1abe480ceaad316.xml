@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance">
+    <sp_instance action="DELETE">
+        <active>true</active>
+        <class_name/>
+        <color>default</color>
+        <css/>
+        <glyph/>
+        <id/>
+        <order>1</order>
+        <roles/>
+        <short_description/>
+        <size>md</size>
+        <sp_column display_value="2">3192496783b71210b1abe480ceaad3d3</sp_column>
+        <sp_widget display_value="Casual Leave PieChart">09c0cd6383b71210b1abe480ceaad346</sp_widget>
+        <sys_class_name>sp_instance</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-02-24 12:54:11</sys_created_on>
+        <sys_id>2889c12b83b71210b1abe480ceaad316</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Leave &amp;amp; Expense Tracking Management System" source="x_1583402_lems">7dc441c583231210b1abe480ceaad313</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_update_name>sp_instance_2889c12b83b71210b1abe480ceaad316</sys_update_name>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-02-25 07:46:07</sys_updated_on>
+        <title/>
+        <url/>
+        <widget_parameters/>
+    </sp_instance>
+    <sys_translated_text action="DELETE" query="documentkey=2889c12b83b71210b1abe480ceaad316"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</application>
+        <file_path/>
+        <instance_id>72954f46ebca1a18c040fddacad0cd81</instance_id>
+        <instance_name>dev291464</instance_name>
+        <name>sp_instance_2889c12b83b71210b1abe480ceaad316</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance"><sp_instance action="INSERT_OR_UPDATE"><active>true</active><class_name/><color>default</color><css/><glyph/><id/><order>1</order><roles/><short_description/><size>md</size><sp_column display_value="2">3192496783b71210b1abe480ceaad3d3</sp_column><sp_widget display_value="Casual Leave PieChart">09c0cd6383b71210b1abe480ceaad346</sp_widget><sys_class_name>sp_instance</sys_class_name><sys_created_by>ankita.chaurasia</sys_created_by><sys_created_on>2025-02-24 12:54:11</sys_created_on><sys_id>2889c12b83b71210b1abe480ceaad316</sys_id><sys_mod_count>3</sys_mod_count><sys_name/><sys_package display_value="Leave &amp;amp; Expense Tracking Management System" source="x_1583402_lems">7dc441c583231210b1abe480ceaad313</sys_package><sys_policy/><sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope><sys_update_name>sp_instance_2889c12b83b71210b1abe480ceaad316</sys_update_name><sys_updated_by>ankita.chaurasia</sys_updated_by><sys_updated_on>2025-02-25 07:46:07</sys_updated_on><title/><url/><widget_parameters/></sp_instance><sys_translated_text action="delete_multiple" query="documentkey=2889c12b83b71210b1abe480ceaad316"/></record_update>]]></payload>
+        <payload_hash>-1539334613</payload_hash>
+        <record_name/>
+        <reverted_from display_value="sp_instance_2889c12b83b71210b1abe480ceaad316">a99ccd7783f31210b1abe480ceaad307</reverted_from>
+        <source>6422b58983a71210b1abe480ceaad3b9</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-02-27 10:31:48</sys_created_on>
+        <sys_id>04b5c4e483842210b1abe480ceaad334</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19546f668f20000001</sys_recorded_at>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-02-27 10:31:48</sys_updated_on>
+        <type>Instance</type>
+        <update_guid>ccb5c4e4a684221024dc08d55dd4f331</update_guid>
+        <update_guid_history>ccb5c4e4a684221024dc08d55dd4f331:-1539334613,5395c82807842210cb9db8aaafc90b85:-204581859,219ccd77daf3121056958c767b095507:-1539334613,6a998d6f35b7121032f35bec592150c6:-1754012406,38998d6f0eb712102b5edd20448e0605:-1968690199,e089c12b16b71210fe31e1848cc5ce18:-1754012406</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="">fb8e54a083082210b1abe480ceaad39c</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-02-27 12:20:27</sys_created_on>
+        <sys_db_object display_value="" name="sp_instance">sp_instance</sys_db_object>
+        <sys_id>93b820ad367b45eeab62afdca7cd1cd1</sys_id>
+        <sys_metadata>2889c12b83b71210b1abe480ceaad316</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Leave &amp;amp; Expense Tracking Management System" source="x_1583402_lems">7dc441c583231210b1abe480ceaad313</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_scope_delete display_value="">704e279aae8d45079b49da557a873a19</sys_scope_delete>
+        <sys_update_name>sp_instance_2889c12b83b71210b1abe480ceaad316</sys_update_name>
+        <sys_update_version display_value="sp_instance_2889c12b83b71210b1abe480ceaad316">04b5c4e483842210b1abe480ceaad334</sys_update_version>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-02-27 12:20:27</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

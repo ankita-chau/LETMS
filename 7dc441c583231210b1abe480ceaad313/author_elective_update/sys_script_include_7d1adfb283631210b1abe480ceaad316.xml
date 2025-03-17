@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="DELETE">
+        <access>package_private</access>
+        <active>false</active>
+        <api_name>x_1583402_lems.GetEmployeeLeaveDetails</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <mobile_callable>false</mobile_callable>
+        <name>GetEmployeeLeaveDetails</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var GetEmployeeLeaveDetails = Class.create();
+GetEmployeeLeaveDetails.prototype = Object.extendsObject(global.AbstractMobileCallableInclude, {
+
+	getLeaveData: function(employeeSysId) {
+        var leaveBucketGR = new GlideRecord('x_1583402_lems_leave_bucket'); 
+        leaveBucketGR.addQuery('employee', this.getParameter('sysparam_user'));
+        leaveBucketGR.addQuery('leave_type', this.getParameter('sysparam_leavetype')); 
+        leaveBucketGR.query();
+
+        if (leaveBucketGR.next()) {
+			var result = {};
+            result.balancr_leaves = '' + leaveBucketGR.balancr_leaves;
+            result.accrued = '' + leaveBucketGR.accrued;
+            result.taken_leaves = '' + leaveBucketGR.taken_leaves;
+			return JSON.stringify(result);
+        }
+
+    },
+
+    type: 'GetEmployeeLeaveDetails'
+});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-02-10 05:21:23</sys_created_on>
+        <sys_id>7d1adfb283631210b1abe480ceaad316</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name>GetEmployeeLeaveDetails</sys_name>
+        <sys_package display_value="Leave &amp;amp; Expense Tracking Management System" source="x_1583402_lems">7dc441c583231210b1abe480ceaad313</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_update_name>sys_script_include_7d1adfb283631210b1abe480ceaad316</sys_update_name>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-02-10 08:00:55</sys_updated_on>
+    </sys_script_include>
+    <sys_es_latest_script action="DELETE">
+        <id>7d1adfb283631210b1abe480ceaad316</id>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-02-10 05:21:23</sys_created_on>
+        <sys_id>939bd73683631210b1abe480ceaad3d5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-02-10 05:21:23</sys_updated_on>
+        <table>sys_script_include</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</application>
+        <file_path/>
+        <instance_id>72954f46ebca1a18c040fddacad0cd81</instance_id>
+        <instance_name>dev291464</instance_name>
+        <name>sys_script_include_7d1adfb283631210b1abe480ceaad316</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_script_include"&gt;&lt;sys_script_include action="INSERT_OR_UPDATE"&gt;&lt;access&gt;package_private&lt;/access&gt;&lt;active&gt;false&lt;/active&gt;&lt;api_name&gt;x_1583402_lems.GetEmployeeLeaveDetails&lt;/api_name&gt;&lt;caller_access/&gt;&lt;client_callable&gt;false&lt;/client_callable&gt;&lt;description/&gt;&lt;mobile_callable&gt;false&lt;/mobile_callable&gt;&lt;name&gt;GetEmployeeLeaveDetails&lt;/name&gt;&lt;sandbox_callable&gt;false&lt;/sandbox_callable&gt;&lt;script&gt;&lt;![CDATA[var GetEmployeeLeaveDetails = Class.create();
+GetEmployeeLeaveDetails.prototype = Object.extendsObject(global.AbstractMobileCallableInclude, {
+
+	getLeaveData: function(employeeSysId) {
+        var leaveBucketGR = new GlideRecord('x_1583402_lems_leave_bucket'); 
+        leaveBucketGR.addQuery('employee', this.getParameter('sysparam_user'));
+        leaveBucketGR.addQuery('leave_type', this.getParameter('sysparam_leavetype')); 
+        leaveBucketGR.query();
+
+        if (leaveBucketGR.next()) {
+			var result = {};
+            result.balancr_leaves = '' + leaveBucketGR.balancr_leaves;
+            result.accrued = '' + leaveBucketGR.accrued;
+            result.taken_leaves = '' + leaveBucketGR.taken_leaves;
+			return JSON.stringify(result);
+        }
+
+    },
+
+    type: 'GetEmployeeLeaveDetails'
+});]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_include&lt;/sys_class_name&gt;&lt;sys_created_by&gt;ankita.chaurasia&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-02-10 05:21:23&lt;/sys_created_on&gt;&lt;sys_id&gt;7d1adfb283631210b1abe480ceaad316&lt;/sys_id&gt;&lt;sys_mod_count&gt;5&lt;/sys_mod_count&gt;&lt;sys_name&gt;GetEmployeeLeaveDetails&lt;/sys_name&gt;&lt;sys_package display_value="Leave &amp;amp;amp; Expense Tracking Management System" source="x_1583402_lems"&gt;7dc441c583231210b1abe480ceaad313&lt;/sys_package&gt;&lt;sys_policy&gt;read&lt;/sys_policy&gt;&lt;sys_scope display_value="Leave &amp;amp;amp; Expense Tracking Management System"&gt;7dc441c583231210b1abe480ceaad313&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_include_7d1adfb283631210b1abe480ceaad316&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;ankita.chaurasia&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-02-10 08:00:55&lt;/sys_updated_on&gt;&lt;/sys_script_include&gt;&lt;sys_es_latest_script action="INSERT_OR_UPDATE"&gt;&lt;id&gt;7d1adfb283631210b1abe480ceaad316&lt;/id&gt;&lt;sys_created_by&gt;ankita.chaurasia&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-02-10 05:21:23&lt;/sys_created_on&gt;&lt;sys_id&gt;939bd73683631210b1abe480ceaad3d5&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;ankita.chaurasia&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-02-10 05:21:23&lt;/sys_updated_on&gt;&lt;table&gt;sys_script_include&lt;/table&gt;&lt;use_es_latest&gt;true&lt;/use_es_latest&gt;&lt;/sys_es_latest_script&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-151092683</payload_hash>
+        <record_name>GetEmployeeLeaveDetails</record_name>
+        <reverted_from/>
+        <source>6422b58983a71210b1abe480ceaad3b9</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-02-10 08:00:55</sys_created_on>
+        <sys_id>84208c8383271210b1abe480ceaad381</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>194eee028760000001</sys_recorded_at>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-02-10 08:00:55</sys_updated_on>
+        <type>Script Include</type>
+        <update_guid>4c208c8391271210fed9f82032826b80</update_guid>
+        <update_guid_history>4c208c8391271210fed9f82032826b80:-151092683,2cfe6f7ecca31210ec1b8d0109d9a960:1137517286,ab6b2bf60ca31210b5a761aa15034d1c:-1095817853,f5b867b67da31210e9c0028b9035b608:-583196588,380edb7af9631210ca9d81493859d076:-1095817853,7f9b9fb6c6631210199a3407345d1184:-304880871</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-02-10 10:51:00</sys_created_on>
+        <sys_db_object display_value="" name="sys_script_include">sys_script_include</sys_db_object>
+        <sys_id>184b2aeec9cf41f999fd4eb70bc93031</sys_id>
+        <sys_metadata>7d1adfb283631210b1abe480ceaad316</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>GetEmployeeLeaveDetails</sys_name>
+        <sys_package display_value="Leave &amp;amp; Expense Tracking Management System" source="x_1583402_lems">7dc441c583231210b1abe480ceaad313</sys_package>
+        <sys_parent/>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_scope_delete display_value="">704e279aae8d45079b49da557a873a19</sys_scope_delete>
+        <sys_update_name>sys_script_include_7d1adfb283631210b1abe480ceaad316</sys_update_name>
+        <sys_update_version display_value="sys_script_include_7d1adfb283631210b1abe480ceaad316">84208c8383271210b1abe480ceaad381</sys_update_version>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-02-10 10:51:00</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

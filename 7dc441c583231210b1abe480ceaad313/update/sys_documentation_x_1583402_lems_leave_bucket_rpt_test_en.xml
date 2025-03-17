@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="rpt_test" label="test" language="en" table="x_1583402_lems_leave_bucket">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>rpt_test</element>
+            <help/>
+            <hint/>
+            <label>test</label>
+            <language>en</language>
+            <name>x_1583402_lems_leave_bucket</name>
+            <plural>tests</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>ankita.chaurasia</sys_created_by>
+            <sys_created_on>2025-02-27 10:04:17</sys_created_on>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>test</sys_name>
+            <sys_package display_value="Leave &amp;amp; Expense Tracking Management System" source="x_1583402_lems">7dc441c583231210b1abe480ceaad313</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+            <sys_update_name>sys_documentation_x_1583402_lems_leave_bucket_rpt_test_en</sys_update_name>
+            <sys_updated_by>ankita.chaurasia</sys_updated_by>
+            <sys_updated_on>2025-02-27 10:04:17</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

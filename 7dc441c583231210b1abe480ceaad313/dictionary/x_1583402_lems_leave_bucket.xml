@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="f38e8a0d832b1210b1abe480ceaad3f9" label="Leave Bucket" max_length="40" name="x_1583402_lems_leave_bucket" type="collection">
+        <element label="Employee" max_length="32" name="employee" reference="sys_user" type="reference"/>
+        <element label="Last Year Balance" max_length="40" name="last_year_balance" type="float"/>
+        <element label="Taken Leave" max_length="40" name="taken_leave" type="float"/>
+        <element label="Balance Leave" max_length="40" name="balance_leave" type="float"/>
+        <element label="Accrued (total leaves gathered)" max_length="40" name="accrued" type="float"/>
+        <element function_definition="glidefunction:divide(balance_leave,taken_leave)" function_field="true" label="test" max_length="40" name="rpt_test" read_only="true" type="integer"/>
+        <element choice="3" choice_field="leave_type" choice_table="x_1583402_lems_leave_request" default="cl" label="Leave Type" max_length="40" name="leave_type" type="choice">
+            <choice/>
+        </element>
+        <index name="index">
+            <element name="employee"/>
+        </index>
+    </element>
+</database>

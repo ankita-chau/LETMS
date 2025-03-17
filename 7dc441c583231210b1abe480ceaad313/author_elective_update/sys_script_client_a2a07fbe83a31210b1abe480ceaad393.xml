@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="DELETE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description/>
+        <field>end_date</field>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>Auto Populate Duration</name>
+        <order/>
+        <script><![CDATA[function onChange(control, oldValue, newValue, isLoading) {
+    if (isLoading || newValue === '') {
+        return;
+    }
+
+    // Ensure g_form is defined
+    if (typeof g_form === 'undefined') {
+        console.error("g_form is not available in this context.");
+        return;
+    }
+
+    // Get Start and End Date values
+    var startDateStr = g_form.getValue('start_date'); // Ensure this field exists
+    var endDateStr = g_form.getValue('end_date');     // Ensure this field exists
+
+    // Check if both dates exist
+    if (startDateStr && endDateStr) {
+        // Convert ServiceNow Date format to JavaScript Date
+        var startDate = parseDate(startDateStr);
+        var endDate = parseDate(endDateStr);
+
+        // Check if dates are valid
+        if (!startDate || !endDate) {
+            console.error("Invalid date format. Check date field values.");
+            g_form.setValue('duration', "Invalid Date");
+            return;
+        }
+
+        // Calculate duration in milliseconds
+        var durationMs = endDate - startDate;
+
+        if (durationMs < 0) {
+            g_form.setValue('duration', 'Invalid: End Date is before Start Date');
+            return;
+        }
+
+        // Convert milliseconds to days, hours, and minutes
+        var days = Math.floor(durationMs / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((durationMs % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((durationMs % (1000 * 60 * 60)) / (1000 * 60));
+
+        // Format duration output
+        var durationText = days + " days " + hours + " hours " + minutes + " minutes";
+
+        // Set the calculated duration in the 'duration' field
+        g_form.setValue('duration', durationText);
+    } else {
+        g_form.clearValue('duration'); // Clear field if dates are missing
+    }
+}
+
+// Function to properly parse ServiceNow date strings
+function parseDate(dateStr) {
+    if (!dateStr) return null;
+    
+    // Handle different formats that may appear
+    var dateObj = new Date(dateStr);
+    if (!isNaN(dateObj)) return dateObj;
+
+    // Try parsing as YYYY-MM-DD HH:mm:ss format (ServiceNow format)
+    var parts = dateStr.split(/[- :]/);
+    if (parts.length >= 3) {
+        return new Date(parts[0], parts[1] - 1, parts[2], parts[3] || 0, parts[4] || 0, parts[5] || 0);
+    }
+    
+    return null;
+}
+]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-02-10 06:53:58</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>a2a07fbe83a31210b1abe480ceaad393</sys_id>
+        <sys_mod_count>9</sys_mod_count>
+        <sys_name>Auto Populate Duration</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Leave &amp;amp; Expense Tracking Management System" source="x_1583402_lems">7dc441c583231210b1abe480ceaad313</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_update_name>sys_script_client_a2a07fbe83a31210b1abe480ceaad393</sys_update_name>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-02-10 07:12:37</sys_updated_on>
+        <table>x_1583402_lems_leave_request</table>
+        <type>onChange</type>
+        <ui_type>10</ui_type>
+        <view/>
+    </sys_script_client>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</application>
+        <file_path/>
+        <instance_id>72954f46ebca1a18c040fddacad0cd81</instance_id>
+        <instance_name>dev291464</instance_name>
+        <name>sys_script_client_a2a07fbe83a31210b1abe480ceaad393</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sys_script_client"&gt;&lt;sys_script_client action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;applies_extended&gt;false&lt;/applies_extended&gt;&lt;condition/&gt;&lt;description/&gt;&lt;field&gt;end_date&lt;/field&gt;&lt;global&gt;true&lt;/global&gt;&lt;isolate_script&gt;true&lt;/isolate_script&gt;&lt;messages/&gt;&lt;name&gt;Auto Populate Duration&lt;/name&gt;&lt;order/&gt;&lt;script&gt;&lt;![CDATA[function onChange(control, oldValue, newValue, isLoading) {
+    if (isLoading || newValue === '') {
+        return;
+    }
+
+    // Ensure g_form is defined
+    if (typeof g_form === 'undefined') {
+        console.error("g_form is not available in this context.");
+        return;
+    }
+
+    // Get Start and End Date values
+    var startDateStr = g_form.getValue('start_date'); // Ensure this field exists
+    var endDateStr = g_form.getValue('end_date');     // Ensure this field exists
+
+    // Check if both dates exist
+    if (startDateStr &amp;&amp; endDateStr) {
+        // Convert ServiceNow Date format to JavaScript Date
+        var startDate = parseDate(startDateStr);
+        var endDate = parseDate(endDateStr);
+
+        // Check if dates are valid
+        if (!startDate || !endDate) {
+            console.error("Invalid date format. Check date field values.");
+            g_form.setValue('duration', "Invalid Date");
+            return;
+        }
+
+        // Calculate duration in milliseconds
+        var durationMs = endDate - startDate;
+
+        if (durationMs &lt; 0) {
+            g_form.setValue('duration', 'Invalid: End Date is before Start Date');
+            return;
+        }
+
+        // Convert milliseconds to days, hours, and minutes
+        var days = Math.floor(durationMs / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((durationMs % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((durationMs % (1000 * 60 * 60)) / (1000 * 60));
+
+        // Format duration output
+        var durationText = days + " days " + hours + " hours " + minutes + " minutes";
+
+        // Set the calculated duration in the 'duration' field
+        g_form.setValue('duration', durationText);
+    } else {
+        g_form.clearValue('duration'); // Clear field if dates are missing
+    }
+}
+
+// Function to properly parse ServiceNow date strings
+function parseDate(dateStr) {
+    if (!dateStr) return null;
+    
+    // Handle different formats that may appear
+    var dateObj = new Date(dateStr);
+    if (!isNaN(dateObj)) return dateObj;
+
+    // Try parsing as YYYY-MM-DD HH:mm:ss format (ServiceNow format)
+    var parts = dateStr.split(/[- :]/);
+    if (parts.length &gt;= 3) {
+        return new Date(parts[0], parts[1] - 1, parts[2], parts[3] || 0, parts[4] || 0, parts[5] || 0);
+    }
+    
+    return null;
+}
+]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_client&lt;/sys_class_name&gt;&lt;sys_created_by&gt;ankita.chaurasia&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-02-10 06:53:58&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;a2a07fbe83a31210b1abe480ceaad393&lt;/sys_id&gt;&lt;sys_mod_count&gt;9&lt;/sys_mod_count&gt;&lt;sys_name&gt;Auto Populate Duration&lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="Leave &amp;amp;amp; Expense Tracking Management System" source="x_1583402_lems"&gt;7dc441c583231210b1abe480ceaad313&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Leave &amp;amp;amp; Expense Tracking Management System"&gt;7dc441c583231210b1abe480ceaad313&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_client_a2a07fbe83a31210b1abe480ceaad393&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;ankita.chaurasia&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-02-10 07:12:37&lt;/sys_updated_on&gt;&lt;table&gt;x_1583402_lems_leave_request&lt;/table&gt;&lt;type&gt;onChange&lt;/type&gt;&lt;ui_type&gt;10&lt;/ui_type&gt;&lt;view/&gt;&lt;/sys_script_client&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>416356691</payload_hash>
+        <record_name>Auto Populate Duration</record_name>
+        <reverted_from/>
+        <source>6422b58983a71210b1abe480ceaad3b9</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-02-10 07:12:37</sys_created_on>
+        <sys_id>ec15373283e31210b1abe480ceaad3de</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>194eeb3f0ef0000001</sys_recorded_at>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-02-10 07:12:37</sys_updated_on>
+        <type>Client Script</type>
+        <update_guid>a4153732f3e312102477d39442ba62de</update_guid>
+        <update_guid_history>a4153732f3e312102477d39442ba62de:416356691,8cd473766de312101fb51bd8595e11ee:-1925787297,4b74f7b28de312101e779475f2d4d765:-1670026748,3d343ffe86a31210adee32809ec7add7:-393855318,85d2b73292e31210d20a0be090cbdc81:-425084620,6282333ea7a312101b7093b5b3c63751:-741131288,0542b37223e31210386e5e2dd4a77428:456537878,d4a1bbbe02a31210a4b3dae726e3b848:-1455210665,9d11bf3e24a312107e909ed323e997bf:799331167,27c0bb3ed7a31210dbab77b80f9b5e6c:-1128302515</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-02-10 07:13:18</sys_created_on>
+        <sys_db_object display_value="" name="sys_script_client">sys_script_client</sys_db_object>
+        <sys_id>aa44cf90cf5b4bb28fc0d33854aca224</sys_id>
+        <sys_metadata>a2a07fbe83a31210b1abe480ceaad393</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Auto Populate Duration</sys_name>
+        <sys_package display_value="Leave &amp;amp; Expense Tracking Management System" source="x_1583402_lems">7dc441c583231210b1abe480ceaad313</sys_package>
+        <sys_parent display_value="Leave Request">a566c1c183e31210b1abe480ceaad3f9</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_scope_delete display_value="">704e279aae8d45079b49da557a873a19</sys_scope_delete>
+        <sys_update_name>sys_script_client_a2a07fbe83a31210b1abe480ceaad393</sys_update_name>
+        <sys_update_version display_value="sys_script_client_a2a07fbe83a31210b1abe480ceaad393">ec15373283e31210b1abe480ceaad3de</sys_update_version>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-02-10 07:13:18</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

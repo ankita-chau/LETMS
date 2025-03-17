@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller = function() { 
+    var c = this;
+
+    c.searchExpenseHistory = function() {  
+        if (!c.searchDate) {
+            c.data.filteredRecords = c.data.records; 
+            return;
+        }
+
+        var selectedDate = new Date(c.searchDate);
+        selectedDate.setHours(selectedDate.getHours() + 5, selectedDate.getMinutes() + 30); 
+        var formattedSelectedDate = selectedDate.toISOString().split('T')[0];
+
+        c.data.filteredRecords = c.data.records.filter(function(record) {
+            var recordExpenseDate = record.expenseDate.split(' ')[0]; 
+            return recordExpenseDate === formattedSelectedDate;
+        });
+    };
+
+    c.data.filteredRecords = c.data.records;
+};
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.table-responsive {&#13;
+    margin-top: 20px;&#13;
+    padding: 15px;&#13;
+    border-radius: 8px;&#13;
+    background-color: #ffffff;&#13;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);&#13;
+}&#13;
+&#13;
+.table-responsive h3 {&#13;
+    text-align: center;&#13;
+    color: #2c3e50;&#13;
+    font-size: 28px;&#13;
+    margin-bottom: 20px;&#13;
+}&#13;
+&#13;
+.form-group {&#13;
+    text-align: center;&#13;
+    margin-bottom: 20px;&#13;
+}&#13;
+&#13;
+.form-group label {&#13;
+    font-size: 16px;&#13;
+    font-weight: bold;&#13;
+    color: #333;&#13;
+}&#13;
+&#13;
+.form-group button {&#13;
+    background-color: #007bff;&#13;
+    color: white;&#13;
+    border: none;&#13;
+    padding: 10px 15px;&#13;
+    border-radius: 5px;&#13;
+    cursor: pointer;&#13;
+}&#13;
+&#13;
+.form-group button:hover {&#13;
+    background-color: #0056b3;&#13;
+}&#13;
+&#13;
+.table {&#13;
+    width: 100%;&#13;
+    border-collapse: collapse;&#13;
+    font-size: 14px;&#13;
+    text-align: left;&#13;
+}&#13;
+&#13;
+.table th {&#13;
+    background-color: #007bff;&#13;
+    color: white;&#13;
+    padding: 12px;&#13;
+    text-align: center;&#13;
+}&#13;
+&#13;
+.table td {&#13;
+    padding: 10px;&#13;
+    border: 1px solid #ddd;&#13;
+    text-align: center;&#13;
+}&#13;
+&#13;
+.table tr:hover {&#13;
+    background-color: #f8f9fa;&#13;
+}&#13;
+&#13;
+@media screen and (max-width: 768px) {&#13;
+    .table {&#13;
+        font-size: 12px;&#13;
+    }&#13;
+    .form-control {&#13;
+        max-width: 100%;&#13;
+    }&#13;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>expense_claim_history</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>Expense Claim History</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+    data.records = [];
+    var grL = new GlideRecord('x_1583402_lems_expence_claim'); 
+    grL.addQuery('requested_by', gs.getUserID()); 
+    grL.orderByDesc('expense_date'); 
+    grL.query();
+
+    var count = 1; 
+    while (grL.next()) {
+        var attachmentSysId = grL.getValue('receipt_attachment');  
+        var receiptLink = '';
+
+        if (attachmentSysId) {
+            receiptLink = gs.getProperty('glide.servlet.uri') + 
+                          'sys_attachment.do?sys_id=' + 
+                          attachmentSysId + '&view=true';
+        }
+
+        data.records.push({
+            srNo: count++, 
+            expenseDate: grL.getValue('expense_date'), 
+            expenseType: grL.getDisplayValue('expense_type'), 
+            amount: grL.getValue('amount'),
+            receipt: receiptLink || 'No Receipt Available'
+        });
+    }
+})();
+]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-03-13 09:44:26</sys_created_on>
+        <sys_id>8b70c08183542210b1abe480ceaad3bb</sys_id>
+        <sys_mod_count>16</sys_mod_count>
+        <sys_name>Expense Claim History</sys_name>
+        <sys_package display_value="Leave &amp;amp; Expense Tracking Management System" source="x_1583402_lems">7dc441c583231210b1abe480ceaad313</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_update_name>sp_widget_8b70c08183542210b1abe480ceaad3bb</sys_update_name>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-03-17 09:28:06</sys_updated_on>
+        <template><![CDATA[<div class="table-responsive">
+    <h3>Your Expense History</h3>
+
+    <!-- Search Bar -->
+    <div class="form-group">
+        <label for="searchDate">Search by Expense Date:</label>
+        <input type="date" class="form-control" id="searchDate" ng-model="c.searchDate">
+        <button class="btn btn-primary" ng-click="c.searchLeaveHistory()">Search</button>
+    </div>
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>SR No.</th>
+                <th>Expense Date</th>
+                <th>Expense Type</th>
+                <th>Amount</th>
+              	<th>Receipt</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="record in c.data.filteredRecords">
+                <td>{{ record.srNo }}</td>
+                <td>{{ record.expenseDate }}</td>
+                <td>{{ record.expenseType }}</td>
+                <td> $ {{ record.amount }}</td>
+              	<td>
+    				<a href="{{ record.receipt }}" 
+                     target="_blank" 
+                     download>
+                       Download Receipt
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>]]></template>
+    </sp_widget>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>8b70c08183542210b1abe480ceaad3bb</id>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-03-13 09:44:25</sys_created_on>
+        <sys_id>96114c4183542210b1abe480ceaad33a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-03-13 09:44:25</sys_updated_on>
+        <table>sp_widget</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

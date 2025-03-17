@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sc_cat_item_category">
+    <sc_cat_item_category action="INSERT_OR_UPDATE">
+        <sc_cat_item display_value="Leave Request Form">2fcee124838c2210b1abe480ceaad367</sc_cat_item>
+        <sc_category display_value="Leave Requests">03d094b083886210b1abe480ceaad300</sc_category>
+        <sys_class_name>sc_cat_item_category</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-02-28 06:20:15</sys_created_on>
+        <sys_id>85b554f483886210b1abe480ceaad369</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Leave Requests.Leave Request Form</sys_name>
+        <sys_package display_value="Leave &amp;amp; Expense Tracking Management System" source="x_1583402_lems">7dc441c583231210b1abe480ceaad313</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_update_name>sc_cat_item_category_85b554f483886210b1abe480ceaad369</sys_update_name>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-02-28 06:20:15</sys_updated_on>
+    </sc_cat_item_category>
+</record_update>

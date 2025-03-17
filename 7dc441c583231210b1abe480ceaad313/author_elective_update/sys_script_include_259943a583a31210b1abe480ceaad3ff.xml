@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="DELETE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_1583402_lems.lemsAjax</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <mobile_callable>false</mobile_callable>
+        <name>lemsAjax</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var lemsAjax = Class.create();
+lemsAjax.prototype = Object.extendsObject(AbstractAjaxProcessor, {
+    getDateDiff: function() {
+        var startDate = this.getParameter('sysparam_start');
+        var endDate = this.getParameter('sysparam_end');
+
+        if (!startDate || !endDate) {
+            return 0; // Return 0 if any date is missing
+        }
+
+        var d1 = new GlideDateTime(startDate);
+        var d2 = new GlideDateTime(endDate);
+
+        var durationMillis = d2.getNumericValue() - d1.getNumericValue();
+        var durationDays = Math.abs(durationMillis / (1000 * 60 * 60 * 24));
+
+        return Math.floor(durationDays); 
+    }
+});
+]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-02-06 06:55:47</sys_created_on>
+        <sys_id>259943a583a31210b1abe480ceaad3ff</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_name>lemsAjax</sys_name>
+        <sys_package display_value="Leave &amp;amp; Expense Tracking Management System" source="x_1583402_lems">7dc441c583231210b1abe480ceaad313</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_update_name>sys_script_include_259943a583a31210b1abe480ceaad3ff</sys_update_name>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-02-06 07:29:22</sys_updated_on>
+    </sys_script_include>
+    <sys_es_latest_script action="DELETE">
+        <id>259943a583a31210b1abe480ceaad3ff</id>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-02-06 06:55:47</sys_created_on>
+        <sys_id>c7dac3e183a31210b1abe480ceaad3c0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-02-06 06:55:47</sys_updated_on>
+        <table>sys_script_include</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</application>
+        <file_path/>
+        <instance_id>72954f46ebca1a18c040fddacad0cd81</instance_id>
+        <instance_name>dev291464</instance_name>
+        <name>sys_script_include_259943a583a31210b1abe480ceaad3ff</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_script_include"&gt;&lt;sys_script_include action="INSERT_OR_UPDATE"&gt;&lt;access&gt;package_private&lt;/access&gt;&lt;active&gt;true&lt;/active&gt;&lt;api_name&gt;x_1583402_lems.lemsAjax&lt;/api_name&gt;&lt;caller_access/&gt;&lt;client_callable&gt;false&lt;/client_callable&gt;&lt;description/&gt;&lt;mobile_callable&gt;false&lt;/mobile_callable&gt;&lt;name&gt;lemsAjax&lt;/name&gt;&lt;sandbox_callable&gt;false&lt;/sandbox_callable&gt;&lt;script&gt;&lt;![CDATA[var lemsAjax = Class.create();
+lemsAjax.prototype = Object.extendsObject(AbstractAjaxProcessor, {
+    getDateDiff: function() {
+        var startDate = this.getParameter('sysparam_start');
+        var endDate = this.getParameter('sysparam_end');
+
+        if (!startDate || !endDate) {
+            return 0; // Return 0 if any date is missing
+        }
+
+        var d1 = new GlideDateTime(startDate);
+        var d2 = new GlideDateTime(endDate);
+
+        var durationMillis = d2.getNumericValue() - d1.getNumericValue();
+        var durationDays = Math.abs(durationMillis / (1000 * 60 * 60 * 24));
+
+        return Math.floor(durationDays); 
+    }
+});
+]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_include&lt;/sys_class_name&gt;&lt;sys_created_by&gt;ankita.chaurasia&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-02-06 06:55:47&lt;/sys_created_on&gt;&lt;sys_id&gt;259943a583a31210b1abe480ceaad3ff&lt;/sys_id&gt;&lt;sys_mod_count&gt;7&lt;/sys_mod_count&gt;&lt;sys_name&gt;lemsAjax&lt;/sys_name&gt;&lt;sys_package display_value="Leave &amp;amp;amp; Expense Tracking Management System" source="x_1583402_lems"&gt;7dc441c583231210b1abe480ceaad313&lt;/sys_package&gt;&lt;sys_policy&gt;read&lt;/sys_policy&gt;&lt;sys_scope display_value="Leave &amp;amp;amp; Expense Tracking Management System"&gt;7dc441c583231210b1abe480ceaad313&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_include_259943a583a31210b1abe480ceaad3ff&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;ankita.chaurasia&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-02-06 07:29:22&lt;/sys_updated_on&gt;&lt;/sys_script_include&gt;&lt;sys_es_latest_script action="INSERT_OR_UPDATE"&gt;&lt;id&gt;259943a583a31210b1abe480ceaad3ff&lt;/id&gt;&lt;sys_created_by&gt;ankita.chaurasia&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-02-06 06:55:47&lt;/sys_created_on&gt;&lt;sys_id&gt;c7dac3e183a31210b1abe480ceaad3c0&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;ankita.chaurasia&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-02-06 06:55:47&lt;/sys_updated_on&gt;&lt;table&gt;sys_script_include&lt;/table&gt;&lt;use_es_latest&gt;true&lt;/use_es_latest&gt;&lt;/sys_es_latest_script&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-643648668</payload_hash>
+        <record_name>lemsAjax</record_name>
+        <reverted_from/>
+        <source>6422b58983a71210b1abe480ceaad3b9</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-02-06 07:29:22</sys_created_on>
+        <sys_id>8782df2183e31210b1abe480ceaad390</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>194da29d65a0000001</sys_recorded_at>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-02-06 07:29:22</sys_updated_on>
+        <type>Script Include</type>
+        <update_guid>4782932d0aa31210b9928ea2c01d98fe</update_guid>
+        <update_guid_history>4782932d0aa31210b9928ea2c01d98fe:-643648668,c012132d27a31210b4597e0bed886a05:1657989443,48f1dbedbea31210d7f2a980cbb42db8:2099194324,8451576dcfa312104989a4b4ed3c5e55:1657989443,bc7ec3ad896312102d7e0029c011077d:1089776819,a34e0fe943a31210a6dd4d25b2542fe5:100864936,c29b8be557a312105f5c54cb7d2d3f28:1089776819,23da4be546a31210445292f21ebf70c8:-492831696</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-02-06 07:31:34</sys_created_on>
+        <sys_db_object display_value="" name="sys_script_include">sys_script_include</sys_db_object>
+        <sys_id>256aaa531c1647fc915fd216630e5e24</sys_id>
+        <sys_metadata>259943a583a31210b1abe480ceaad3ff</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>lemsAjax</sys_name>
+        <sys_package display_value="Leave &amp;amp; Expense Tracking Management System" source="x_1583402_lems">7dc441c583231210b1abe480ceaad313</sys_package>
+        <sys_parent/>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_scope_delete display_value="">704e279aae8d45079b49da557a873a19</sys_scope_delete>
+        <sys_update_name>sys_script_include_259943a583a31210b1abe480ceaad3ff</sys_update_name>
+        <sys_update_version display_value="sys_script_include_259943a583a31210b1abe480ceaad3ff">8782df2183e31210b1abe480ceaad390</sys_update_version>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-02-06 07:31:34</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

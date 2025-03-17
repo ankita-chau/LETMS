@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="5513200083542210b1abe480ceaad3c5" label="Expense Claim" max_length="40" name="x_1583402_lems_expence_claim" type="collection">
+        <element label="Receipt Attachment" max_length="40" name="receipt_attachment" type="file_attachment"/>
+        <element label="Amount" max_length="20" name="amount" type="currency"/>
+        <element label="Description" max_length="500" name="description" type="string"/>
+        <element choice="1" label="Expense Type" max_length="40" name="expense_type" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Travel Expenses" sequence="1" value="travel_exp"/>
+                <element inactive_on_update="false" label="Medical Care" sequence="2" value="medical_care"/>
+                <element inactive_on_update="false" label="Training and Development" sequence="3" value="training"/>
+            </choice>
+        </element>
+        <element label="Requested By" max_length="32" name="requested_by" reference="sys_user" type="reference"/>
+        <element label="Expense Date" max_length="40" name="expense_date" type="glide_date"/>
+        <index name="index">
+            <element name="requested_by"/>
+        </index>
+    </element>
+</database>

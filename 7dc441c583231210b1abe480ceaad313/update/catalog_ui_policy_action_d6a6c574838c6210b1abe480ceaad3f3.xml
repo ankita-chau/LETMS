@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="catalog_ui_policy_action">
+    <catalog_ui_policy_action action="INSERT_OR_UPDATE">
+        <catalog_item display_value="Leave Request Form">2fcee124838c2210b1abe480ceaad367</catalog_item>
+        <catalog_variable>IO:57f18578830c6210b1abe480ceaad325</catalog_variable>
+        <cleared>false</cleared>
+        <disabled>ignore</disabled>
+        <field/>
+        <field_message/>
+        <field_message_type>none</field_message_type>
+        <mandatory>false</mandatory>
+        <order>100</order>
+        <sys_class_name>catalog_ui_policy_action</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-02-28 09:54:43</sys_created_on>
+        <sys_id>d6a6c574838c6210b1abe480ceaad3f3</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>end_date</sys_name>
+        <sys_package display_value="Leave &amp;amp; Expense Tracking Management System" source="x_1583402_lems">7dc441c583231210b1abe480ceaad313</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_update_name>catalog_ui_policy_action_d6a6c574838c6210b1abe480ceaad3f3</sys_update_name>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-02-28 09:57:57</sys_updated_on>
+        <table/>
+        <ui_policy display_value="Hide end date when click to half day">0ef58db0838c6210b1abe480ceaad346</ui_policy>
+        <value/>
+        <value_action>ignore</value_action>
+        <variable>end_date</variable>
+        <variable_set/>
+        <visible>false</visible>
+    </catalog_ui_policy_action>
+    <sys_translated_text action="delete_multiple" query="documentkey=d6a6c574838c6210b1abe480ceaad3f3"/>
+</record_update>

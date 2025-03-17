@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sc_catalog_view_mtom">
+    <sc_catalog_view_mtom action="INSERT_OR_UPDATE">
+        <default>false</default>
+        <sc_catalog display_value="Leave Request Catalog ">214b772883086210b1abe480ceaad362</sc_catalog>
+        <sys_class_name>sc_catalog_view_mtom</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-02-28 04:31:21</sys_created_on>
+        <sys_id>b9cc7ba883086210b1abe480ceaad38c</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Leave Request Catalog .catalog_leave_request_catalog_form</sys_name>
+        <sys_package display_value="Leave &amp;amp; Expense Tracking Management System" source="x_1583402_lems">7dc441c583231210b1abe480ceaad313</sys_package>
+        <sys_policy/>
+        <sys_portal_page display_value="catalog_leave_request_catalog_form">7dcc7ba883086210b1abe480ceaad38a</sys_portal_page>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_update_name>sc_catalog_view_mtom_b9cc7ba883086210b1abe480ceaad38c</sys_update_name>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-02-28 06:23:55</sys_updated_on>
+    </sc_catalog_view_mtom>
+</record_update>

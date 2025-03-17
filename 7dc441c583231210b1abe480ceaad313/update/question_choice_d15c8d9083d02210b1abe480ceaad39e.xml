@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="question_choice">
+    <question_choice action="INSERT_OR_UPDATE">
+        <inactive>false</inactive>
+        <misc>0</misc>
+        <order>100</order>
+        <published_ref/>
+        <question display_value="Expense Type">f0bbcd1083d02210b1abe480ceaad3a6</question>
+        <rec_misc>0</rec_misc>
+        <sys_class_name>question_choice</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-03-11 07:18:15</sys_created_on>
+        <sys_id>d15c8d9083d02210b1abe480ceaad39e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Travel Expenses</sys_name>
+        <sys_package display_value="Leave &amp;amp; Expense Tracking Management System" source="x_1583402_lems">7dc441c583231210b1abe480ceaad313</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_update_name>question_choice_d15c8d9083d02210b1abe480ceaad39e</sys_update_name>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-03-11 07:18:15</sys_updated_on>
+        <text>Travel Expenses</text>
+        <value>travel_exp</value>
+    </question_choice>
+    <fx_price action="delete_multiple" query="id=d15c8d9083d02210b1abe480ceaad39e"/>
+    <fx_price action="INSERT_OR_UPDATE">
+        <amount>0</amount>
+        <currency display_value="USD">USD</currency>
+        <field>misc</field>
+        <id>d15c8d9083d02210b1abe480ceaad39e</id>
+        <parent/>
+        <reference_amount>0</reference_amount>
+        <reference_currency display_value="USD">USD</reference_currency>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-03-11 07:18:15</sys_created_on>
+        <sys_id>c27c41d083d02210b1abe480ceaad36f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-03-11 07:18:15</sys_updated_on>
+        <table>question_choice</table>
+        <type>calculated</type>
+    </fx_price>
+    <fx_price action="INSERT_OR_UPDATE">
+        <amount>0</amount>
+        <currency display_value="USD">USD</currency>
+        <field>rec_misc</field>
+        <id>d15c8d9083d02210b1abe480ceaad39e</id>
+        <parent/>
+        <reference_amount>0</reference_amount>
+        <reference_currency display_value="USD">USD</reference_currency>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-03-11 07:18:15</sys_created_on>
+        <sys_id>8a7c41d083d02210b1abe480ceaad36e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-03-11 07:18:15</sys_updated_on>
+        <table>question_choice</table>
+        <type>calculated</type>
+    </fx_price>
+</record_update>

@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller = function($timeout) { 
+    var c = this;
+    var chartInstance = null;
+
+    function loadChartJS(callback) {
+        if (window.Chart) {
+            callback();
+        } else {
+            var script = document.createElement('script');
+            script.src = "https://cdn.jsdelivr.net/npm/chart.js";
+            script.onload = callback;
+            document.head.appendChild(script);
+        }
+    }
+
+    function renderChart() {
+        var takenLeave = parseInt(c.data.leaveData.taken_leave) || 0;
+        var balanceLeave = parseInt(c.data.leaveData.balance_leave) || 0;
+
+        // ]]>🟢<![CDATA[ Corrected and updated the IDs for sick leave
+        document.getElementById("taken-sick-leave-text").innerText = `Taken Leaves (${takenLeave})`;
+        document.getElementById("remaining-sick-leave-text").innerText = `Remaining Leaves (${balanceLeave})`;
+
+        var ctx = document.getElementById('sickLeavePieChart').getContext('2d');
+
+        if (chartInstance) {
+            chartInstance.destroy();
+        }
+
+        chartInstance = new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: ["Taken Sick Leave", "Remaining Sick Leave"],
+                datasets: [{
+                    data: [takenLeave, balanceLeave],
+                    backgroundColor: ["#FF6F61", "#6A0572"]
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false
+            }
+        });
+    }
+
+    c.$onInit = function() {
+        $timeout(function() {
+            loadChartJS(renderChart);
+        }, 500);
+    };
+};
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.chart-container {&#13;
+    max-width: 400px;&#13;
+    margin: auto;&#13;
+    text-align: center;&#13;
+    padding: 20px;&#13;
+}&#13;
+&#13;
+.chart-wrapper {&#13;
+    width: 80%;&#13;
+    max-width: 250px; &#13;
+    height: 250px;&#13;
+    margin: auto;&#13;
+}&#13;
+&#13;
+canvas {&#13;
+    width: 100%;&#13;
+    height: 100%;&#13;
+}&#13;
+&#13;
+.legend {&#13;
+    margin-top: 15px;&#13;
+    font-size: 14px;&#13;
+}&#13;
+&#13;
+.color-box {&#13;
+    display: inline-block;&#13;
+    width: 12px;&#13;
+    height: 12px;&#13;
+    margin-right: 5px;&#13;
+    border-radius: 50%;&#13;
+}&#13;
+&#13;
+.taken {&#13;
+    background-color: #FF6384;&#13;
+}&#13;
+&#13;
+.remaining {&#13;
+    background-color: #36A2EB;&#13;
+}&#13;
+&#13;
+.chart-container .legend {&#13;
+    display: none;&#13;
+}&#13;
+&#13;
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>sick_leave_piechart</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>Sick Leave PieChart</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+    var employeeSysId = gs.getUserID(); 
+    var gr = new GlideRecord('x_1583402_lems_leave_bucket'); 
+    gr.addQuery('leave_type', 'sl'); // ]]>🔴<![CDATA[ Change to 'sl' for Sick Leave
+    gr.addQuery('employee', employeeSysId); 
+    gr.query();
+
+    var result = { taken_leave: 0, balance_leave: 0 };
+    if (gr.next()) {
+        result.taken_leave = parseInt(gr.getValue('taken_leave')) || 0;
+        result.balance_leave = parseInt(gr.getValue('balance_leave')) || 0;
+    }
+
+    data.leaveData = result; 
+})();
+]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-02-27 12:45:04</sys_created_on>
+        <sys_id>8034e0a883082210b1abe480ceaad3c7</sys_id>
+        <sys_mod_count>9</sys_mod_count>
+        <sys_name>Sick Leave PieChart</sys_name>
+        <sys_package display_value="Leave &amp;amp; Expense Tracking Management System" source="x_1583402_lems">7dc441c583231210b1abe480ceaad313</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_update_name>sp_widget_8034e0a883082210b1abe480ceaad3c7</sys_update_name>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-02-28 04:13:00</sys_updated_on>
+        <template><![CDATA[<div class="chart-container">
+  <h4> <b>Sick Leave</b> </h4>
+    <div class="chart-wrapper">
+        <canvas id="sickLeavePieChart"></canvas>
+    </div>
+    <div class="legend">
+        <div><span class="color-box taken"></span> <span id="taken-sick-leave-text">Taken Leaves (0)</span></div>
+        <div><span class="color-box remaining"></span> <span id="remaining-sick-leave-text">Remaining Leaves (0)</span></div>
+    </div>
+</div>
+]]></template>
+    </sp_widget>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>8034e0a883082210b1abe480ceaad3c7</id>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-02-27 12:45:34</sys_created_on>
+        <sys_id>2744ac6c83082210b1abe480ceaad375</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-02-27 12:45:34</sys_updated_on>
+        <table>sp_widget</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

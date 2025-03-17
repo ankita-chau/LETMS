@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sc_cat_item_user_criteria_mtom">
+    <sc_cat_item_user_criteria_mtom action="DELETE">
+        <sc_cat_item display_value="Leave Request Form">2fcee124838c2210b1abe480ceaad367</sc_cat_item>
+        <sys_class_name>sc_cat_item_user_criteria_mtom</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-02-28 06:05:45</sys_created_on>
+        <sys_id>a462587083886210b1abe480ceaad37a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Leave Request Form.Any User</sys_name>
+        <sys_package display_value="Leave &amp;amp; Expense Tracking Management System" source="x_1583402_lems">7dc441c583231210b1abe480ceaad313</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_update_name>sc_cat_item_user_criteria_mtom_a462587083886210b1abe480ceaad37a</sys_update_name>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-02-28 06:05:45</sys_updated_on>
+        <user_criteria display_value="Any User">fb1166d64fff0200086eeed18110c7ab</user_criteria>
+    </sc_cat_item_user_criteria_mtom>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</application>
+        <file_path/>
+        <instance_id>72954f46ebca1a18c040fddacad0cd81</instance_id>
+        <instance_name>dev291464</instance_name>
+        <name>sc_cat_item_user_criteria_mtom_a462587083886210b1abe480ceaad37a</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sc_cat_item_user_criteria_mtom"><sc_cat_item_user_criteria_mtom action="INSERT_OR_UPDATE"><sc_cat_item display_value="Leave Request Form">2fcee124838c2210b1abe480ceaad367</sc_cat_item><sys_class_name>sc_cat_item_user_criteria_mtom</sys_class_name><sys_created_by>ankita.chaurasia</sys_created_by><sys_created_on>2025-02-28 06:05:45</sys_created_on><sys_id>a462587083886210b1abe480ceaad37a</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Leave Request Form.Any User</sys_name><sys_package display_value="Leave &amp;amp; Expense Tracking Management System" source="x_1583402_lems">7dc441c583231210b1abe480ceaad313</sys_package><sys_policy/><sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope><sys_update_name>sc_cat_item_user_criteria_mtom_a462587083886210b1abe480ceaad37a</sys_update_name><sys_updated_by>ankita.chaurasia</sys_updated_by><sys_updated_on>2025-02-28 06:05:45</sys_updated_on><user_criteria display_value="Any User">fb1166d64fff0200086eeed18110c7ab</user_criteria></sc_cat_item_user_criteria_mtom></record_update>]]></payload>
+        <payload_hash>1925947003</payload_hash>
+        <record_name>Leave Request Form.Any User</record_name>
+        <reverted_from/>
+        <source>6422b58983a71210b1abe480ceaad3b9</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-02-28 06:05:45</sys_created_on>
+        <sys_id>2062587083886210b1abe480ceaad37e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1954b29318b0000001</sys_recorded_at>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-02-28 06:05:45</sys_updated_on>
+        <type>Catalog Item Available for</type>
+        <update_guid>24625870c48862108cc7681abd69b77d</update_guid>
+        <update_guid_history>24625870c48862108cc7681abd69b77d:1925947003</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Leave Request Form.Any User">50e4d4f483886210b1abe480ceaad324</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-02-28 06:16:39</sys_created_on>
+        <sys_db_object display_value="" name="sc_cat_item_user_criteria_mtom">sc_cat_item_user_criteria_mtom</sys_db_object>
+        <sys_id>00a435d58a6e42098010579041f695d1</sys_id>
+        <sys_metadata>a462587083886210b1abe480ceaad37a</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Leave Request Form.Any User</sys_name>
+        <sys_package display_value="Leave &amp;amp; Expense Tracking Management System" source="x_1583402_lems">7dc441c583231210b1abe480ceaad313</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_scope_delete display_value="">704e279aae8d45079b49da557a873a19</sys_scope_delete>
+        <sys_update_name>sc_cat_item_user_criteria_mtom_a462587083886210b1abe480ceaad37a</sys_update_name>
+        <sys_update_version display_value="sc_cat_item_user_criteria_mtom_a462587083886210b1abe480ceaad37a">2062587083886210b1abe480ceaad37e</sys_update_version>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-02-28 06:16:39</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
