@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="catalog_ui_policy_action">
+    <catalog_ui_policy_action action="INSERT_OR_UPDATE">
+        <catalog_item display_value="Claim Expense Catalog">cdbf4bf083502210b1abe480ceaad3f9</catalog_item>
+        <catalog_variable>IO:443297b483502210b1abe480ceaad372</catalog_variable>
+        <cleared>false</cleared>
+        <disabled>ignore</disabled>
+        <field/>
+        <field_message/>
+        <field_message_type>none</field_message_type>
+        <mandatory>true</mandatory>
+        <order>100</order>
+        <sys_class_name>catalog_ui_policy_action</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-03-13 06:38:06</sys_created_on>
+        <sys_id>b966d33c83502210b1abe480ceaad3e1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>expense_date</sys_name>
+        <sys_package display_value="Leave &amp;amp; Expense Tracking Management System" source="x_1583402_lems">7dc441c583231210b1abe480ceaad313</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_update_name>catalog_ui_policy_action_b966d33c83502210b1abe480ceaad3e1</sys_update_name>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-03-13 06:38:06</sys_updated_on>
+        <table/>
+        <ui_policy display_value="Making fields mandatory">63a593f883502210b1abe480ceaad3f8</ui_policy>
+        <value/>
+        <value_action>ignore</value_action>
+        <variable>expense_date</variable>
+        <variable_set/>
+        <visible>ignore</visible>
+    </catalog_ui_policy_action>
+    <sys_translated_text action="delete_multiple" query="documentkey=b966d33c83502210b1abe480ceaad3e1"/>
+</record_update>

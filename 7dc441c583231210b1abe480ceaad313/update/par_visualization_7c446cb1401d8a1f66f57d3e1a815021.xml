@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="par_visualization">
+    <par_visualization action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <certified>false</certified>
+        <description/>
+        <macroponent display_value="Calendar Report">259e0221ff18a75c5f5f0fb28fa5d32f</macroponent>
+        <name>leave calendar</name>
+        <properties>{"table":"business_calendar","startDateField":"sys_created_on","endDateField":"","eventDisplayFields":"","componentTitle":"leave calendar","followFilters":true,"showFilterOverview":true,"showDescription":true,"componentDescription":"","viewType":"MONTH","eventColor":"","filterConfigurations":[]}</properties>
+        <requested_by/>
+        <scheduled_count/>
+        <sys_class_name>par_visualization</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-02-27 08:29:00</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>7c446cb1401d8a1f66f57d3e1a815021</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>leave calendar</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Leave &amp;amp; Expense Tracking Management System" source="x_1583402_lems">7dc441c583231210b1abe480ceaad313</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_update_name>par_visualization_7c446cb1401d8a1f66f57d3e1a815021</sys_update_name>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-02-27 10:23:35</sys_updated_on>
+        <type>Calendar Report</type>
+    </par_visualization>
+</record_update>

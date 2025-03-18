@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance">
+    <sp_instance action="DELETE">
+        <active>true</active>
+        <class_name/>
+        <color>default</color>
+        <css/>
+        <glyph/>
+        <id/>
+        <order>2</order>
+        <roles/>
+        <short_description/>
+        <size>md</size>
+        <sp_column display_value="1">111e372c83086210b1abe480ceaad3ff</sp_column>
+        <sp_widget display_value="Related Catalog Item">806f40990fab2300b7b2c8337a767e6f</sp_widget>
+        <sys_class_name>sp_instance</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-02-28 06:27:41</sys_created_on>
+        <sys_id>b967d4b883886210b1abe480ceaad353</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Request Leave</sys_name>
+        <sys_package display_value="Leave &amp;amp; Expense Tracking Management System" source="x_1583402_lems">7dc441c583231210b1abe480ceaad313</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_update_name>sp_instance_b967d4b883886210b1abe480ceaad353</sys_update_name>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-02-28 06:29:31</sys_updated_on>
+        <title>Request Leave</title>
+        <url/>
+        <widget_parameters><![CDATA[{
+	"source_table": {
+		"value": "sc_2_sc",
+		"displayValue": "sc_2_sc"
+	},
+	"source_column": {
+		"value": "sc_cat_item",
+		"displayValue": "sc_cat_item"
+	},
+	"target_column": {
+		"value": "sc_cat_item",
+		"displayValue": "sc_cat_item"
+	},
+	"title": {
+		"value": "Request Leave",
+		"displayValue": "Request Leave"
+	},
+	"max_number": {
+		"value": null,
+		"displayValue": ""
+	},
+	"source_id": {
+		"value": "2fcee124838c2210b1abe480ceaad367",
+		"displayValue": "2fcee124838c2210b1abe480ceaad367"
+	},
+	"use_full_width": {
+		"value": "true",
+		"displayValue": "true"
+	}
+}]]></widget_parameters>
+    </sp_instance>
+    <sys_translated_text action="DELETE" query="documentkey=b967d4b883886210b1abe480ceaad353"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</application>
+        <file_path/>
+        <instance_id>72954f46ebca1a18c040fddacad0cd81</instance_id>
+        <instance_name>dev291464</instance_name>
+        <name>sp_instance_b967d4b883886210b1abe480ceaad353</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sp_instance"&gt;&lt;sp_instance action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;class_name/&gt;&lt;color&gt;default&lt;/color&gt;&lt;css/&gt;&lt;glyph/&gt;&lt;id/&gt;&lt;order&gt;2&lt;/order&gt;&lt;roles/&gt;&lt;short_description/&gt;&lt;size&gt;md&lt;/size&gt;&lt;sp_column display_value="1"&gt;111e372c83086210b1abe480ceaad3ff&lt;/sp_column&gt;&lt;sp_widget display_value="Related Catalog Item"&gt;806f40990fab2300b7b2c8337a767e6f&lt;/sp_widget&gt;&lt;sys_class_name&gt;sp_instance&lt;/sys_class_name&gt;&lt;sys_created_by&gt;ankita.chaurasia&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-02-28 06:27:41&lt;/sys_created_on&gt;&lt;sys_id&gt;b967d4b883886210b1abe480ceaad353&lt;/sys_id&gt;&lt;sys_mod_count&gt;2&lt;/sys_mod_count&gt;&lt;sys_name&gt;Request Leave&lt;/sys_name&gt;&lt;sys_package display_value="Leave &amp;amp;amp; Expense Tracking Management System" source="x_1583402_lems"&gt;7dc441c583231210b1abe480ceaad313&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Leave &amp;amp;amp; Expense Tracking Management System"&gt;7dc441c583231210b1abe480ceaad313&lt;/sys_scope&gt;&lt;sys_update_name&gt;sp_instance_b967d4b883886210b1abe480ceaad353&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;ankita.chaurasia&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-02-28 06:29:31&lt;/sys_updated_on&gt;&lt;title&gt;Request Leave&lt;/title&gt;&lt;url/&gt;&lt;widget_parameters&gt;&lt;![CDATA[{
+	"source_table": {
+		"value": "sc_2_sc",
+		"displayValue": "sc_2_sc"
+	},
+	"source_column": {
+		"value": "sc_cat_item",
+		"displayValue": "sc_cat_item"
+	},
+	"target_column": {
+		"value": "sc_cat_item",
+		"displayValue": "sc_cat_item"
+	},
+	"title": {
+		"value": "Request Leave",
+		"displayValue": "Request Leave"
+	},
+	"max_number": {
+		"value": null,
+		"displayValue": ""
+	},
+	"source_id": {
+		"value": "2fcee124838c2210b1abe480ceaad367",
+		"displayValue": "2fcee124838c2210b1abe480ceaad367"
+	},
+	"use_full_width": {
+		"value": "true",
+		"displayValue": "true"
+	}
+}]]&gt;&lt;/widget_parameters&gt;&lt;/sp_instance&gt;&lt;sys_translated_text action="delete_multiple" query="documentkey=b967d4b883886210b1abe480ceaad353"/&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-312654160</payload_hash>
+        <record_name>Request Leave</record_name>
+        <reverted_from/>
+        <source>6422b58983a71210b1abe480ceaad3b9</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-02-28 06:29:31</sys_created_on>
+        <sys_id>78d7d0f883886210b1abe480ceaad33c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1954b3ef49f0000001</sys_recorded_at>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-02-28 06:29:31</sys_updated_on>
+        <type>Instance</type>
+        <update_guid>30d7d0f888886210999fa61a75f8553c</update_guid>
+        <update_guid_history>30d7d0f888886210999fa61a75f8553c:-312654160,c7a7dcb8b2886210a5817011168b99f1:639546642,3d6758b8fe8862106b37690350e92be8:717846030</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Request Leave">6de9d47c83886210b1abe480ceaad37f</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-02-28 06:38:35</sys_created_on>
+        <sys_db_object display_value="" name="sp_instance">sp_instance</sys_db_object>
+        <sys_id>111e087f5a1844c584e86933fd30a461</sys_id>
+        <sys_metadata>b967d4b883886210b1abe480ceaad353</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Request Leave</sys_name>
+        <sys_package display_value="Leave &amp;amp; Expense Tracking Management System" source="x_1583402_lems">7dc441c583231210b1abe480ceaad313</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_scope_delete display_value="">704e279aae8d45079b49da557a873a19</sys_scope_delete>
+        <sys_update_name>sp_instance_b967d4b883886210b1abe480ceaad353</sys_update_name>
+        <sys_update_version display_value="sp_instance_b967d4b883886210b1abe480ceaad353">78d7d0f883886210b1abe480ceaad33c</sys_update_version>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-02-28 06:38:35</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

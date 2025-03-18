@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="m2m_sp_portal_catalog">
+    <m2m_sp_portal_catalog action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <order>100</order>
+        <sc_catalog display_value="Leave Request Catalog ">214b772883086210b1abe480ceaad362</sc_catalog>
+        <sp_portal display_value="Leave &amp; Expense Tracking Management">45132c1c83b31210b1abe480ceaad3c7</sp_portal>
+        <sys_class_name>m2m_sp_portal_catalog</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-02-28 06:41:07</sys_created_on>
+        <sys_id>cf6adc3c83886210b1abe480ceaad3ba</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Leave Request Catalog .Leave &amp; Expense Tracking Management</sys_name>
+        <sys_package display_value="Leave &amp;amp; Expense Tracking Management System" source="x_1583402_lems">7dc441c583231210b1abe480ceaad313</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_update_name>m2m_sp_portal_catalog_cf6adc3c83886210b1abe480ceaad3ba</sys_update_name>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-02-28 06:41:07</sys_updated_on>
+    </m2m_sp_portal_catalog>
+</record_update>

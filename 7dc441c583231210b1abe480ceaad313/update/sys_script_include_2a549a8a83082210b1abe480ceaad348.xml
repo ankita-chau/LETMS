@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>false</active>
+        <api_name>x_1583402_lems.durationdiff</api_name>
+        <caller_access/>
+        <client_callable>true</client_callable>
+        <description/>
+        <mobile_callable>false</mobile_callable>
+        <name>durationdiff</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var durationdiff = Class.create();
+durationdiff.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+
+    getDuration: function() {
+
+        var userName = this.getParameter('sysparm_user');
+        var leaveType = this.getParameter('sysparm_leave_type');
+        var gr = new GlideRecord('x_1583402_lems_leave_bucket');
+        gr.addQuery('employee', );
+        gs.log("user" + employee);
+        gs.log("leaveType" + leave_type);
+        return gr.balance_leave;
+    },
+
+    type: 'durationdiff'
+});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-03-04 12:46:56</sys_created_on>
+        <sys_id>2a549a8a83082210b1abe480ceaad348</sys_id>
+        <sys_mod_count>9</sys_mod_count>
+        <sys_name>durationdiff</sys_name>
+        <sys_package display_value="Leave &amp;amp; Expense Tracking Management System" source="x_1583402_lems">7dc441c583231210b1abe480ceaad313</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_update_name>sys_script_include_2a549a8a83082210b1abe480ceaad348</sys_update_name>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-03-05 06:30:17</sys_updated_on>
+    </sys_script_include>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>2a549a8a83082210b1abe480ceaad348</id>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-03-04 12:46:56</sys_created_on>
+        <sys_id>5494924e83082210b1abe480ceaad362</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-03-04 12:46:56</sys_updated_on>
+        <table>sys_script_include</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="DELETE">
+        <category>custom</category>
+        <client_script><![CDATA[function($scope, $rootScope, moment, $window, spModal) {
+	var c = this;
+	
+	$rootScope.$on('angular-bootstrap-calendar-init', function(evt, vm){
+		vm.eventClicked = function(event){
+			var begin = moment(event.startsAt).toString();
+			var end = moment(event.endsAt).toString();
+			spModal.alert('Event ' + event.title + ' Starts at ' + begin + ' and ends at ' + end);
+		};
+		
+		function format(dt){
+			return moment(dt).format('ddd, M/D/Y h:mmA');
+		}
+
+
+    // Override the format of the titles and tool tips on the different views
+		vm.calendarEventTitle.weekView = function(event){
+			return event.title  + ' (' + format(event.startsAt) + ' to ' + format(event.endsAt) + ')';
+		};
+		
+		vm.calendarEventTitle.weekViewTooltip = function(event){
+			return event.title  + ' (' + format(event.startsAt) + ' to ' + format(event.endsAt) + ')';
+		};
+		
+		vm.calendarEventTitle.monthView = function(event){
+			return event.title  + ' (' + format(event.startsAt) + ' to ' + format(event.endsAt) + ')' +
+				'<span class="event-title"> :' + event.title + '</span>';
+		};
+	});	
+
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css/>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>calendar_clone</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Calendar Clone</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+	var viewDate = new GlideDateTime().toString();
+
+	// Get events from the server, for example from cmdb_ci_outage
+	var events = [];
+	
+	events.push(setDates({
+        title: '<i class="glyphicon glyphicon-asterisk"></i> <span class="text-primary">Another event</span>, with a <i>html</i> title',
+        color: { primary : 'red', secondary : 'pink'},
+        startsAt: '',
+        endsAt: '',
+        draggable: true,
+        resizable: true
+      }, -2, 8));
+	events.push(setDates({
+        title: 'This is a really long event title that occurs on every year',
+        color:  { primary : 'green', secondary : 'light-green' },
+        startsAt: '',
+        endsAt: '',
+        recursOn: 'year',
+        draggable: true,
+        resizable: true
+      }, -1, 120));
+	events.push(setDates({
+        title: 'An event',
+        color: { primary : 'blue', secondary : 'light-blue' },
+        startsAt: '',
+        endsAt: '',
+        draggable: true,
+        resizable: true
+      }, 0.5, 19));
+	
+	var defaultCalendarView = 'month';
+	
+	// If using Custom Templates add them to the angular-bootstrap-calendar widget in the platform
+	// related list then reference them here by name and template file name.
+/*	var customTemplateUrls = { 'calendarMonthCellEvents' : 'calendarMonthCellEvents.html',
+														'calendarMonthCell' : 'customMonthCellText.html',
+														'calendarWeekView' : 'calendarWeekView.html' };*/
+	var customTemplateUrls = '';
+	
+	data.calendarWidget = $sp.getWidget('angular-bootstrap-calendar', { 'events' : events, 'id' : 'calendar1', 
+																																			'show_navigation' : true, 'default_calendar_view' : defaultCalendarView,
+																																			'custom_template_urls' : customTemplateUrls,
+																																		 'start_date' : viewDate });
+
+	function setDates(event, daysFromNowStart, hoursLength){
+		var dtStart = new GlideDateTime();
+		dtStart.addDaysLocalTime(daysFromNowStart);
+		
+		event.startsAt = dtStart.toString();
+	
+		var dtEnd = new GlideDateTime(dtStart);
+		dtEnd.addSeconds(60 * 60 * hoursLength);
+		event.endsAt = dtEnd.toString();
+		
+		return event;
+	}
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-02-21 05:49:23</sys_created_on>
+        <sys_id>ac8b0c2283731210b1abe480ceaad3d0</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>Calendar Clone</sys_name>
+        <sys_package display_value="Leave &amp;amp; Expense Tracking Management System" source="x_1583402_lems">7dc441c583231210b1abe480ceaad313</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_update_name>sp_widget_ac8b0c2283731210b1abe480ceaad3d0</sys_update_name>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-02-21 07:01:55</sys_updated_on>
+        <template><![CDATA[<div class="panel panel-default">
+  <div class="panel-heading" ng-if="options.title">
+    <h2 class="panel-title">
+     CALENDAR
+    </h2>
+  </div>
+  <div class="panel-body">
+    <div class="calendar-panel">
+		  <sp-widget widget="data.calendarWidget"/>
+    </div>
+  </div>
+</div>]]></template>
+    </sp_widget>
+    <sys_es_latest_script action="DELETE">
+        <id>ac8b0c2283731210b1abe480ceaad3d0</id>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-02-21 07:00:42</sys_created_on>
+        <sys_id>59db9ca283b31210b1abe480ceaad344</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-02-21 07:00:42</sys_updated_on>
+        <table>sp_widget</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</application>
+        <file_path/>
+        <instance_id>72954f46ebca1a18c040fddacad0cd81</instance_id>
+        <instance_name>dev291464</instance_name>
+        <name>sp_widget_ac8b0c2283731210b1abe480ceaad3d0</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sp_widget"&gt;&lt;sp_widget action="INSERT_OR_UPDATE"&gt;&lt;category&gt;custom&lt;/category&gt;&lt;client_script&gt;&lt;![CDATA[function($scope, $rootScope, moment, $window, spModal) {
+	var c = this;
+	
+	$rootScope.$on('angular-bootstrap-calendar-init', function(evt, vm){
+		vm.eventClicked = function(event){
+			var begin = moment(event.startsAt).toString();
+			var end = moment(event.endsAt).toString();
+			spModal.alert('Event ' + event.title + ' Starts at ' + begin + ' and ends at ' + end);
+		};
+		
+		function format(dt){
+			return moment(dt).format('ddd, M/D/Y h:mmA');
+		}
+
+
+    // Override the format of the titles and tool tips on the different views
+		vm.calendarEventTitle.weekView = function(event){
+			return event.title  + ' (' + format(event.startsAt) + ' to ' + format(event.endsAt) + ')';
+		};
+		
+		vm.calendarEventTitle.weekViewTooltip = function(event){
+			return event.title  + ' (' + format(event.startsAt) + ' to ' + format(event.endsAt) + ')';
+		};
+		
+		vm.calendarEventTitle.monthView = function(event){
+			return event.title  + ' (' + format(event.startsAt) + ' to ' + format(event.endsAt) + ')' +
+				'&lt;span class="event-title"&gt; :' + event.title + '&lt;/span&gt;';
+		};
+	});	
+
+}]]&gt;&lt;/client_script&gt;&lt;controller_as&gt;c&lt;/controller_as&gt;&lt;css/&gt;&lt;data_table&gt;sp_instance&lt;/data_table&gt;&lt;demo_data/&gt;&lt;description/&gt;&lt;docs/&gt;&lt;field_list/&gt;&lt;has_preview&gt;false&lt;/has_preview&gt;&lt;id&gt;calendar_clone&lt;/id&gt;&lt;internal&gt;false&lt;/internal&gt;&lt;link&gt;&lt;![CDATA[function link(scope, element, attrs, controller) {  }]]&gt;&lt;/link&gt;&lt;name&gt;Calendar Clone&lt;/name&gt;&lt;option_schema/&gt;&lt;public&gt;false&lt;/public&gt;&lt;roles/&gt;&lt;script&gt;&lt;![CDATA[(function() {
+	var viewDate = new GlideDateTime().toString();
+
+	// Get events from the server, for example from cmdb_ci_outage
+	var events = [];
+	
+	events.push(setDates({
+        title: '&lt;i class="glyphicon glyphicon-asterisk"&gt;&lt;/i&gt; &lt;span class="text-primary"&gt;Another event&lt;/span&gt;, with a &lt;i&gt;html&lt;/i&gt; title',
+        color: { primary : 'red', secondary : 'pink'},
+        startsAt: '',
+        endsAt: '',
+        draggable: true,
+        resizable: true
+      }, -2, 8));
+	events.push(setDates({
+        title: 'This is a really long event title that occurs on every year',
+        color:  { primary : 'green', secondary : 'light-green' },
+        startsAt: '',
+        endsAt: '',
+        recursOn: 'year',
+        draggable: true,
+        resizable: true
+      }, -1, 120));
+	events.push(setDates({
+        title: 'An event',
+        color: { primary : 'blue', secondary : 'light-blue' },
+        startsAt: '',
+        endsAt: '',
+        draggable: true,
+        resizable: true
+      }, 0.5, 19));
+	
+	var defaultCalendarView = 'month';
+	
+	// If using Custom Templates add them to the angular-bootstrap-calendar widget in the platform
+	// related list then reference them here by name and template file name.
+/*	var customTemplateUrls = { 'calendarMonthCellEvents' : 'calendarMonthCellEvents.html',
+														'calendarMonthCell' : 'customMonthCellText.html',
+														'calendarWeekView' : 'calendarWeekView.html' };*/
+	var customTemplateUrls = '';
+	
+	data.calendarWidget = $sp.getWidget('angular-bootstrap-calendar', { 'events' : events, 'id' : 'calendar1', 
+																																			'show_navigation' : true, 'default_calendar_view' : defaultCalendarView,
+																																			'custom_template_urls' : customTemplateUrls,
+																																		 'start_date' : viewDate });
+
+	function setDates(event, daysFromNowStart, hoursLength){
+		var dtStart = new GlideDateTime();
+		dtStart.addDaysLocalTime(daysFromNowStart);
+		
+		event.startsAt = dtStart.toString();
+	
+		var dtEnd = new GlideDateTime(dtStart);
+		dtEnd.addSeconds(60 * 60 * hoursLength);
+		event.endsAt = dtEnd.toString();
+		
+		return event;
+	}
+})();]]&gt;&lt;/script&gt;&lt;servicenow&gt;false&lt;/servicenow&gt;&lt;sys_class_name&gt;sp_widget&lt;/sys_class_name&gt;&lt;sys_created_by&gt;ankita.chaurasia&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-02-21 05:49:23&lt;/sys_created_on&gt;&lt;sys_id&gt;ac8b0c2283731210b1abe480ceaad3d0&lt;/sys_id&gt;&lt;sys_mod_count&gt;3&lt;/sys_mod_count&gt;&lt;sys_name&gt;Calendar Clone&lt;/sys_name&gt;&lt;sys_package display_value="Leave &amp;amp;amp; Expense Tracking Management System" source="x_1583402_lems"&gt;7dc441c583231210b1abe480ceaad313&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Leave &amp;amp;amp; Expense Tracking Management System"&gt;7dc441c583231210b1abe480ceaad313&lt;/sys_scope&gt;&lt;sys_update_name&gt;sp_widget_ac8b0c2283731210b1abe480ceaad3d0&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;ankita.chaurasia&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-02-21 07:01:55&lt;/sys_updated_on&gt;&lt;template&gt;&lt;![CDATA[&lt;div class="panel panel-default"&gt;
+  &lt;div class="panel-heading" ng-if="options.title"&gt;
+    &lt;h2 class="panel-title"&gt;
+     CALENDAR
+    &lt;/h2&gt;
+  &lt;/div&gt;
+  &lt;div class="panel-body"&gt;
+    &lt;div class="calendar-panel"&gt;
+		  &lt;sp-widget widget="data.calendarWidget"/&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;]]&gt;&lt;/template&gt;&lt;/sp_widget&gt;&lt;sys_es_latest_script action="INSERT_OR_UPDATE"&gt;&lt;id&gt;ac8b0c2283731210b1abe480ceaad3d0&lt;/id&gt;&lt;sys_created_by&gt;ankita.chaurasia&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-02-21 07:00:42&lt;/sys_created_on&gt;&lt;sys_id&gt;59db9ca283b31210b1abe480ceaad344&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;ankita.chaurasia&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-02-21 07:00:42&lt;/sys_updated_on&gt;&lt;table&gt;sp_widget&lt;/table&gt;&lt;use_es_latest&gt;true&lt;/use_es_latest&gt;&lt;/sys_es_latest_script&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>198333966</payload_hash>
+        <record_name>Calendar Clone</record_name>
+        <reverted_from/>
+        <source>6422b58983a71210b1abe480ceaad3b9</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-02-21 07:01:55</sys_created_on>
+        <sys_id>1f1cd82683b31210b1abe480ceaad36b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>195275018ca0000001</sys_recorded_at>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-02-21 07:01:55</sys_updated_on>
+        <type>Widget</type>
+        <update_guid>d31cd8262fb31210f5709933aff1ad6b</update_guid>
+        <update_guid_history>d31cd8262fb31210f5709933aff1ad6b:198333966,0c1c5066bbb31210001a6bbbcec54374:1979674692,4f9e4862aa731210b139bdebcf83328a:-66525052,e48b0c22cd731210f88a16867dc578d2:-951032450</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Calendar Clone">1292ad2a83f71210b1abe480ceaad3e4</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-02-21 12:09:53</sys_created_on>
+        <sys_db_object display_value="" name="sp_widget">sp_widget</sys_db_object>
+        <sys_id>240779c9714b49ba8e1955c67deead49</sys_id>
+        <sys_metadata>ac8b0c2283731210b1abe480ceaad3d0</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Calendar Clone</sys_name>
+        <sys_package display_value="Leave &amp;amp; Expense Tracking Management System" source="x_1583402_lems">7dc441c583231210b1abe480ceaad313</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_scope_delete display_value="">704e279aae8d45079b49da557a873a19</sys_scope_delete>
+        <sys_update_name>sp_widget_ac8b0c2283731210b1abe480ceaad3d0</sys_update_name>
+        <sys_update_version display_value="sp_widget_ac8b0c2283731210b1abe480ceaad3d0">1f1cd82683b31210b1abe480ceaad36b</sys_update_version>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-02-21 12:09:53</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

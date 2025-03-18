@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role">
+    <sys_security_acl_role action="INSERT_OR_UPDATE">
+        <sys_class_name>sys_security_acl_role</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-03-06 11:32:03</sys_created_on>
+        <sys_id>8f96503283c42210b1abe480ceaad352</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_1583402_lems_leave_history.x_1583402_lems.leave_history_user</sys_name>
+        <sys_package display_value="Leave &amp;amp; Expense Tracking Management System" source="x_1583402_lems">7dc441c583231210b1abe480ceaad313</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_security_acl display_value="x_1583402_lems_leave_history">c796503283c42210b1abe480ceaad34f</sys_security_acl>
+        <sys_update_name>sys_security_acl_role_8f96503283c42210b1abe480ceaad352</sys_update_name>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-03-06 11:32:03</sys_updated_on>
+        <sys_user_role display_value="x_1583402_lems.leave_history_user" name="x_1583402_lems.leave_history_user">7296dc7e83842210b1abe480ceaad3bd</sys_user_role>
+    </sys_security_acl_role>
+</record_update>

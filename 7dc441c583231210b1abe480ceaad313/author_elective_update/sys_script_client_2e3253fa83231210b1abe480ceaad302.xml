@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="DELETE">
+        <active>false</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description/>
+        <field>leave_type</field>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>Populate Leave Data</name>
+        <order/>
+        <script><![CDATA[function onChange(control, oldValue, newValue, isLoading) {
+    if (isLoading || !newValue) {
+        return;
+    }
+
+    var ga = new GlideAjax('GetEmployeeLeaveDetails');
+    ga.addParam('sysparm_name', 'getLeaveData');
+    ga.addParam('sysparm_user', g_user.userID);
+	ga.addParam('sysparam_leavetype', newValue);
+
+	ga.getXML(getBucket);
+	function getBucket(response){
+		var answer = response.responseXML.documentElement.getAttribute("answer");
+		var result = JSON.parse(answer);
+		g_form.setValue('accrued', result.accrued);
+		g_form.setValue('balance_leaves', result.balance_leaves);
+		g_form.setValue('taken_leaves', result.talen_leaves);
+	}
+    
+    // ga.getXMLAnswer(function(response) {
+    //     var leaveData = JSON.parse(response);
+
+    //     if (leaveData) {
+    //         g_form.setValue('balance_leaves', leaveData.balance_leaves);
+    //         g_form.setValue('accrued', leaveData.accrued);
+    //         g_form.setValue('taken_leaves', leaveData.taken_leaves);
+    //     }
+    // });
+}
+]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-02-10 04:48:54</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>2e3253fa83231210b1abe480ceaad302</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_name>Populate Leave Data</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Leave &amp;amp; Expense Tracking Management System" source="x_1583402_lems">7dc441c583231210b1abe480ceaad313</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_update_name>sys_script_client_2e3253fa83231210b1abe480ceaad302</sys_update_name>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-02-10 08:01:07</sys_updated_on>
+        <table>x_1583402_lems_leave_request</table>
+        <type>onChange</type>
+        <ui_type>10</ui_type>
+        <view/>
+    </sys_script_client>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</application>
+        <file_path/>
+        <instance_id>72954f46ebca1a18c040fddacad0cd81</instance_id>
+        <instance_name>dev291464</instance_name>
+        <name>sys_script_client_2e3253fa83231210b1abe480ceaad302</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sys_script_client"&gt;&lt;sys_script_client action="INSERT_OR_UPDATE"&gt;&lt;active&gt;false&lt;/active&gt;&lt;applies_extended&gt;false&lt;/applies_extended&gt;&lt;condition/&gt;&lt;description/&gt;&lt;field&gt;leave_type&lt;/field&gt;&lt;global&gt;true&lt;/global&gt;&lt;isolate_script&gt;true&lt;/isolate_script&gt;&lt;messages/&gt;&lt;name&gt;Populate Leave Data&lt;/name&gt;&lt;order/&gt;&lt;script&gt;&lt;![CDATA[function onChange(control, oldValue, newValue, isLoading) {
+    if (isLoading || !newValue) {
+        return;
+    }
+
+    var ga = new GlideAjax('GetEmployeeLeaveDetails');
+    ga.addParam('sysparm_name', 'getLeaveData');
+    ga.addParam('sysparm_user', g_user.userID);
+	ga.addParam('sysparam_leavetype', newValue);
+
+	ga.getXML(getBucket);
+	function getBucket(response){
+		var answer = response.responseXML.documentElement.getAttribute("answer");
+		var result = JSON.parse(answer);
+		g_form.setValue('accrued', result.accrued);
+		g_form.setValue('balance_leaves', result.balance_leaves);
+		g_form.setValue('taken_leaves', result.talen_leaves);
+	}
+    
+    // ga.getXMLAnswer(function(response) {
+    //     var leaveData = JSON.parse(response);
+
+    //     if (leaveData) {
+    //         g_form.setValue('balance_leaves', leaveData.balance_leaves);
+    //         g_form.setValue('accrued', leaveData.accrued);
+    //         g_form.setValue('taken_leaves', leaveData.taken_leaves);
+    //     }
+    // });
+}
+]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_client&lt;/sys_class_name&gt;&lt;sys_created_by&gt;ankita.chaurasia&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-02-10 04:48:54&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;2e3253fa83231210b1abe480ceaad302&lt;/sys_id&gt;&lt;sys_mod_count&gt;6&lt;/sys_mod_count&gt;&lt;sys_name&gt;Populate Leave Data&lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="Leave &amp;amp;amp; Expense Tracking Management System" source="x_1583402_lems"&gt;7dc441c583231210b1abe480ceaad313&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Leave &amp;amp;amp; Expense Tracking Management System"&gt;7dc441c583231210b1abe480ceaad313&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_client_2e3253fa83231210b1abe480ceaad302&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;ankita.chaurasia&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-02-10 08:01:07&lt;/sys_updated_on&gt;&lt;table&gt;x_1583402_lems_leave_request&lt;/table&gt;&lt;type&gt;onChange&lt;/type&gt;&lt;ui_type&gt;10&lt;/ui_type&gt;&lt;view/&gt;&lt;/sys_script_client&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>706251062</payload_hash>
+        <record_name>Populate Leave Data</record_name>
+        <reverted_from/>
+        <source>6422b58983a71210b1abe480ceaad3b9</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-02-10 08:01:07</sys_created_on>
+        <sys_id>5720cc8383271210b1abe480ceaad3d1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>194eee059550000001</sys_recorded_at>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-02-10 08:01:07</sys_updated_on>
+        <type>Client Script</type>
+        <update_guid>1f20cc83f8271210a13ae8d246adfad0</update_guid>
+        <update_guid_history>1f20cc83f8271210a13ae8d246adfad0:706251062,017b2f7a30a3121011fe5d22c86eae53:-1963565527,2fb8eb36a9a31210808b34c3696460b5:706251062,9bb7e736dba3121010e4c141c8bf0b44:-1963565527,9be42f723ba31210963f3fc9fed958e4:-1378821670,b6e757b200631210f61aad3bab969010:-1581062369,6f241f7a9123121090e6a1b542f00a61:1087457785</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-02-10 10:51:12</sys_created_on>
+        <sys_db_object display_value="" name="sys_script_client">sys_script_client</sys_db_object>
+        <sys_id>604de5b564ec45528fe26434c9583364</sys_id>
+        <sys_metadata>2e3253fa83231210b1abe480ceaad302</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Populate Leave Data</sys_name>
+        <sys_package display_value="Leave &amp;amp; Expense Tracking Management System" source="x_1583402_lems">7dc441c583231210b1abe480ceaad313</sys_package>
+        <sys_parent display_value="Leave Request">a566c1c183e31210b1abe480ceaad3f9</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_scope_delete display_value="">704e279aae8d45079b49da557a873a19</sys_scope_delete>
+        <sys_update_name>sys_script_client_2e3253fa83231210b1abe480ceaad302</sys_update_name>
+        <sys_update_version display_value="sys_script_client_2e3253fa83231210b1abe480ceaad302">5720cc8383271210b1abe480ceaad3d1</sys_update_version>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-02-10 10:51:12</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

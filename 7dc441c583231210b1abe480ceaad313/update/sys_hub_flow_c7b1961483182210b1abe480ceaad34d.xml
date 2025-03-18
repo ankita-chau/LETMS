@@ -1,0 +1,1266 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_hub_flow">
+    <sys_hub_flow action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>true</active>
+        <annotation/>
+        <attributes>browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=496870000,viewActivatedIn=naturalLanguage</attributes>
+        <authored_on_release_version>26000</authored_on_release_version>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <copied_from/>
+        <copied_from_name/>
+        <description/>
+        <display_name_after_preview/>
+        <flow_priority>MEDIUM</flow_priority>
+        <generation_source/>
+        <internal_name>claim_expense_flow</internal_name>
+        <label_cache>[{"name":"28aea95e-d4eb-4452-a02e-907c282dc50a.attach_receipt.sys_id","label":"1 - Get Catalog Variables➛attach_receipt➛Sys ID","reference":"","reference_display":"Sys ID","type":"GUID","base_type":"GUID","parent_table_name":"sys_attachment","column_name":"sys_id","usedInstances":{"916d9566-ab6f-4257-af95-0911efc95f67":["receipt_attachment"]}},{"name":"28aea95e-d4eb-4452-a02e-907c282dc50a.attach_receipt.content_type","label":"1 - Get Catalog Variables➛attach_receipt➛Content type","reference":"","reference_display":"Content type","type":"string","base_type":"string","parent_table_name":"sys_attachment","column_name":"content_type","usedInstances":{"916d9566-ab6f-4257-af95-0911efc95f67":["receipt_attachment"]}},{"name":"Service Catalog_1.request_item.sys_id","label":"Trigger - Service Catalog➛Requested Item Record➛Sys ID","reference":"","reference_display":"Sys ID","type":"GUID","base_type":"GUID","parent_table_name":"sc_req_item","column_name":"sys_id","usedInstances":{"e82a2bbf-d480-4a7b-ae90-ef599010fc5b":["conditions"]}},{"name":"28aea95e-d4eb-4452-a02e-907c282dc50a.attach_receipt.file_name","label":"1 - Get Catalog Variables➛attach_receipt➛File name","reference":"","reference_display":"File name","type":"string","base_type":"string","parent_table_name":"sys_attachment","column_name":"file_name","usedInstances":{"1d5dde89-6ed9-4b32-9cef-f03fe3ebc3cb":["file_name"],"916d9566-ab6f-4257-af95-0911efc95f67":["receipt_attachment"]}},{"name":"28aea95e-d4eb-4452-a02e-907c282dc50a.attach_receipt","label":"1 - Get Catalog Variables➛attach_receipt","reference":"sys_attachment","reference_display":"Attachment","type":"reference","base_type":"reference","usedInstances":{"1d5dde89-6ed9-4b32-9cef-f03fe3ebc3cb":["source_record"],"87482b87-03ea-431c-ada4-68aa8c94fc79":["attachment_record","target_record"],"916d9566-ab6f-4257-af95-0911efc95f67":["receipt_attachment"]},"attributes":{"catalogType":"33","catalogTypeLabel":"Attachment"}},{"name":"28aea95e-d4eb-4452-a02e-907c282dc50a.requested_by.name","label":"1 - Get Catalog Variables➛requested_by➛Name","reference":"","reference_display":"Name","type":"string","base_type":"string","parent_table_name":"sys_user","column_name":"name","usedInstances":{"9ba72445-fbb6-45d8-8da0-b374845bdf2a":[null]}},{"name":"28aea95e-d4eb-4452-a02e-907c282dc50a.description","label":"1 - Get Catalog Variables➛description","reference":"","reference_display":"description","type":"multi_small","base_type":"multi_small","usedInstances":{"916d9566-ab6f-4257-af95-0911efc95f67":["description"]},"attributes":{"catalogType":"2","catalogTypeLabel":"Multi Line Text"}},{"name":"28aea95e-d4eb-4452-a02e-907c282dc50a.expense_type","label":"1 - Get Catalog Variables➛expense_type","reference":"","reference_display":"expense_type","type":"choice","base_type":"choice","choices":[{"label":"--None--","value":"none","order":100.0},{"label":"Travel Expenses","value":"travel_exp","order":100.0},{"label":"Training and Development","value":"training","order":100.0},{"label":"Medical Care","value":"medical_care","order":100.0}],"usedInstances":{"916d9566-ab6f-4257-af95-0911efc95f67":["expense_type"],"9ba72445-fbb6-45d8-8da0-b374845bdf2a":[null]},"attributes":{"catalogType":"5","catalogTypeLabel":"Select Box"}},{"name":"28aea95e-d4eb-4452-a02e-907c282dc50a.expense_date","label":"1 - Get Catalog Variables➛expense_date","reference":"","reference_display":"expense_date","type":"glide_date","base_type":"glide_date","usedInstances":{"916d9566-ab6f-4257-af95-0911efc95f67":["expense_date"],"9ba72445-fbb6-45d8-8da0-b374845bdf2a":[null,"ah_subject"],"5bc18428-3e2a-43be-8e56-9e8ac957cfb5":["ah_subject"]},"attributes":{"catalogType":"9","catalogTypeLabel":"Date"}},{"name":"92453936-c89d-4745-945b-3e55d60f5f3d.approval_state","label":"2 - Ask For Approval➛Approval State","reference_display":"Approval State","type":"choice","base_type":"choice","choices":[{"label":"-- None --","value":"","order":0.0},{"label":"Not Yet Requested","value":"not requested","order":1.0},{"label":"Requested","value":"requested","order":2.0},{"label":"Approved","value":"approved","order":3.0},{"label":"Rejected","value":"rejected","order":4.0},{"label":"Cancelled","value":"cancelled","order":5.0},{"label":"No Longer Required","value":"not_required","order":6.0},{"label":"Skipped","value":"skipped","order":7.0}],"usedInstances":{"acdefd44-c556-458e-9c79-392edf078f5f":["condition"]},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"Created or Updated_1.current.requested_by.manager","label":"Trigger - Record Created or Updated➛Expense Claim Record➛Requested By➛Manager","reference":"sys_user","reference_display":"User","type":"reference","base_type":"reference","parent_table_name":"sys_user","column_name":"manager","usedInstances":{"92453936-c89d-4745-945b-3e55d60f5f3d":["approval_conditions"]}},{"name":"Created or Updated_1.current","label":"Trigger - Record Created or Updated➛Expense Claim Record","reference":"x_1583402_lems_expence_claim","reference_display":"Expense Claim","type":"reference","base_type":"reference","usedInstances":{"92453936-c89d-4745-945b-3e55d60f5f3d":["record"],"16bc89af-58a9-461a-b9df-ac402d11003e":["record"],"9b762dcd-5b24-4114-807c-9c986c759f3b":["record"]},"attributes":{}},{"name":"Created or Updated_1.current.approval_status","label":"Trigger - Record Created or Updated➛Expense Claim Record➛Approval Status","reference":"","reference_display":"Approval Status","type":"choice","base_type":"choice","parent_table_name":"x_1583402_lems_expence_claim","column_name":"approval_status","choices":[{"label":"-- None --","used":false,"image":"","reference":false,"selected":false,"missing":false,"rawLabel":"-- None --","value":""},{"used":false,"label":"Requested","image":"","reference":false,"selected":false,"missing":false,"rawLabel":"Requested","value":"requested","parameters":{"name":"x_1583402_lems_expence_claim","dependent_values":[""]}},{"used":false,"label":"Approved","image":"","reference":false,"selected":false,"missing":false,"rawLabel":"Approved","value":"approved","parameters":{"name":"x_1583402_lems_expence_claim","dependent_values":[""]}},{"used":false,"label":"Rejected","image":"","reference":false,"selected":false,"missing":false,"rawLabel":"Rejected","value":"rejected","parameters":{"name":"x_1583402_lems_expence_claim","dependent_values":[""]}}],"usedInstances":{"59b48179-2309-43d5-9fe7-5f01ba5dd27c":["condition"]}},{"name":"Created_1.current.requested_by.manager","label":"Trigger - Record Created➛Expense Claim Record➛Requested By➛Manager","reference":"sys_user","reference_display":"User","type":"reference","base_type":"reference","parent_table_name":"sys_user","column_name":"manager","usedInstances":{"92453936-c89d-4745-945b-3e55d60f5f3d":["approval_conditions"]}},{"name":"Created_1.current","label":"Trigger - Record Created➛Expense Claim Record","reference":"x_1583402_lems_expence_claim","reference_display":"Expense Claim","type":"reference","base_type":"reference","usedInstances":{"92453936-c89d-4745-945b-3e55d60f5f3d":["record"],"16bc89af-58a9-461a-b9df-ac402d11003e":["record"],"9b762dcd-5b24-4114-807c-9c986c759f3b":["record"]},"attributes":{}},{"name":"Created_1.current.approval_status","label":"Trigger - Record Created➛Expense Claim Record➛Approval Status","reference":"","reference_display":"Approval Status","type":"choice","base_type":"choice","parent_table_name":"x_1583402_lems_expence_claim","column_name":"approval_status","choices":[{"label":"-- None --","used":false,"image":"","reference":false,"selected":false,"missing":false,"rawLabel":"-- None --","value":""},{"used":false,"label":"Requested","image":"","reference":false,"selected":false,"missing":false,"rawLabel":"Requested","value":"requested","parameters":{"name":"x_1583402_lems_expence_claim","dependent_values":[""]}},{"used":false,"label":"Approved","image":"","reference":false,"selected":false,"missing":false,"rawLabel":"Approved","value":"approved","parameters":{"name":"x_1583402_lems_expence_claim","dependent_values":[""]}},{"used":false,"label":"Rejected","image":"","reference":false,"selected":false,"missing":false,"rawLabel":"Rejected","value":"rejected","parameters":{"name":"x_1583402_lems_expence_claim","dependent_values":[""]}}],"usedInstances":{"59b48179-2309-43d5-9fe7-5f01ba5dd27c":["condition"],"acdefd44-c556-458e-9c79-392edf078f5f":["condition"]}},{"name":"Service Catalog_1.request_item","label":"Trigger - Service Catalog➛Requested Item Record","reference":"sc_req_item","reference_display":"Requested Item","type":"reference","base_type":"reference","usedInstances":{"28aea95e-d4eb-4452-a02e-907c282dc50a":["requested_item"],"1e95ed16-479c-4d84-beaa-72db501bc4dd":["record"],"7c8ae9cd-5857-452c-8b93-f48b93c50b3b":["record"],"87482b87-03ea-431c-ada4-68aa8c94fc79":["target_record"]},"attributes":{"default_search_field":"number"}},{"name":"28aea95e-d4eb-4452-a02e-907c282dc50a.requested_by","label":"1 - Get Catalog Variables➛requested_by","reference":"sys_user","reference_display":"User","type":"reference","base_type":"reference","usedInstances":{"916d9566-ab6f-4257-af95-0911efc95f67":["requested_by"],"9ba72445-fbb6-45d8-8da0-b374845bdf2a":["ah_to"],"5bc18428-3e2a-43be-8e56-9e8ac957cfb5":["ah_to"]},"attributes":{"catalogType":"8","catalogTypeLabel":"Reference"}},{"name":"28aea95e-d4eb-4452-a02e-907c282dc50a.requested_by.manager","label":"1 - Get Catalog Variables➛requested_by➛Manager","reference":"sys_user","reference_display":"User","type":"reference","base_type":"reference","parent_table_name":"sys_user","column_name":"manager","usedInstances":{"7c8ae9cd-5857-452c-8b93-f48b93c50b3b":["approval_conditions"]}},{"name":"7c8ae9cd-5857-452c-8b93-f48b93c50b3b.approval_state","label":"3 - Ask For Approval➛Approval State","reference_display":"Approval State","type":"choice","base_type":"choice","choices":[{"label":"-- None --","value":"","order":0.0},{"label":"Not Yet Requested","value":"not requested","order":1.0},{"label":"Requested","value":"requested","order":2.0},{"label":"Approved","value":"approved","order":3.0},{"label":"Rejected","value":"rejected","order":4.0},{"label":"Cancelled","value":"cancelled","order":5.0},{"label":"No Longer Required","value":"not_required","order":6.0},{"label":"Skipped","value":"skipped","order":7.0}],"usedInstances":{"662469b8-a3fd-40c6-9a1e-ead6f07e355a":["condition"]},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"28aea95e-d4eb-4452-a02e-907c282dc50a.amount","label":"1 - Get Catalog Variables➛amount","reference":"","reference_display":"amount","type":"string","base_type":"string","usedInstances":{"916d9566-ab6f-4257-af95-0911efc95f67":["amount"],"9ba72445-fbb6-45d8-8da0-b374845bdf2a":[null]},"attributes":{"catalogType":"6","catalogTypeLabel":"Single Line Text"}}]</label_cache>
+        <master_snapshot>99ac3d2c83102210b1abe480ceaad322</master_snapshot>
+        <master_snapshot_digest/>
+        <name>Claim Expense Flow</name>
+        <natlang/>
+        <outputs/>
+        <pre_compiled>false</pre_compiled>
+        <remote_trigger_id>69d8eb3483d02210b1abe480ceaad388</remote_trigger_id>
+        <run_as>user</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <show_draft_actions>false</show_draft_actions>
+        <show_triggered_flows>false</show_triggered_flows>
+        <status>published</status>
+        <substatus/>
+        <sys_class_name>sys_hub_flow</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-03-11 12:20:53</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>c7b1961483182210b1abe480ceaad34d</sys_id>
+        <sys_mod_count>45</sys_mod_count>
+        <sys_name>Claim Expense Flow</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Leave &amp;amp; Expense Tracking Management System" source="x_1583402_lems">7dc441c583231210b1abe480ceaad313</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_update_name>sys_hub_flow_c7b1961483182210b1abe480ceaad34d</sys_update_name>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-03-17 06:22:07</sys_updated_on>
+        <type>flow</type>
+        <version>2</version>
+    </sys_hub_flow>
+    <sys_translated_text action="delete_multiple" query="documentkey=c7b1961483182210b1abe480ceaad34d"/>
+    <sys_variable_value action="delete_multiple" query="document_key=c7b1961483182210b1abe480ceaad34d"/>
+    <sys_flow_catalog_trigger action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <catalog_item/>
+        <name/>
+        <run_flow_in/>
+        <sys_class_name>sys_flow_catalog_trigger</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-03-13 07:58:24</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>69d8eb3483d02210b1abe480ceaad388</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_overrides/>
+        <sys_scope/>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-03-13 10:24:50</sys_updated_on>
+    </sys_flow_catalog_trigger>
+    <sys_trigger_runner_mapping action="delete_multiple" query="identifier=c7b1961483182210b1abe480ceaad34d"/>
+    <sys_hub_flow_stage action="delete_multiple" query="flow=c7b1961483182210b1abe480ceaad34d"/>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=c7b1961483182210b1abe480ceaad34d^sys_idNOT INcfb1529483182210b1abe480ceaad315"/>
+    <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
+        <id>c7b1961483182210b1abe480ceaad34d</id>
+        <name>Claim Expense Flow</name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-03-11 12:20:53</sys_created_on>
+        <sys_id>cfb1529483182210b1abe480ceaad315</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-03-11 12:20:53</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_flow_cat_variable action="delete_multiple" query="flow_catalog_model=cfb1529483182210b1abe480ceaad315"/>
+    <sys_hub_flow_input action="delete_multiple" query="model=c7b1961483182210b1abe480ceaad34d^sys_idNOT IN97039ed483182210b1abe480ceaad3ea,9a10a77883902210b1abe480ceaad3a9"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,test_input_hidden=true,uiType=table_name,uiTypeLabel=Table Name</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value>sc_req_item</default_value>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>table_name</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">table_name</internal_type>
+        <label>Table Name</label>
+        <mandatory>false</mandatory>
+        <max_length>40</max_length>
+        <model display_value="Claim Expense Flow">c7b1961483182210b1abe480ceaad34d</model>
+        <model_id>c7b1961483182210b1abe480ceaad34d</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_c7b1961483182210b1abe480ceaad34d</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-03-11 12:26:38</sys_created_on>
+        <sys_id>97039ed483182210b1abe480ceaad3ea</sys_id>
+        <sys_mod_count>54</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-03-17 06:22:03</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=97039ed483182210b1abe480ceaad3ea"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>default_search_field=number,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=reference,uiTypeLabel=Reference</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>request_item</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="Reference">reference</internal_type>
+        <label>Request Item</label>
+        <mandatory>true</mandatory>
+        <max_length>32</max_length>
+        <model display_value="Claim Expense Flow">c7b1961483182210b1abe480ceaad34d</model>
+        <model_id>c7b1961483182210b1abe480ceaad34d</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_c7b1961483182210b1abe480ceaad34d</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference display_value="" name="sc_req_item">sc_req_item</reference>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-03-13 07:20:14</sys_created_on>
+        <sys_id>9a10a77883902210b1abe480ceaad3a9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-03-13 07:20:14</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=9a10a77883902210b1abe480ceaad3a9"/>
+    <sys_hub_flow_output action="delete_multiple" query="model=c7b1961483182210b1abe480ceaad34d"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=c7b1961483182210b1abe480ceaad34d"/>
+    <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=c7b1961483182210b1abe480ceaad34d^sys_idNOT INc310e77883902210b1abe480ceaad355"/>
+    <sys_hub_trigger_instance_v2 action="INSERT_OR_UPDATE">
+        <comment/>
+        <display_text/>
+        <flow display_value="Claim Expense Flow">c7b1961483182210b1abe480ceaad34d</flow>
+        <name>Service Catalog</name>
+        <remote_sys_id/>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-03-13 07:20:17</sys_created_on>
+        <sys_id>c310e77883902210b1abe480ceaad355</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-03-13 07:22:41</sys_updated_on>
+        <trigger_definition display_value="Service Catalog">c43a1011c36813002841b63b12d3ae15</trigger_definition>
+        <trigger_inputs>H4sIAAAAAAAA/81T0WrbMBT9FaOnDRJwkrVZ/DYGhUDXjmbbSyhGlq4cMVnyJNltFvLvu7Kd2OlMGeylb9LV1T3nSOdsD0TRDBRJyEOloxtlnqK1JhMitQerqfq2LwEP2c5IBlhvF7fSeZJsD0T8oKoKDXgkbrtJ02l0ZzRE02morguanzo2oIB54CQRVDnAync33H2Rzkmdd4XjZACQUfYzt6bSfAgVSItAWuqo74jecRC0Uv79SwJfqaUFoDRHkgPRuMYDt3dpGJJaYMby1FuZ52Cxn0MJmoP2aR1o4KUtIY/H/1MijIXXlVx2vAX+jxNSUM2pN3Z/bkIsRElmcTwhzfzN3q15y7SjZivdUpPBVHVvFi5dqeh+YJ/yJC0oYzupuAWNhBFahqHX8Spmy/lquZzHi0Uci6tMMMHY8uMsvp5drXDEuJVHqfgXvh5qgWcfXq1/jb+lW6D8Xqu+sMPAtDoK+uzkbxz+IQ59AlAG6zS2cK6Jjvp3C9djGTgxDt4am3VhonrMe92EefjdDu3zmyXYPt196aVBV5BF+EOaqdf9z4yqCn03ZoCO/cCAlYP0HJg+CZudeXo4feON1A2l7lAZRtV5Rz0iZ5WHJpyU1xRvBOt6ixjHxg3pryrcIBfhbBSFBsesLP0n5mUN5+j9AY92AAukBQAA</trigger_inputs>
+        <trigger_outputs/>
+        <trigger_type>service_catalog</trigger_type>
+    </sys_hub_trigger_instance_v2>
+    <sys_hub_action_instance_v2 action="delete_multiple" query="flow=c7b1961483182210b1abe480ceaad34d^sys_idNOT IN1310e77883902210b1abe480ceaad35b,1b10e77883902210b1abe480ceaad36a,82b7e3f083d02210b1abe480ceaad3ce,cc48aff083d02210b1abe480ceaad36e,d310e77883902210b1abe480ceaad358,df10e77883902210b1abe480ceaad359"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Ask For Approval">f8f2e9920b10030085c083eb37673abd</action_type>
+        <action_type_parent display_value="Ask For Approval">bae0a1120b10030085c083eb37673a92</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f8f2e9920b10030085c083eb37673abd</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Claim Expense Flow">c7b1961483182210b1abe480ceaad34d</flow>
+        <generation_source/>
+        <order>3</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-03-13 07:20:17</sys_created_on>
+        <sys_id>1310e77883902210b1abe480ceaad35b</sys_id>
+        <sys_mod_count>15</sys_mod_count>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-03-17 06:28:20</sys_updated_on>
+        <ui_id>7c8ae9cd-5857-452c-8b93-f48b93c50b3b</ui_id>
+        <values>H4sIAAAAAAAA/+1YXW/iOBT9K8jPlA0BtsBbVVRpVrszUtudl1JFxr4Br4yTsZ3OsBH/fW9sJ2RgysCKl6rz6PvhnHt6jo37VBLByZRcj9MYJpM4WvSjaBBF4xGLxgNYDK5/vx5QFpEuUXQNWKmBZZrj+oXKogqU5QPoF8Ggc0stldky6fc0fCnA2ERYWG+3WMyFySXdfA49GGErIbkGRaZPz12SU43bW9BkWu6lTsUn6QIklt7XAPcB201erXnGijUoBFcH/wyds5DpfJhhBpsqOFGXwDcLigPiSKk00CVrqji1md6QqdUFBjRQ/knJTVOxEsr6Odf0mxH/4ocHcVWXAg7GAgfN8pEuJMw8Rz6VzpDMB9yd2UI3lGVIs/G0cEhpIe1tO+YLPuVWZMq32Grj0J3JYq0+elJIs0HrT1IYSDjk1awVej9a+rDKvt7XQO+EcqyEMWXGqGxW1FotFoWt4JQEJDia1zTPhVomuc5ehGtGKOveUuKil8rsK37TiKXqUVbh7iGztHeH8ZkLf6ZaVEP8hdtg87ZLzMbcSmrMbhTkMflSVEj8YGGExLHgKaj6mBa5vcGvvEDAvO0G/S/YUX2xnZz8djv5G5ag2p3SD3V+730AvPPB589T/QmoatU/Blh7KIPm3TJxue8l79o6H30iKL5/XPEhspO818kPFD+O3pjiw2hvXvI/U3vUP6YrPt7pCBHgDFQmqQDZPvXrxKHmW5nz1H4CqlrtN+EbnbsA6zW4Qf9u+SP9u/49/cdn6v/1I38cRW/NAu/p0GdHBQeDna7+yQqtjrggWQnj1PGqG1oV57niBJC1K/7wKPdNsQ/+/3hi8MsT78MTw9FRubV+YjTKZpniokJsWs7wJzSYG7X5+6ks4zEFOhnBFR/C4mo4HMVXNIrhahJds3gcczaKaP1qAJ4sNj1UF12C3m6fD0112c3P8+MJBDUvkUKC+RlhwY1NUoemtiOb667eMbhyeKm3yRs05Xv5rcaO6i2d7PTFCySI2vbjpJwTD3tOpnOiMgVz0p2TqiqpBObCWIHgmoSLleV26yOFpmGDfmu56+Z0Y1ylYSvgqE8X/S6SOEOE+CX+G3ACJ7UHZwV0Zp6UQ5qC9xqcnhdxcCM+hAK302+Pon0zji52Mw5/WfASFkSYImkeIXjt4Sl4QV8+/wdMZbIzMxMAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Create Record">2de05916c31332002841b63b12d3aee1</action_type>
+        <action_type_parent display_value="Create Record">02f0b88cc3c632002841b63b12d3aeff</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>2de05916c31332002841b63b12d3aee1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Claim Expense Flow">c7b1961483182210b1abe480ceaad34d</flow>
+        <generation_source/>
+        <order>5</order>
+        <parent_ui_id>662469b8-a3fd-40c6-9a1e-ead6f07e355a</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-03-13 07:20:17</sys_created_on>
+        <sys_id>1b10e77883902210b1abe480ceaad36a</sys_id>
+        <sys_mod_count>21</sys_mod_count>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-03-17 06:28:20</sys_updated_on>
+        <ui_id>916d9566-ab6f-4257-af95-0911efc95f67</ui_id>
+        <values>H4sIAAAAAAAA/+1WTW/bMAz9K4XOieGPJEtyG9r1tLXAOvTStQItMY0A+aOS3CYL/N9HWU5qdC22DLsUWG4i+Z4eKTL0zY4pyZZslmA8XSQzkSVZlsZxOp8k+SzLk1RmgDhhI1ZCgRTpINfIu8OIPYJuvHHDk+k8m8Qp11hYjpsaS4FcaFAFhUllaw3b6z76k3dbPDnt3WKttDRYsuXN7YjVYIjcoWHL3QvXn0rVkKOm0G9e6xvS3bZ+1fZ5iD25CI7KSK8nHjHcOCwlkpAVaIsjVkApwVVmy5bONGQwCPKy1NtDxFqVjgiZj91Y9YOuncc+boXGlyn4Dsfu4rNQseBanYGDK2IXrjF9uFhXSqANdZG4gka706EtBFzWTlVlgHSp9uhKN0V5EcrCDgT7ByJLY5FLrH2uXn2fyupqXT193Ss9V2VXlt6pKwH6cALnjMob5/XsGFJfEBEvoK5Vec9rUz2qDkxaiuhe0yFa6eqJLrXqvoxAeOERlRaic7KfdeZrMMpn8YVoCNyOmN1aaiNrn3OhQvKHxisJmfU58FAGDxFG1e4jXfCIvdx2tJ8DifHizeZK8udm6lrfDmbA4AMZHEqeb783cZzJ3S6dA8JiimM5wXw8mUzTMcQpjhfxB5HOUymmMURDYNveQVE1pTuKIUAIi2GyOJUNj2IYAgc8fiD+iscDiYcesys2PeVRNAMcsRgUSAdOLQVi7fvouOp0MN6zRNQxXMm2/fV/6f8LvrsXPHJ1/H6696vjXKGW9pVx3+8NLKh1HPIw/i92R+88ue6d/f5I/tX+SGZx93tnWyQk+O6XyOCb4fV1sjeS6La9/QkRVRLUZAkAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Send Email">c1806bf4a70323008299b39f087901cb</action_type>
+        <action_type_parent display_value="Send Email">98c181d20b100300d97d8bf637673ab5</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>c1806bf4a70323008299b39f087901cb</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Claim Expense Flow">c7b1961483182210b1abe480ceaad34d</flow>
+        <generation_source/>
+        <order>6</order>
+        <parent_ui_id>662469b8-a3fd-40c6-9a1e-ead6f07e355a</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-03-13 07:53:31</sys_created_on>
+        <sys_id>82b7e3f083d02210b1abe480ceaad3ce</sys_id>
+        <sys_mod_count>15</sys_mod_count>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-03-17 06:28:20</sys_updated_on>
+        <ui_id>9ba72445-fbb6-45d8-8da0-b374845bdf2a</ui_id>
+        <values>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</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Send Email">c1806bf4a70323008299b39f087901cb</action_type>
+        <action_type_parent display_value="Send Email">98c181d20b100300d97d8bf637673ab5</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>c1806bf4a70323008299b39f087901cb</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Claim Expense Flow">c7b1961483182210b1abe480ceaad34d</flow>
+        <generation_source/>
+        <order>9</order>
+        <parent_ui_id>f1b8b7d5-4b27-45f2-b6c3-d9aca1043777</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-03-13 07:55:50</sys_created_on>
+        <sys_id>cc48aff083d02210b1abe480ceaad36e</sys_id>
+        <sys_mod_count>15</sys_mod_count>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-03-17 06:28:20</sys_updated_on>
+        <ui_id>5bc18428-3e2a-43be-8e56-9e8ac957cfb5</ui_id>
+        <values>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</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Get Catalog Variables">330ba3abc31013002841b63b12d3aee8</action_type>
+        <action_type_parent display_value="Get Catalog Variables">22f0b88cc3c632002841b63b12d3aeff</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>330ba3abc31013002841b63b12d3aee8</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Claim Expense Flow">c7b1961483182210b1abe480ceaad34d</flow>
+        <generation_source/>
+        <order>1</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-03-13 07:20:17</sys_created_on>
+        <sys_id>d310e77883902210b1abe480ceaad358</sys_id>
+        <sys_mod_count>15</sys_mod_count>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-03-17 06:28:20</sys_updated_on>
+        <ui_id>28aea95e-d4eb-4452-a02e-907c282dc50a</ui_id>
+        <values>H4sIAAAAAAAA/+1V227bMAz9lUDPRuBL0qR529oVGLALsAx9GQZBluhGmHyZJCfNgv77KFt23GZNU2AdsGGPpkiT55CH/LIjUpAFSbMwZQlLeRKFURKG8XwSpWdJGsUiYQCMBKRgOaCnhu81GAuCSgs52tdM1e5ht1uCXksOowtmmSpvaDT2zo3r3R06C2kqxbbXPgYtfCWV0FCQxZevAamYxjQWNFnsHjydWqdiKSh0XdZpLi0WOvrUVnEEg91WrT0DzMfBm975X30a2EstXHVhQODWQiEAy8qYMhCQnBWC2VJvycLqGg0amPhYqG3vsZKFbWHn7NbIH5g0iYNB3gUxnGJ5XWH9y2eWKrhs2Wsq8ghGb1vH7BJJX2JabmvdU1tiO0xLn4CM1cpeDG2tw8fKyrJoQ6xL46NLVefFh5Yx0v9g0LraABVQORIcLI8xW67KTc/YlSwavvyjKjlTA1dgmq+uJCjX3KLOU/QNCLNWy7S2rs4dAQU5JqA5qypZ3NBKl2vZ/BRrzMc3Cj/GmSo3WIyRN8WYcQdojL1g4yu0Xzbma6alQ/cef9NkKbEzVOiyqjxo1zRyFxCzNReKGbPHjm2g32tXecuEx0xb2lwI17KyrzDxGjy8u6DTVnpsZrNoP5fYSuyvBcq9gh5IjIs0m6AE5sk0jOMoTCMc0Mk85MCYSLLzQ4EhDpmP3txiwaYX5vNV9zSCTnWfPYQuVzOfZoTKGHUNGC3BmqdBP1+T0Ytp0lKciXsFGoo/pmsPiZoW0mNyfZqMf0K/LtefUq80uCfzEuemwUyH/WqEjKJEINgZV+LeuMJ8VNeFlTnQRlhUFrSszFrC5uWWwOy4hGZ7PXRT1s2WGSwAMeHRNEknv14AbL5wo4lgHIO0gE0wmSTx+eyxgFl8EDBLzuLpowHZ2WGAmCbTJJn/OkCkBwHZlCXns8cCZslBgJiKIxkmBwGHW/A/bafR9ryrcMJId1eh23/Xg5k+Mu5+9RtVm1Va829gHyz/pXsZve6e/P6Pj+9/bznlAERxGIb3b8CR7f63ru/7ixoXaoZ3GPnb9wLnAho2SROCSV9qnZ+0lnHwCq5q9MyRCqkxS1+qO6O9m6NmUARoutFtpt6l0hij1+50K+C2AdndjbLW3N8VtD7Uye87Dl9/AuaMubF/DQAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Claim Expense Flow">c7b1961483182210b1abe480ceaad34d</flow>
+        <generation_source/>
+        <order>2</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-03-13 07:20:17</sys_created_on>
+        <sys_id>df10e77883902210b1abe480ceaad359</sys_id>
+        <sys_mod_count>14</sys_mod_count>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-03-17 06:28:20</sys_updated_on>
+        <ui_id>1e95ed16-479c-4d84-beaa-72db501bc4dd</ui_id>
+        <values>H4sIAAAAAAAA/+VUXWvbMBT9K0HPxthxGtq8jYRAoWshGXnpipGt60Qgy64kp81C/vuuLdkxydal0Jcwv+l+6Zzjc/W8J5yRCRkBC8K7cJxGYRQNg2B4OwqTcZSEQxZRgJB4RNIcsFJBWiiG5y0VVR3Y75egtjyFwZQaKop1HPoKXivQJuYG8sMBixnXpaC7levBSLrhgimQZPL84pGSKhxvQJHJ/iR1KT5BExBYumgBngI2u7I+syKtcpAIrg0+uM6ZywzuZ5jBphpOGHgE3g1IBggko0KDR3IqGTWF2pGJURUGFFD2JMWuq9hwaSzRnL5r/gtvHgV1XQbILHUidMcfNBEwsyLZVDZDNZc4PTWV6jQrUGdtdWGQ0UqYaT9mC55KwwtpW0w92HUXosrlo1WFdAN6/6TSEDMoa641ekstW26Kt0ULdM5lI4ujKYqUiu5EjVE8qUwNZ09AQKNzTsuSy3VcqmLLm2aEkvtrgQc/E8Ub3qn5Wvo0rXH7qCz15xifNeEVVbwm8R3HYPPBI3qnp4JqfaSCOsavVY3EEnMU4kaFRoK4cUPdnCpemm941RYc8IPntiC5+chl6d3RVL2Zx03QaYzGb0x/bvmFXQlgg3ub/9wCXACtXYDGS3+B6nbgLPbQ7x082oTbgJsv24Dba9sAR+XqV+Bfxg+GHz6vPTc1Xtc90/+sgiBi537v4p/z+QVIWp/POQim/wCtNTnkCMhAbKGeGN0lByuX7J77L3N7OA6a78o8/9+8+i+/AZTXPVX9CAAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=c7b1961483182210b1abe480ceaad34d"/>
+    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=c7b1961483182210b1abe480ceaad34d^sys_idNOT IN1b10e77883902210b1abe480ceaad35c,75c86b3483d02210b1abe480ceaad352,7b38aff083d02210b1abe480ceaad36d,f5c86b3483d02210b1abe480ceaad34e"/>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">d710e77883902210b1abe480ceaad35b</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Claim Expense Flow">c7b1961483182210b1abe480ceaad34d</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>4</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-03-13 07:20:17</sys_created_on>
+        <sys_id>1b10e77883902210b1abe480ceaad35c</sys_id>
+        <sys_mod_count>27</sys_mod_count>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-03-17 06:22:03</sys_updated_on>
+        <ui_id>662469b8-a3fd-40c6-9a1e-ead6f07e355a</ui_id>
+        <values>H4sIAAAAAAAA/+VVwW7bMAz9lUHnJJDtuHFyKzYUKNCtwFr0shUGLdGJMEXyLLltFuTfR9pxW2wtNgy97WT7kSLfox7hvfBdbLoYrv1pCGbtxOrL7UQYxxi970Vt/f2FXxt17kIEp/BqF861WImkSiQuFkWRLWWaJrJKoMJ5IRUC6CxXYiIcbJEylXfaRONd2QMTcQe248Bp07T+DjVB2oTGwu7m94jaGKtbPDJroKUaEVux2v8SirsGS0skLBW4iq1xazpumGstoU6WKlFZepKlUqbFPKlOsipJdQYIGeWNB9+PZN9d9MjrKrgf4WHs5FvNtBI5EfgQ0Wmiv6rBBpyILTgN0be7R6RF0JfOPgEb4yKVE5z8EMwPqp3mOSfWSBoVDkG18UbhZcNMBiRCZcegt93WfRoI81Sxhs7GcaqEdAFLjQ2z43bH3vXVxt9/HhudGdcrOQatV2AfvyCS3qqLGPgG0OKWCpVbaBqaQsm3ZvrDxGU7W1v6mLGFqCnbawaKic9oGDA7I/xDD99Aa1jFRypDhweaFQSjyt6KVC62JOHQj6P83jGhQeBRSjlMgxKCak0TT6nPHR5ZHyZv6+NnFt7vF6oAXCo9zYt8MZ3nqZoW1TKb1nN+qFxWWTWD3s9gS+od8XD42kmZaXjV/29V9i2WZwl5nScyf3l55icvLc/LQ3tlY9I/bAxf/V8ujJTyP90YE8rB+UdtffN/XphbdvjQIQwG0ahMICLXjJ2P/wcO7Oimea2eoHvffmMJT9jhJ8lPYf1pBgAA</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">7dc86b3483d02210b1abe480ceaad351</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Claim Expense Flow">c7b1961483182210b1abe480ceaad34d</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="End">d176605ea76103004f27b0d2187901c7</logic_definition>
+        <order>10</order>
+        <outputs_assigned/>
+        <parent_ui_id>f1b8b7d5-4b27-45f2-b6c3-d9aca1043777</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-03-13 07:58:09</sys_created_on>
+        <sys_id>75c86b3483d02210b1abe480ceaad352</sys_id>
+        <sys_mod_count>26</sys_mod_count>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-03-17 06:22:03</sys_updated_on>
+        <ui_id>fd2fde66-01af-4b0e-b327-f1f0bc410f82</ui_id>
+        <values>H4sIAAAAAAAA/6tWyi8tKSgtKQ7JdywuzkzPU7KKjtVRyswDiUHYZYlFmYlJOalQbkpqcmZxZn5eCEjME0ldSmVeYm5mMrJQeX5RdlpOfjlCrBYAD1ouqHEAAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">3f38aff083d02210b1abe480ceaad36c</block>
+        <comment/>
+        <connected_to>662469b8-a3fd-40c6-9a1e-ead6f07e355a</connected_to>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Claim Expense Flow">c7b1961483182210b1abe480ceaad34d</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Else">1f781bf3c32232002841b63b12d3aee6</logic_definition>
+        <order>8</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-03-13 07:55:50</sys_created_on>
+        <sys_id>7b38aff083d02210b1abe480ceaad36d</sys_id>
+        <sys_mod_count>28</sys_mod_count>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-03-17 06:22:03</sys_updated_on>
+        <ui_id>f1b8b7d5-4b27-45f2-b6c3-d9aca1043777</ui_id>
+        <values>H4sIAAAAAAAA/6tWyi8tKSgtKQ7JdywuzkzPU7KKjtVRyswDiUHYZYlFmYlJOalQbkpqcmZxZn5eCEjME0ldSmVeYm5mMrJQeX5RdlpOfjlCrBYAD1ouqHEAAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">fdc86b3483d02210b1abe480ceaad34d</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Claim Expense Flow">c7b1961483182210b1abe480ceaad34d</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="End">d176605ea76103004f27b0d2187901c7</logic_definition>
+        <order>7</order>
+        <outputs_assigned/>
+        <parent_ui_id>662469b8-a3fd-40c6-9a1e-ead6f07e355a</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-03-13 07:58:09</sys_created_on>
+        <sys_id>f5c86b3483d02210b1abe480ceaad34e</sys_id>
+        <sys_mod_count>26</sys_mod_count>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-03-17 06:22:03</sys_updated_on>
+        <ui_id>f21a20b1-e882-40be-b71e-c4e7523d4df8</ui_id>
+        <values>H4sIAAAAAAAA/6tWyi8tKSgtKQ7JdywuzkzPU7KKjtVRyswDiUHYZYlFmYlJOalQbkpqcmZxZn5eCEjME0ldSmVeYm5mMrJQeX5RdlpOfjlCrBYAD1ouqHEAAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=c7b1961483182210b1abe480ceaad34d^sys_idNOT IN06b7e3f083d02210b1abe480ceaad3d1,42b7e3f083d02210b1abe480ceaad3d1,86b7e3f083d02210b1abe480ceaad3d0,8eb7e3f083d02210b1abe480ceaad3d0"/>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>c7b1961483182210b1abe480ceaad34d</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{28aea95e-d4eb-4452-a02e-907c282dc50a.expense_date}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-03-13 07:53:31</sys_created_on>
+        <sys_id>06b7e3f083d02210b1abe480ceaad3d1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-03-13 07:53:31</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>cb0160bb-6e14-4aec-9653-8f62caeea715</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>c7b1961483182210b1abe480ceaad34d</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{28aea95e-d4eb-4452-a02e-907c282dc50a.expense_type}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-03-13 07:53:31</sys_created_on>
+        <sys_id>42b7e3f083d02210b1abe480ceaad3d1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-03-13 07:53:31</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>3c847b6f-7c85-4b4b-9be1-329e9d6f8e2c</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>c7b1961483182210b1abe480ceaad34d</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{28aea95e-d4eb-4452-a02e-907c282dc50a.requested_by.name}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-03-13 07:53:31</sys_created_on>
+        <sys_id>86b7e3f083d02210b1abe480ceaad3d0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-03-13 07:53:31</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>55b332c7-2e88-45b8-9166-5749bdbcce30</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>c7b1961483182210b1abe480ceaad34d</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{28aea95e-d4eb-4452-a02e-907c282dc50a.amount}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-03-13 07:53:31</sys_created_on>
+        <sys_id>8eb7e3f083d02210b1abe480ceaad3d0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-03-13 07:53:31</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>459bc07c-dfa4-4b9c-b576-5e8c1ef15c85</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_flow_variable action="delete_multiple" query="model=c7b1961483182210b1abe480ceaad34d"/>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_input_c7b1961483182210b1abe480ceaad34d^sys_idNOT IN57039ed483182210b1abe480ceaad3ec,6e10a77883902210b1abe480ceaad3e3"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>table_name</element>
+        <help/>
+        <hint/>
+        <label>Table Name</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_c7b1961483182210b1abe480ceaad34d</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-03-11 12:26:38</sys_created_on>
+        <sys_id>57039ed483182210b1abe480ceaad3ec</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Leave &amp;amp; Expense Tracking Management System" source="x_1583402_lems">7dc441c583231210b1abe480ceaad313</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-03-11 12:26:38</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>request_item</element>
+        <help/>
+        <hint/>
+        <label>Request Item</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_c7b1961483182210b1abe480ceaad34d</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-03-13 07:20:14</sys_created_on>
+        <sys_id>6e10a77883902210b1abe480ceaad3e3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Leave &amp;amp; Expense Tracking Management System" source="x_1583402_lems">7dc441c583231210b1abe480ceaad313</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-03-13 07:20:14</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_c7b1961483182210b1abe480ceaad34d"/>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_output_c7b1961483182210b1abe480ceaad34d"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_c7b1961483182210b1abe480ceaad34d"/>
+    <sys_hub_flow_snapshot action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>true</active>
+        <annotation/>
+        <attributes>browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,viewActivatedIn=naturalLanguage</attributes>
+        <authored_on_release_version>26000</authored_on_release_version>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <copied_from/>
+        <copied_from_name/>
+        <description/>
+        <flow_priority>MEDIUM</flow_priority>
+        <internal_name>claim_expense_flow</internal_name>
+        <label_cache>[{"name":"28aea95e-d4eb-4452-a02e-907c282dc50a.attach_receipt.sys_id","label":"1 - Get Catalog Variables➛attach_receipt➛Sys ID","reference":"","reference_display":"Sys ID","type":"GUID","base_type":"GUID","parent_table_name":"sys_attachment","column_name":"sys_id","usedInstances":{"916d9566-ab6f-4257-af95-0911efc95f67":["receipt_attachment"]}},{"name":"28aea95e-d4eb-4452-a02e-907c282dc50a.attach_receipt.content_type","label":"1 - Get Catalog Variables➛attach_receipt➛Content type","reference":"","reference_display":"Content type","type":"string","base_type":"string","parent_table_name":"sys_attachment","column_name":"content_type","usedInstances":{"916d9566-ab6f-4257-af95-0911efc95f67":["receipt_attachment"]}},{"name":"Service Catalog_1.request_item.sys_id","label":"Trigger - Service Catalog➛Requested Item Record➛Sys ID","reference":"","reference_display":"Sys ID","type":"GUID","base_type":"GUID","parent_table_name":"sc_req_item","column_name":"sys_id","usedInstances":{"e82a2bbf-d480-4a7b-ae90-ef599010fc5b":["conditions"]}},{"name":"28aea95e-d4eb-4452-a02e-907c282dc50a.attach_receipt.file_name","label":"1 - Get Catalog Variables➛attach_receipt➛File name","reference":"","reference_display":"File name","type":"string","base_type":"string","parent_table_name":"sys_attachment","column_name":"file_name","usedInstances":{"1d5dde89-6ed9-4b32-9cef-f03fe3ebc3cb":["file_name"],"916d9566-ab6f-4257-af95-0911efc95f67":["receipt_attachment"]}},{"name":"28aea95e-d4eb-4452-a02e-907c282dc50a.attach_receipt","label":"1 - Get Catalog Variables➛attach_receipt","reference":"sys_attachment","reference_display":"Attachment","type":"reference","base_type":"reference","usedInstances":{"1d5dde89-6ed9-4b32-9cef-f03fe3ebc3cb":["source_record"],"87482b87-03ea-431c-ada4-68aa8c94fc79":["attachment_record","target_record"],"916d9566-ab6f-4257-af95-0911efc95f67":["receipt_attachment"]},"attributes":{"catalogType":"33","catalogTypeLabel":"Attachment"}},{"name":"28aea95e-d4eb-4452-a02e-907c282dc50a.requested_by.name","label":"1 - Get Catalog Variables➛requested_by➛Name","reference":"","reference_display":"Name","type":"string","base_type":"string","parent_table_name":"sys_user","column_name":"name","usedInstances":{"9ba72445-fbb6-45d8-8da0-b374845bdf2a":[null]}},{"name":"28aea95e-d4eb-4452-a02e-907c282dc50a.description","label":"1 - Get Catalog Variables➛description","reference":"","reference_display":"description","type":"multi_small","base_type":"multi_small","usedInstances":{"916d9566-ab6f-4257-af95-0911efc95f67":["description"]},"attributes":{"catalogType":"2","catalogTypeLabel":"Multi Line Text"}},{"name":"28aea95e-d4eb-4452-a02e-907c282dc50a.expense_type","label":"1 - Get Catalog Variables➛expense_type","reference":"","reference_display":"expense_type","type":"choice","base_type":"choice","choices":[{"label":"--None--","value":"none","order":100.0},{"label":"Travel Expenses","value":"travel_exp","order":100.0},{"label":"Training and Development","value":"training","order":100.0},{"label":"Medical Care","value":"medical_care","order":100.0}],"usedInstances":{"916d9566-ab6f-4257-af95-0911efc95f67":["expense_type"],"9ba72445-fbb6-45d8-8da0-b374845bdf2a":[null]},"attributes":{"catalogType":"5","catalogTypeLabel":"Select Box"}},{"name":"28aea95e-d4eb-4452-a02e-907c282dc50a.expense_date","label":"1 - Get Catalog Variables➛expense_date","reference":"","reference_display":"expense_date","type":"glide_date","base_type":"glide_date","usedInstances":{"916d9566-ab6f-4257-af95-0911efc95f67":["expense_date"],"9ba72445-fbb6-45d8-8da0-b374845bdf2a":[null,"ah_subject"],"5bc18428-3e2a-43be-8e56-9e8ac957cfb5":["ah_subject"]},"attributes":{"catalogType":"9","catalogTypeLabel":"Date"}},{"name":"92453936-c89d-4745-945b-3e55d60f5f3d.approval_state","label":"2 - Ask For Approval➛Approval State","reference_display":"Approval State","type":"choice","base_type":"choice","choices":[{"label":"-- None --","value":"","order":0.0},{"label":"Not Yet Requested","value":"not requested","order":1.0},{"label":"Requested","value":"requested","order":2.0},{"label":"Approved","value":"approved","order":3.0},{"label":"Rejected","value":"rejected","order":4.0},{"label":"Cancelled","value":"cancelled","order":5.0},{"label":"No Longer Required","value":"not_required","order":6.0},{"label":"Skipped","value":"skipped","order":7.0}],"usedInstances":{"acdefd44-c556-458e-9c79-392edf078f5f":["condition"]},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"Created or Updated_1.current.requested_by.manager","label":"Trigger - Record Created or Updated➛Expense Claim Record➛Requested By➛Manager","reference":"sys_user","reference_display":"User","type":"reference","base_type":"reference","parent_table_name":"sys_user","column_name":"manager","usedInstances":{"92453936-c89d-4745-945b-3e55d60f5f3d":["approval_conditions"]}},{"name":"Created or Updated_1.current","label":"Trigger - Record Created or Updated➛Expense Claim Record","reference":"x_1583402_lems_expence_claim","reference_display":"Expense Claim","type":"reference","base_type":"reference","usedInstances":{"92453936-c89d-4745-945b-3e55d60f5f3d":["record"],"16bc89af-58a9-461a-b9df-ac402d11003e":["record"],"9b762dcd-5b24-4114-807c-9c986c759f3b":["record"]},"attributes":{}},{"name":"Created or Updated_1.current.approval_status","label":"Trigger - Record Created or Updated➛Expense Claim Record➛Approval Status","reference":"","reference_display":"Approval Status","type":"choice","base_type":"choice","parent_table_name":"x_1583402_lems_expence_claim","column_name":"approval_status","choices":[{"label":"-- None --","used":false,"image":"","reference":false,"selected":false,"missing":false,"rawLabel":"-- None --","value":""},{"used":false,"label":"Requested","image":"","reference":false,"selected":false,"missing":false,"rawLabel":"Requested","value":"requested","parameters":{"name":"x_1583402_lems_expence_claim","dependent_values":[""]}},{"used":false,"label":"Approved","image":"","reference":false,"selected":false,"missing":false,"rawLabel":"Approved","value":"approved","parameters":{"name":"x_1583402_lems_expence_claim","dependent_values":[""]}},{"used":false,"label":"Rejected","image":"","reference":false,"selected":false,"missing":false,"rawLabel":"Rejected","value":"rejected","parameters":{"name":"x_1583402_lems_expence_claim","dependent_values":[""]}}],"usedInstances":{"59b48179-2309-43d5-9fe7-5f01ba5dd27c":["condition"]}},{"name":"Created_1.current.requested_by.manager","label":"Trigger - Record Created➛Expense Claim Record➛Requested By➛Manager","reference":"sys_user","reference_display":"User","type":"reference","base_type":"reference","parent_table_name":"sys_user","column_name":"manager","usedInstances":{"92453936-c89d-4745-945b-3e55d60f5f3d":["approval_conditions"]}},{"name":"Created_1.current","label":"Trigger - Record Created➛Expense Claim Record","reference":"x_1583402_lems_expence_claim","reference_display":"Expense Claim","type":"reference","base_type":"reference","usedInstances":{"92453936-c89d-4745-945b-3e55d60f5f3d":["record"],"16bc89af-58a9-461a-b9df-ac402d11003e":["record"],"9b762dcd-5b24-4114-807c-9c986c759f3b":["record"]},"attributes":{}},{"name":"Created_1.current.approval_status","label":"Trigger - Record Created➛Expense Claim Record➛Approval Status","reference":"","reference_display":"Approval Status","type":"choice","base_type":"choice","parent_table_name":"x_1583402_lems_expence_claim","column_name":"approval_status","choices":[{"label":"-- None --","used":false,"image":"","reference":false,"selected":false,"missing":false,"rawLabel":"-- None --","value":""},{"used":false,"label":"Requested","image":"","reference":false,"selected":false,"missing":false,"rawLabel":"Requested","value":"requested","parameters":{"name":"x_1583402_lems_expence_claim","dependent_values":[""]}},{"used":false,"label":"Approved","image":"","reference":false,"selected":false,"missing":false,"rawLabel":"Approved","value":"approved","parameters":{"name":"x_1583402_lems_expence_claim","dependent_values":[""]}},{"used":false,"label":"Rejected","image":"","reference":false,"selected":false,"missing":false,"rawLabel":"Rejected","value":"rejected","parameters":{"name":"x_1583402_lems_expence_claim","dependent_values":[""]}}],"usedInstances":{"59b48179-2309-43d5-9fe7-5f01ba5dd27c":["condition"],"acdefd44-c556-458e-9c79-392edf078f5f":["condition"]}},{"name":"Service Catalog_1.request_item","label":"Trigger - Service Catalog➛Requested Item Record","reference":"sc_req_item","reference_display":"Requested Item","type":"reference","base_type":"reference","usedInstances":{"28aea95e-d4eb-4452-a02e-907c282dc50a":["requested_item"],"1e95ed16-479c-4d84-beaa-72db501bc4dd":["record"],"7c8ae9cd-5857-452c-8b93-f48b93c50b3b":["record"],"87482b87-03ea-431c-ada4-68aa8c94fc79":["target_record"]},"attributes":{"default_search_field":"number"}},{"name":"28aea95e-d4eb-4452-a02e-907c282dc50a.requested_by","label":"1 - Get Catalog Variables➛requested_by","reference":"sys_user","reference_display":"User","type":"reference","base_type":"reference","usedInstances":{"916d9566-ab6f-4257-af95-0911efc95f67":["requested_by"],"9ba72445-fbb6-45d8-8da0-b374845bdf2a":["ah_to"],"5bc18428-3e2a-43be-8e56-9e8ac957cfb5":["ah_to"]},"attributes":{"catalogType":"8","catalogTypeLabel":"Reference"}},{"name":"28aea95e-d4eb-4452-a02e-907c282dc50a.requested_by.manager","label":"1 - Get Catalog Variables➛requested_by➛Manager","reference":"sys_user","reference_display":"User","type":"reference","base_type":"reference","parent_table_name":"sys_user","column_name":"manager","usedInstances":{"7c8ae9cd-5857-452c-8b93-f48b93c50b3b":["approval_conditions"]}},{"name":"7c8ae9cd-5857-452c-8b93-f48b93c50b3b.approval_state","label":"3 - Ask For Approval➛Approval State","reference_display":"Approval State","type":"choice","base_type":"choice","choices":[{"label":"-- None --","value":"","order":0.0},{"label":"Not Yet Requested","value":"not requested","order":1.0},{"label":"Requested","value":"requested","order":2.0},{"label":"Approved","value":"approved","order":3.0},{"label":"Rejected","value":"rejected","order":4.0},{"label":"Cancelled","value":"cancelled","order":5.0},{"label":"No Longer Required","value":"not_required","order":6.0},{"label":"Skipped","value":"skipped","order":7.0}],"usedInstances":{"662469b8-a3fd-40c6-9a1e-ead6f07e355a":["condition"]},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"28aea95e-d4eb-4452-a02e-907c282dc50a.amount","label":"1 - Get Catalog Variables➛amount","reference":"","reference_display":"amount","type":"string","base_type":"string","usedInstances":{"916d9566-ab6f-4257-af95-0911efc95f67":["amount"],"9ba72445-fbb6-45d8-8da0-b374845bdf2a":[null]},"attributes":{"catalogType":"6","catalogTypeLabel":"Single Line Text"}}]</label_cache>
+        <master>true</master>
+        <name>Claim Expense Flow</name>
+        <natlang/>
+        <outputs/>
+        <parent_flow display_value="Claim Expense Flow">c7b1961483182210b1abe480ceaad34d</parent_flow>
+        <remote_trigger_id/>
+        <run_as>user</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <status>published</status>
+        <sys_class_name>sys_hub_flow_snapshot</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-03-12 05:27:13</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>99ac3d2c83102210b1abe480ceaad322</sys_id>
+        <sys_mod_count>11</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-03-17 06:22:07</sys_updated_on>
+        <type>flow</type>
+        <version>2</version>
+    </sys_hub_flow_snapshot>
+    <sys_translated_text action="delete_multiple" query="documentkey=99ac3d2c83102210b1abe480ceaad322"/>
+    <sys_variable_value action="delete_multiple" query="document_key=99ac3d2c83102210b1abe480ceaad322"/>
+    <sys_hub_flow_stage action="delete_multiple" query="flow=99ac3d2c83102210b1abe480ceaad322"/>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=99ac3d2c83102210b1abe480ceaad322^sys_idNOT IN11ac3d2c83102210b1abe480ceaad324"/>
+    <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
+        <id>99ac3d2c83102210b1abe480ceaad322</id>
+        <name>Claim Expense Flow</name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-03-12 05:27:13</sys_created_on>
+        <sys_id>11ac3d2c83102210b1abe480ceaad324</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-03-12 05:27:13</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_flow_cat_variable action="delete_multiple" query="flow_catalog_model=11ac3d2c83102210b1abe480ceaad324"/>
+    <sys_hub_flow_input action="delete_multiple" query="model=99ac3d2c83102210b1abe480ceaad322^sys_idNOT IN74d8ab3483d02210b1abe480ceaad3d2,e9ac3d2c83102210b1abe480ceaad344"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>default_search_field=number,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=reference</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>request_item</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="Reference">reference</internal_type>
+        <label>Request Item</label>
+        <mandatory>true</mandatory>
+        <max_length>32</max_length>
+        <model display_value="Claim Expense Flow">99ac3d2c83102210b1abe480ceaad322</model>
+        <model_id>99ac3d2c83102210b1abe480ceaad322</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_99ac3d2c83102210b1abe480ceaad322</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference display_value="" name="sc_req_item">sc_req_item</reference>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-03-13 07:58:21</sys_created_on>
+        <sys_id>74d8ab3483d02210b1abe480ceaad3d2</sys_id>
+        <sys_mod_count>21</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-03-17 06:22:06</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=74d8ab3483d02210b1abe480ceaad3d2"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,test_input_hidden=true,uiType=table_name</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value>sc_req_item</default_value>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>table_name</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">table_name</internal_type>
+        <label>Table Name</label>
+        <mandatory>false</mandatory>
+        <max_length>40</max_length>
+        <model display_value="Claim Expense Flow">99ac3d2c83102210b1abe480ceaad322</model>
+        <model_id>99ac3d2c83102210b1abe480ceaad322</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_99ac3d2c83102210b1abe480ceaad322</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>true</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-03-12 05:27:14</sys_created_on>
+        <sys_id>e9ac3d2c83102210b1abe480ceaad344</sys_id>
+        <sys_mod_count>44</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-03-17 06:22:06</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=e9ac3d2c83102210b1abe480ceaad344"/>
+    <sys_hub_flow_output action="delete_multiple" query="model=99ac3d2c83102210b1abe480ceaad322"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=99ac3d2c83102210b1abe480ceaad322"/>
+    <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=99ac3d2c83102210b1abe480ceaad322^sys_idNOT INb4d8eb3483d02210b1abe480ceaad300"/>
+    <sys_hub_trigger_instance_v2 action="INSERT_OR_UPDATE">
+        <comment/>
+        <display_text/>
+        <flow display_value="Claim Expense Flow">99ac3d2c83102210b1abe480ceaad322</flow>
+        <name>Service Catalog</name>
+        <remote_sys_id/>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-03-13 07:58:21</sys_created_on>
+        <sys_id>b4d8eb3483d02210b1abe480ceaad300</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-03-13 07:58:21</sys_updated_on>
+        <trigger_definition display_value="Service Catalog">c43a1011c36813002841b63b12d3ae15</trigger_definition>
+        <trigger_inputs>H4sIAAAAAAAA/81T0WrbMBT9FaOnDRJwkrVZ/DYGhUDXjmbbSyhGlq4cMVnyJNltFvLvu7Kd2OlMGeylb9LV1T3nSOdsD0TRDBRJyEOloxtlnqK1JhMitQerqfq2LwEP2c5IBlhvF7fSeZJsD0T8oKoKDXgkbrtJ02l0ZzRE02morguanzo2oIB54CQRVDnAync33H2Rzkmdd4XjZACQUfYzt6bSfAgVSItAWuqo74jecRC0Uv79SwJfqaUFoDRHkgPRuMYDt3dpGJJaYMby1FuZ52Cxn0MJmoP2aR1o4KUtIY/H/1MijIXXlVx2vAX+jxNSUM2pN3Z/bkIsRElmcTwhzfzN3q15y7SjZivdUpPBVHVvFi5dqeh+YJ/yJC0oYzupuAWNhBFahqHX8Spmy/lquZzHi0Uci6tMMMHY8uMsvp5drXDEuJVHqfgXvh5qgWcfXq1/jb+lW6D8Xqu+sMPAtDoK+uzkbxz+IQ59AlAG6zS2cK6Jjvp3C9djGTgxDt4am3VhonrMe92EefjdDu3zmyXYPt196aVBV5BF+EOaqdf9z4yqCn03ZoCO/cCAlYP0HJg+CZudeXo4feON1A2l7lAZRtV5Rz0iZ5WHJpyU1xRvBOt6ixjHxg3pryrcIBfhbBSFBsesLP0n5mUN5+j9AY92AAukBQAA</trigger_inputs>
+        <trigger_outputs/>
+        <trigger_type>service_catalog</trigger_type>
+    </sys_hub_trigger_instance_v2>
+    <sys_hub_action_instance_v2 action="delete_multiple" query="flow=99ac3d2c83102210b1abe480ceaad322^sys_idNOT IN05d8eb3483d02210b1abe480ceaad314,09d8eb3483d02210b1abe480ceaad302,49d8eb3483d02210b1abe480ceaad303,78d8eb3483d02210b1abe480ceaad301,85d8eb3483d02210b1abe480ceaad304,c5d8eb3483d02210b1abe480ceaad306"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Send Email">c1806bf4a70323008299b39f087901cb</action_type>
+        <action_type_parent display_value="Send Email">98c181d20b100300d97d8bf637673ab5</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>c1806bf4a70323008299b39f087901cb</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Claim Expense Flow">99ac3d2c83102210b1abe480ceaad322</flow>
+        <generation_source/>
+        <order>9</order>
+        <parent_ui_id>f1b8b7d5-4b27-45f2-b6c3-d9aca1043777</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-03-13 07:58:22</sys_created_on>
+        <sys_id>05d8eb3483d02210b1abe480ceaad314</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-03-13 11:02:51</sys_updated_on>
+        <ui_id>5bc18428-3e2a-43be-8e56-9e8ac957cfb5</ui_id>
+        <values>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</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Claim Expense Flow">99ac3d2c83102210b1abe480ceaad322</flow>
+        <generation_source/>
+        <order>2</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-03-13 07:58:22</sys_created_on>
+        <sys_id>09d8eb3483d02210b1abe480ceaad302</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-03-13 07:58:22</sys_updated_on>
+        <ui_id>1e95ed16-479c-4d84-beaa-72db501bc4dd</ui_id>
+        <values>H4sIAAAAAAAA/+VUXWvbMBT9K0HPxthxGtq8jYRAoWshGXnpipGt60Qgy64kp81C/vuuLdkxydal0Jcwv+l+6Zzjc/W8J5yRCRkBC8K7cJxGYRQNg2B4OwqTcZSEQxZRgJB4RNIcsFJBWiiG5y0VVR3Y75egtjyFwZQaKop1HPoKXivQJuYG8sMBixnXpaC7levBSLrhgimQZPL84pGSKhxvQJHJ/iR1KT5BExBYumgBngI2u7I+syKtcpAIrg0+uM6ZywzuZ5jBphpOGHgE3g1IBggko0KDR3IqGTWF2pGJURUGFFD2JMWuq9hwaSzRnL5r/gtvHgV1XQbILHUidMcfNBEwsyLZVDZDNZc4PTWV6jQrUGdtdWGQ0UqYaT9mC55KwwtpW0w92HUXosrlo1WFdAN6/6TSEDMoa641ekstW26Kt0ULdM5lI4ujKYqUiu5EjVE8qUwNZ09AQKNzTsuSy3VcqmLLm2aEkvtrgQc/E8Ub3qn5Wvo0rXH7qCz15xifNeEVVbwm8R3HYPPBI3qnp4JqfaSCOsavVY3EEnMU4kaFRoK4cUPdnCpemm941RYc8IPntiC5+chl6d3RVL2Zx03QaYzGb0x/bvmFXQlgg3ub/9wCXACtXYDGS3+B6nbgLPbQ7x082oTbgJsv24Dba9sAR+XqV+Bfxg+GHz6vPTc1Xtc90/+sgiBi537v4p/z+QVIWp/POQim/wCtNTnkCMhAbKGeGN0lByuX7J77L3N7OA6a78o8/9+8+i+/AZTXPVX9CAAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Ask For Approval">f8f2e9920b10030085c083eb37673abd</action_type>
+        <action_type_parent display_value="Ask For Approval">bae0a1120b10030085c083eb37673a92</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f8f2e9920b10030085c083eb37673abd</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Claim Expense Flow">99ac3d2c83102210b1abe480ceaad322</flow>
+        <generation_source/>
+        <order>3</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-03-13 07:58:22</sys_created_on>
+        <sys_id>49d8eb3483d02210b1abe480ceaad303</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-03-13 07:58:22</sys_updated_on>
+        <ui_id>7c8ae9cd-5857-452c-8b93-f48b93c50b3b</ui_id>
+        <values>H4sIAAAAAAAA/+1YXW/iOBT9K8jPlA0BtsBbVVRpVrszUtudl1JFxr4Br4yTsZ3OsBH/fW9sJ2RgysCKl6rz6PvhnHt6jo37VBLByZRcj9MYJpM4WvSjaBBF4xGLxgNYDK5/vx5QFpEuUXQNWKmBZZrj+oXKogqU5QPoF8Ggc0stldky6fc0fCnA2ERYWG+3WMyFySXdfA49GGErIbkGRaZPz12SU43bW9BkWu6lTsUn6QIklt7XAPcB201erXnGijUoBFcH/wyds5DpfJhhBpsqOFGXwDcLigPiSKk00CVrqji1md6QqdUFBjRQ/knJTVOxEsr6Odf0mxH/4ocHcVWXAg7GAgfN8pEuJMw8Rz6VzpDMB9yd2UI3lGVIs/G0cEhpIe1tO+YLPuVWZMq32Grj0J3JYq0+elJIs0HrT1IYSDjk1awVej9a+rDKvt7XQO+EcqyEMWXGqGxW1FotFoWt4JQEJDia1zTPhVomuc5ehGtGKOveUuKil8rsK37TiKXqUVbh7iGztHeH8ZkLf6ZaVEP8hdtg87ZLzMbcSmrMbhTkMflSVEj8YGGExLHgKaj6mBa5vcGvvEDAvO0G/S/YUX2xnZz8djv5G5ag2p3SD3V+730AvPPB589T/QmoatU/Blh7KIPm3TJxue8l79o6H30iKL5/XPEhspO818kPFD+O3pjiw2hvXvI/U3vUP6YrPt7pCBHgDFQmqQDZPvXrxKHmW5nz1H4CqlrtN+EbnbsA6zW4Qf9u+SP9u/49/cdn6v/1I38cRW/NAu/p0GdHBQeDna7+yQqtjrggWQnj1PGqG1oV57niBJC1K/7wKPdNsQ/+/3hi8MsT78MTw9FRubV+YjTKZpniokJsWs7wJzSYG7X5+6ks4zEFOhnBFR/C4mo4HMVXNIrhahJds3gcczaKaP1qAJ4sNj1UF12C3m6fD0112c3P8+MJBDUvkUKC+RlhwY1NUoemtiOb667eMbhyeKm3yRs05Xv5rcaO6i2d7PTFCySI2vbjpJwTD3tOpnOiMgVz0p2TqiqpBObCWIHgmoSLleV26yOFpmGDfmu56+Z0Y1ylYSvgqE8X/S6SOEOE+CX+G3ACJ7UHZwV0Zp6UQ5qC9xqcnhdxcCM+hAK302+Pon0zji52Mw5/WfASFkSYImkeIXjt4Sl4QV8+/wdMZbIzMxMAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Get Catalog Variables">330ba3abc31013002841b63b12d3aee8</action_type>
+        <action_type_parent display_value="Get Catalog Variables">22f0b88cc3c632002841b63b12d3aeff</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>330ba3abc31013002841b63b12d3aee8</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Claim Expense Flow">99ac3d2c83102210b1abe480ceaad322</flow>
+        <generation_source/>
+        <order>1</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-03-13 07:58:21</sys_created_on>
+        <sys_id>78d8eb3483d02210b1abe480ceaad301</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-03-13 07:58:21</sys_updated_on>
+        <ui_id>28aea95e-d4eb-4452-a02e-907c282dc50a</ui_id>
+        <values>H4sIAAAAAAAA/+1V227bMAz9lUDPRuBL0qR529oVGLALsAx9GQZBluhGmHyZJCfNgv77KFt23GZNU2AdsGGPpkiT55CH/LIjUpAFSbMwZQlLeRKFURKG8XwSpWdJGsUiYQCMBKRgOaCnhu81GAuCSgs52tdM1e5ht1uCXksOowtmmSpvaDT2zo3r3R06C2kqxbbXPgYtfCWV0FCQxZevAamYxjQWNFnsHjydWqdiKSh0XdZpLi0WOvrUVnEEg91WrT0DzMfBm975X30a2EstXHVhQODWQiEAy8qYMhCQnBWC2VJvycLqGg0amPhYqG3vsZKFbWHn7NbIH5g0iYNB3gUxnGJ5XWH9y2eWKrhs2Wsq8ghGb1vH7BJJX2JabmvdU1tiO0xLn4CM1cpeDG2tw8fKyrJoQ6xL46NLVefFh5Yx0v9g0LraABVQORIcLI8xW67KTc/YlSwavvyjKjlTA1dgmq+uJCjX3KLOU/QNCLNWy7S2rs4dAQU5JqA5qypZ3NBKl2vZ/BRrzMc3Cj/GmSo3WIyRN8WYcQdojL1g4yu0Xzbma6alQ/cef9NkKbEzVOiyqjxo1zRyFxCzNReKGbPHjm2g32tXecuEx0xb2lwI17KyrzDxGjy8u6DTVnpsZrNoP5fYSuyvBcq9gh5IjIs0m6AE5sk0jOMoTCMc0Mk85MCYSLLzQ4EhDpmP3txiwaYX5vNV9zSCTnWfPYQuVzOfZoTKGHUNGC3BmqdBP1+T0Ytp0lKciXsFGoo/pmsPiZoW0mNyfZqMf0K/LtefUq80uCfzEuemwUyH/WqEjKJEINgZV+LeuMJ8VNeFlTnQRlhUFrSszFrC5uWWwOy4hGZ7PXRT1s2WGSwAMeHRNEknv14AbL5wo4lgHIO0gE0wmSTx+eyxgFl8EDBLzuLpowHZ2WGAmCbTJJn/OkCkBwHZlCXns8cCZslBgJiKIxkmBwGHW/A/bafR9ryrcMJId1eh23/Xg5k+Mu5+9RtVm1Va829gHyz/pXsZve6e/P6Pj+9/bznlAERxGIb3b8CR7f63ru/7ixoXaoZ3GPnb9wLnAho2SROCSV9qnZ+0lnHwCq5q9MyRCqkxS1+qO6O9m6NmUARoutFtpt6l0hij1+50K+C2AdndjbLW3N8VtD7Uye87Dl9/AuaMubF/DQAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Create Record">2de05916c31332002841b63b12d3aee1</action_type>
+        <action_type_parent display_value="Create Record">02f0b88cc3c632002841b63b12d3aeff</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>2de05916c31332002841b63b12d3aee1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Claim Expense Flow">99ac3d2c83102210b1abe480ceaad322</flow>
+        <generation_source/>
+        <order>5</order>
+        <parent_ui_id>662469b8-a3fd-40c6-9a1e-ead6f07e355a</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-03-13 07:58:22</sys_created_on>
+        <sys_id>85d8eb3483d02210b1abe480ceaad304</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-03-17 06:22:06</sys_updated_on>
+        <ui_id>916d9566-ab6f-4257-af95-0911efc95f67</ui_id>
+        <values>H4sIAAAAAAAA/+1WTW/bMAz9K4XOieGPJEtyG9r1tLXAOvTStQItMY0A+aOS3CYL/N9HWU5qdC22DLsUWG4i+Z4eKTL0zY4pyZZslmA8XSQzkSVZlsZxOp8k+SzLk1RmgDhhI1ZCgRTpINfIu8OIPYJuvHHDk+k8m8Qp11hYjpsaS4FcaFAFhUllaw3b6z76k3dbPDnt3WKttDRYsuXN7YjVYIjcoWHL3QvXn0rVkKOm0G9e6xvS3bZ+1fZ5iD25CI7KSK8nHjHcOCwlkpAVaIsjVkApwVVmy5bONGQwCPKy1NtDxFqVjgiZj91Y9YOuncc+boXGlyn4Dsfu4rNQseBanYGDK2IXrjF9uFhXSqANdZG4gka706EtBFzWTlVlgHSp9uhKN0V5EcrCDgT7ByJLY5FLrH2uXn2fyupqXT193Ss9V2VXlt6pKwH6cALnjMob5/XsGFJfEBEvoK5Vec9rUz2qDkxaiuhe0yFa6eqJLrXqvoxAeOERlRaic7KfdeZrMMpn8YVoCNyOmN1aaiNrn3OhQvKHxisJmfU58FAGDxFG1e4jXfCIvdx2tJ8DifHizeZK8udm6lrfDmbA4AMZHEqeb783cZzJ3S6dA8JiimM5wXw8mUzTMcQpjhfxB5HOUymmMURDYNveQVE1pTuKIUAIi2GyOJUNj2IYAgc8fiD+iscDiYcesys2PeVRNAMcsRgUSAdOLQVi7fvouOp0MN6zRNQxXMm2/fV/6f8LvrsXPHJ1/H6696vjXKGW9pVx3+8NLKh1HPIw/i92R+88ue6d/f5I/tX+SGZx93tnWyQk+O6XyOCb4fV1sjeS6La9/QkRVRLUZAkAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Send Email">c1806bf4a70323008299b39f087901cb</action_type>
+        <action_type_parent display_value="Send Email">98c181d20b100300d97d8bf637673ab5</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>c1806bf4a70323008299b39f087901cb</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Claim Expense Flow">99ac3d2c83102210b1abe480ceaad322</flow>
+        <generation_source/>
+        <order>6</order>
+        <parent_ui_id>662469b8-a3fd-40c6-9a1e-ead6f07e355a</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-03-13 07:58:22</sys_created_on>
+        <sys_id>c5d8eb3483d02210b1abe480ceaad306</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-03-13 11:02:51</sys_updated_on>
+        <ui_id>9ba72445-fbb6-45d8-8da0-b374845bdf2a</ui_id>
+        <values>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</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=99ac3d2c83102210b1abe480ceaad322"/>
+    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=99ac3d2c83102210b1abe480ceaad322^sys_idNOT IN45d8eb3483d02210b1abe480ceaad315,49d8eb3483d02210b1abe480ceaad318,89d8eb3483d02210b1abe480ceaad317,c9d8eb3483d02210b1abe480ceaad316"/>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">d710e77883902210b1abe480ceaad35b</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Claim Expense Flow">99ac3d2c83102210b1abe480ceaad322</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>4</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-03-13 07:58:22</sys_created_on>
+        <sys_id>45d8eb3483d02210b1abe480ceaad315</sys_id>
+        <sys_mod_count>23</sys_mod_count>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-03-17 06:22:06</sys_updated_on>
+        <ui_id>662469b8-a3fd-40c6-9a1e-ead6f07e355a</ui_id>
+        <values>H4sIAAAAAAAA/+1VwW7bMAz9lUFnJ5DtuHFyC1oUKNCtwFr0shUGLdGJMEXyLLltFuTfR9lOUnQttgI57mTrkSIfn/ngLbOtr1vv7uzCObU0bP7tIWLKBIzet6zS9unaLpW4Ms6DEXi7cVeSzVlcxhyn0zxPZzxJYl7GUOIk5wIBZJoJFjEDa6RMYY1UXllTdEDEHkG3IbCo68Y+oiRIKldr2Nz/GRErpWWDA7MaGqrhsWHz7auQCqwqDlU8E7FIk7M04TzJJ3F5lpZxIlNASKmgJp6aUs/3tD5dd8j7fP2mDrjzjTLL4Xw9VLndg7aRgVXMI4bPHo0k9vMKtMOIrcFI8LbZHJAGQd4YfQRWyngqx0Lys1O/qGGSZSGxQhpRYB88HO+g1HjRq9aHqgvwQHRa4dtmSBcrqwS6XiCJFbTan7/E+oSbOozbX/Gh8HDb6nZtvvSqsEOB/UcipHVYSKzDtIH+MEt1u7JPX/dML5XplBmC2grQhxN40q9sfeCzZahxTYWKNdQ1qVqEJVDdZeKyHi81HcZhI6lp2NYxiEB8TOLC+JLwiw6+h0aFKT5TGbrc0yzBKVF0m03lSCZku4i5jTvX4NxxSFK4+NkGiv3Iw3BFr0+4IhpV+wV1fsRhjl10WqO88Mh2OxU54EzIUZZn09EkS8QoL2fpqJqEh8h4mZZj6AwDuqDeHne77y3nqYR3DXaqsh9z5wyyKot59rY7J2dvufNteT5iyeQvlgy78I+O5Jz/t+RJLKlc0RtpmK1rfkJHPgQL9T0PWgvliFr3ma72f7gQ2NCCBd8eoSfb/AhDHbHdb1IBUu8rBwAA</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">7dc86b3483d02210b1abe480ceaad351</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Claim Expense Flow">99ac3d2c83102210b1abe480ceaad322</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="End">d176605ea76103004f27b0d2187901c7</logic_definition>
+        <order>10</order>
+        <outputs_assigned/>
+        <parent_ui_id>f1b8b7d5-4b27-45f2-b6c3-d9aca1043777</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-03-13 07:58:22</sys_created_on>
+        <sys_id>49d8eb3483d02210b1abe480ceaad318</sys_id>
+        <sys_mod_count>27</sys_mod_count>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-03-17 06:22:07</sys_updated_on>
+        <ui_id>fd2fde66-01af-4b0e-b327-f1f0bc410f82</ui_id>
+        <values>H4sIAAAAAAAA/6tWyi8tKSgtKQ7JdywuzkzPU7KKjtVRyswDiUHYZYlFmYlJOalQbkpqcmZxZn5eCEjME0ldSmVeYm5mMrJQeX5RdlpOfjlCrBYAD1ouqHEAAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">3f38aff083d02210b1abe480ceaad36c</block>
+        <comment/>
+        <connected_to>662469b8-a3fd-40c6-9a1e-ead6f07e355a</connected_to>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Claim Expense Flow">99ac3d2c83102210b1abe480ceaad322</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Else">1f781bf3c32232002841b63b12d3aee6</logic_definition>
+        <order>8</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-03-13 07:58:22</sys_created_on>
+        <sys_id>89d8eb3483d02210b1abe480ceaad317</sys_id>
+        <sys_mod_count>27</sys_mod_count>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-03-17 06:22:06</sys_updated_on>
+        <ui_id>f1b8b7d5-4b27-45f2-b6c3-d9aca1043777</ui_id>
+        <values>H4sIAAAAAAAA/6tWyi8tKSgtKQ7JdywuzkzPU7KKjtVRyswDiUHYZYlFmYlJOalQbkpqcmZxZn5eCEjME0ldSmVeYm5mMrJQeX5RdlpOfjlCrBYAD1ouqHEAAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">fdc86b3483d02210b1abe480ceaad34d</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Claim Expense Flow">99ac3d2c83102210b1abe480ceaad322</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="End">d176605ea76103004f27b0d2187901c7</logic_definition>
+        <order>7</order>
+        <outputs_assigned/>
+        <parent_ui_id>662469b8-a3fd-40c6-9a1e-ead6f07e355a</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-03-13 07:58:22</sys_created_on>
+        <sys_id>c9d8eb3483d02210b1abe480ceaad316</sys_id>
+        <sys_mod_count>27</sys_mod_count>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-03-17 06:22:06</sys_updated_on>
+        <ui_id>f21a20b1-e882-40be-b71e-c4e7523d4df8</ui_id>
+        <values>H4sIAAAAAAAA/6tWyi8tKSgtKQ7JdywuzkzPU7KKjtVRyswDiUHYZYlFmYlJOalQbkpqcmZxZn5eCEjME0ldSmVeYm5mMrJQeX5RdlpOfjlCrBYAD1ouqHEAAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=99ac3d2c83102210b1abe480ceaad322^sys_idNOT IN01d8eb3483d02210b1abe480ceaad357,4dd8eb3483d02210b1abe480ceaad356,89d8eb3483d02210b1abe480ceaad356,c5d8eb3483d02210b1abe480ceaad356"/>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>99ac3d2c83102210b1abe480ceaad322</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{28aea95e-d4eb-4452-a02e-907c282dc50a.expense_date}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-03-13 07:58:23</sys_created_on>
+        <sys_id>01d8eb3483d02210b1abe480ceaad357</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-03-13 07:58:23</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>cb0160bb-6e14-4aec-9653-8f62caeea715</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>99ac3d2c83102210b1abe480ceaad322</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{28aea95e-d4eb-4452-a02e-907c282dc50a.expense_type}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-03-13 07:58:23</sys_created_on>
+        <sys_id>4dd8eb3483d02210b1abe480ceaad356</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-03-13 07:58:23</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>3c847b6f-7c85-4b4b-9be1-329e9d6f8e2c</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>99ac3d2c83102210b1abe480ceaad322</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{28aea95e-d4eb-4452-a02e-907c282dc50a.amount}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-03-13 07:58:23</sys_created_on>
+        <sys_id>89d8eb3483d02210b1abe480ceaad356</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-03-13 07:58:23</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>459bc07c-dfa4-4b9c-b576-5e8c1ef15c85</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>99ac3d2c83102210b1abe480ceaad322</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{28aea95e-d4eb-4452-a02e-907c282dc50a.requested_by.name}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-03-13 07:58:23</sys_created_on>
+        <sys_id>c5d8eb3483d02210b1abe480ceaad356</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-03-13 07:58:23</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>55b332c7-2e88-45b8-9166-5749bdbcce30</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_flow_variable action="delete_multiple" query="model=99ac3d2c83102210b1abe480ceaad322"/>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_input_99ac3d2c83102210b1abe480ceaad322^sys_idNOT INadac3d2c83102210b1abe480ceaad348,b4d8ab3483d02210b1abe480ceaad3d7"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>table_name</element>
+        <help/>
+        <hint/>
+        <label>Table Name</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_99ac3d2c83102210b1abe480ceaad322</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-03-12 05:27:14</sys_created_on>
+        <sys_id>adac3d2c83102210b1abe480ceaad348</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Leave &amp;amp; Expense Tracking Management System" source="x_1583402_lems">7dc441c583231210b1abe480ceaad313</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-03-12 05:27:14</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>request_item</element>
+        <help/>
+        <hint/>
+        <label>Request Item</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_99ac3d2c83102210b1abe480ceaad322</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-03-13 07:58:21</sys_created_on>
+        <sys_id>b4d8ab3483d02210b1abe480ceaad3d7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Leave &amp;amp; Expense Tracking Management System" source="x_1583402_lems">7dc441c583231210b1abe480ceaad313</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-03-13 07:58:21</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_99ac3d2c83102210b1abe480ceaad322"/>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_output_99ac3d2c83102210b1abe480ceaad322"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_99ac3d2c83102210b1abe480ceaad322"/>
+    <sys_hub_flow action="UPDATE">
+        <sys_id>c7b1961483182210b1abe480ceaad34d</sys_id>
+        <latest_snapshot>99ac3d2c83102210b1abe480ceaad322</latest_snapshot>
+        <compiler_build>glide-xanadu-07-02-2024__patch3-hotfix1-11-13-2024_11-19-2024_1208.zip</compiler_build>
+    </sys_hub_flow>
+    <sys_flow_trigger_plan action="delete_multiple" query="plan_id=c7b1961483182210b1abe480ceaad34d^sys_idNOT IN3dac3d2c83102210b1abe480ceaad372"/>
+    <sys_flow_trigger_plan action="INSERT_OR_UPDATE">
+        <binding_strategy>com.snc.process_flow.engine.binding.RunAlways</binding_strategy>
+        <plan>{"type":"PlanProxy","persistor":{"@class":".ChunkingPlanPersistor","table":"sys_flow_trigger_plan","id":"3dac3d2c83102210b1abe480ceaad372","name":"plan","plan_signature":null}}</plan>
+        <plan_id>c7b1961483182210b1abe480ceaad34d</plan_id>
+        <snapshot>4d9a7b0e83902210b1abe480ceaad387</snapshot>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-03-12 05:27:15</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>3dac3d2c83102210b1abe480ceaad372</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_overrides/>
+        <sys_scope/>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-03-17 06:12:03</sys_updated_on>
+        <trigger display_value="">69d8eb3483d02210b1abe480ceaad388</trigger>
+    </sys_flow_trigger_plan>
+    <sys_flow_subflow_plan action="delete_multiple" query="plan_id=c7b1961483182210b1abe480ceaad34d"/>
+</record_update>

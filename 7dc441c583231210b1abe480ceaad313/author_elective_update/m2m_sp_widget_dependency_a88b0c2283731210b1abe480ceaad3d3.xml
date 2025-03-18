@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="m2m_sp_widget_dependency">
+    <m2m_sp_widget_dependency action="DELETE">
+        <sp_dependency display_value="angularMoment">7f07b9d7db10230002157a613996198b</sp_dependency>
+        <sp_widget display_value="Calendar LEMTS">ac8b0c2283731210b1abe480ceaad3d0</sp_widget>
+        <sys_class_name>m2m_sp_widget_dependency</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-02-21 05:49:23</sys_created_on>
+        <sys_id>a88b0c2283731210b1abe480ceaad3d3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>angularMoment.Calendar LEMTS</sys_name>
+        <sys_package display_value="Leave &amp;amp; Expense Tracking Management System" source="x_1583402_lems">7dc441c583231210b1abe480ceaad313</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_update_name>m2m_sp_widget_dependency_a88b0c2283731210b1abe480ceaad3d3</sys_update_name>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-02-21 05:49:23</sys_updated_on>
+    </m2m_sp_widget_dependency>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</application>
+        <file_path/>
+        <instance_id>72954f46ebca1a18c040fddacad0cd81</instance_id>
+        <instance_name>dev291464</instance_name>
+        <name>m2m_sp_widget_dependency_a88b0c2283731210b1abe480ceaad3d3</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="m2m_sp_widget_dependency"><m2m_sp_widget_dependency action="INSERT_OR_UPDATE"><sp_dependency display_value="angularMoment">7f07b9d7db10230002157a613996198b</sp_dependency><sp_widget display_value="Calendar LEMTS">ac8b0c2283731210b1abe480ceaad3d0</sp_widget><sys_class_name>m2m_sp_widget_dependency</sys_class_name><sys_created_by>ankita.chaurasia</sys_created_by><sys_created_on>2025-02-21 05:49:23</sys_created_on><sys_id>a88b0c2283731210b1abe480ceaad3d3</sys_id><sys_mod_count>0</sys_mod_count><sys_name>angularMoment.Calendar LEMTS</sys_name><sys_package display_value="Leave &amp;amp; Expense Tracking Management System" source="x_1583402_lems">7dc441c583231210b1abe480ceaad313</sys_package><sys_policy/><sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope><sys_update_name>m2m_sp_widget_dependency_a88b0c2283731210b1abe480ceaad3d3</sys_update_name><sys_updated_by>ankita.chaurasia</sys_updated_by><sys_updated_on>2025-02-21 05:49:23</sys_updated_on></m2m_sp_widget_dependency></record_update>]]></payload>
+        <payload_hash>638365644</payload_hash>
+        <record_name>angularMoment.Calendar LEMTS</record_name>
+        <reverted_from/>
+        <source>6422b58983a71210b1abe480ceaad3b9</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-02-21 05:49:23</sys_created_on>
+        <sys_id>fc8b0c2283731210b1abe480ceaad3d5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>195270db09c0000001</sys_recorded_at>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-02-21 05:49:23</sys_updated_on>
+        <type>Widget Dependency</type>
+        <update_guid>f08b0c22307312102457ae3515df80d5</update_guid>
+        <update_guid_history>f08b0c22307312102457ae3515df80d5:638365644</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="angularMoment.Calendar LEMTS">3766146e83731210b1abe480ceaad36a</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-02-21 06:37:06</sys_created_on>
+        <sys_db_object display_value="" name="m2m_sp_widget_dependency">m2m_sp_widget_dependency</sys_db_object>
+        <sys_id>2e3045f2ff7a41629e6b564f505dd8e4</sys_id>
+        <sys_metadata>a88b0c2283731210b1abe480ceaad3d3</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>angularMoment.Calendar LEMTS</sys_name>
+        <sys_package display_value="Leave &amp;amp; Expense Tracking Management System" source="x_1583402_lems">7dc441c583231210b1abe480ceaad313</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_scope_delete display_value="">704e279aae8d45079b49da557a873a19</sys_scope_delete>
+        <sys_update_name>m2m_sp_widget_dependency_a88b0c2283731210b1abe480ceaad3d3</sys_update_name>
+        <sys_update_version display_value="m2m_sp_widget_dependency_a88b0c2283731210b1abe480ceaad3d3">fc8b0c2283731210b1abe480ceaad3d5</sys_update_version>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-02-21 06:37:06</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

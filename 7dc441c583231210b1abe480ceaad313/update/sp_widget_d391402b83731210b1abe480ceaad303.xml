@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script/>
+        <controller_as>c</controller_as>
+        <css>.chart-container {&#13;
+    display: flex;&#13;
+    flex-direction: column;&#13;
+    align-items: center;&#13;
+    font-family: Arial, sans-serif;&#13;
+}&#13;
+&#13;
+.pie-chart {&#13;
+    width: 150px;&#13;
+    height: 150px;&#13;
+    border-radius: 50%;&#13;
+    background: conic-gradient(&#13;
+        #FF6384 0% 42%,  /* Taken Leaves */&#13;
+        #36A2EB 42% 100% /* Remaining Leaves */&#13;
+    );&#13;
+}&#13;
+&#13;
+.legend {&#13;
+    display: flex;&#13;
+    gap: 10px;&#13;
+    margin-top: 10px;&#13;
+}&#13;
+&#13;
+.legend div {&#13;
+    display: flex;&#13;
+    align-items: center;&#13;
+    gap: 5px;&#13;
+}&#13;
+&#13;
+.color-box {&#13;
+    width: 15px;&#13;
+    height: 15px;&#13;
+    border-radius: 3px;&#13;
+}&#13;
+&#13;
+.taken { background-color: #FF6384; }&#13;
+.remaining { background-color: #36A2EB; }&#13;
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>demo</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>Demo</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-02-24 07:45:43</sys_created_on>
+        <sys_id>d391402b83731210b1abe480ceaad303</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_name>Demo</sys_name>
+        <sys_package display_value="Leave &amp;amp; Expense Tracking Management System" source="x_1583402_lems">7dc441c583231210b1abe480ceaad313</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_update_name>sp_widget_d391402b83731210b1abe480ceaad303</sys_update_name>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-02-24 10:30:00</sys_updated_on>
+        <template><![CDATA[<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Static Pie Chart</title>
+</head>
+<body>
+
+    <div class="chart-container">
+        <h4>Casual Leave</h4>
+        <div class="pie-chart"></div>
+        <div class="legend">
+            <div><span class="color-box taken"></span> Taken Leaves (5)</div>
+            <div><span class="color-box remaining"></span> Remaining Leaves (7)</div>
+        </div>
+    </div>
+
+</body>
+</html>
+]]></template>
+    </sp_widget>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>d391402b83731210b1abe480ceaad303</id>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-02-24 07:45:07</sys_created_on>
+        <sys_id>d9c288e783731210b1abe480ceaad31d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-02-24 07:45:07</sys_updated_on>
+        <table>sp_widget</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

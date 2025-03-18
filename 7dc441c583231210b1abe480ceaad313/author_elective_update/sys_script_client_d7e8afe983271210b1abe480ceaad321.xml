@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="DELETE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description/>
+        <field>end_date</field>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>Auto Populate Duration</name>
+        <order/>
+        <script><![CDATA[function onChange(control, oldValue, newValue, isLoading, isTemplate) {
+    if (isLoading || newValue === '') {
+        return;
+    }
+
+    // Get values from the Start Date and End Date fields
+    var startDateStr = g_form.getValue('start_date');
+    var endDateStr = g_form.getValue('end_date');
+
+    // Ensure both dates are selected
+    if (startDateStr && endDateStr) {
+        var startDate = new Date(startDateStr + "T00:00:00Z"); // Convert to Date object (UTC fix)
+        var endDate = new Date(endDateStr + "T00:00:00Z");
+
+        // Validate if end date is before start date
+        if (endDate < startDate) {
+            g_form.clearValue('duration'); // Clear duration if invalid date range
+            g_form.addErrorMessage("End Date must be greater than Start Date.");
+            return;
+        }
+
+        // Function to calculate business days
+        function calculateBusinessDays(start, end) {
+            var count = 0;
+            var currentDate = new Date(start);
+
+            while (currentDate < end) { // "<" to exclude the end date itself
+                var dayOfWeek = currentDate.getUTCDay(); // Get the day in UTC
+                // Only count Monday (1) to Friday (5), exclude Saturday (6) & Sunday (0)
+                if (dayOfWeek !== 0 && dayOfWeek !== 6) {
+                    count++;
+                }
+                currentDate.setUTCDate(currentDate.getUTCDate() + 1); // Move to next day
+            }
+            return count;
+        }
+
+        // Calculate business days
+        var businessDays = calculateBusinessDays(startDate, endDate);
+
+        // Set the duration field value
+        g_form.setValue('duration', businessDays + " business days");
+    } else {
+        g_form.clearValue('duration'); // Clear duration if dates are not selected
+    }
+}
+]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-02-06 09:10:11</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>d7e8afe983271210b1abe480ceaad321</sys_id>
+        <sys_mod_count>25</sys_mod_count>
+        <sys_name>Auto Populate Duration</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Leave &amp;amp; Expense Tracking Management System" source="x_1583402_lems">7dc441c583231210b1abe480ceaad313</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_update_name>sys_script_client_d7e8afe983271210b1abe480ceaad321</sys_update_name>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-02-07 06:14:12</sys_updated_on>
+        <table>x_1583402_lems_leave_request</table>
+        <type>onChange</type>
+        <ui_type>10</ui_type>
+        <view/>
+    </sys_script_client>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</application>
+        <file_path/>
+        <instance_id>72954f46ebca1a18c040fddacad0cd81</instance_id>
+        <instance_name>dev291464</instance_name>
+        <name>sys_script_client_d7e8afe983271210b1abe480ceaad321</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sys_script_client"&gt;&lt;sys_script_client action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;applies_extended&gt;false&lt;/applies_extended&gt;&lt;condition/&gt;&lt;description/&gt;&lt;field&gt;end_date&lt;/field&gt;&lt;global&gt;true&lt;/global&gt;&lt;isolate_script&gt;true&lt;/isolate_script&gt;&lt;messages/&gt;&lt;name&gt;Auto Populate Duration&lt;/name&gt;&lt;order/&gt;&lt;script&gt;&lt;![CDATA[function onChange(control, oldValue, newValue, isLoading, isTemplate) {
+    if (isLoading || newValue === '') {
+        return;
+    }
+
+    // Get values from the Start Date and End Date fields
+    var startDateStr = g_form.getValue('start_date');
+    var endDateStr = g_form.getValue('end_date');
+
+    // Ensure both dates are selected
+    if (startDateStr &amp;&amp; endDateStr) {
+        var startDate = new Date(startDateStr + "T00:00:00Z"); // Convert to Date object (UTC fix)
+        var endDate = new Date(endDateStr + "T00:00:00Z");
+
+        // Validate if end date is before start date
+        if (endDate &lt; startDate) {
+            g_form.clearValue('duration'); // Clear duration if invalid date range
+            g_form.addErrorMessage("End Date must be greater than Start Date.");
+            return;
+        }
+
+        // Function to calculate business days
+        function calculateBusinessDays(start, end) {
+            var count = 0;
+            var currentDate = new Date(start);
+
+            while (currentDate &lt; end) { // "&lt;" to exclude the end date itself
+                var dayOfWeek = currentDate.getUTCDay(); // Get the day in UTC
+                // Only count Monday (1) to Friday (5), exclude Saturday (6) &amp; Sunday (0)
+                if (dayOfWeek !== 0 &amp;&amp; dayOfWeek !== 6) {
+                    count++;
+                }
+                currentDate.setUTCDate(currentDate.getUTCDate() + 1); // Move to next day
+            }
+            return count;
+        }
+
+        // Calculate business days
+        var businessDays = calculateBusinessDays(startDate, endDate);
+
+        // Set the duration field value
+        g_form.setValue('duration', businessDays + " business days");
+    } else {
+        g_form.clearValue('duration'); // Clear duration if dates are not selected
+    }
+}
+]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_client&lt;/sys_class_name&gt;&lt;sys_created_by&gt;ankita.chaurasia&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-02-06 09:10:11&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;d7e8afe983271210b1abe480ceaad321&lt;/sys_id&gt;&lt;sys_mod_count&gt;25&lt;/sys_mod_count&gt;&lt;sys_name&gt;Auto Populate Duration&lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="Leave &amp;amp;amp; Expense Tracking Management System" source="x_1583402_lems"&gt;7dc441c583231210b1abe480ceaad313&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Leave &amp;amp;amp; Expense Tracking Management System"&gt;7dc441c583231210b1abe480ceaad313&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_client_d7e8afe983271210b1abe480ceaad321&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;ankita.chaurasia&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-02-07 06:14:12&lt;/sys_updated_on&gt;&lt;table&gt;x_1583402_lems_leave_request&lt;/table&gt;&lt;type&gt;onChange&lt;/type&gt;&lt;ui_type&gt;10&lt;/ui_type&gt;&lt;view/&gt;&lt;/sys_script_client&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>171587311</payload_hash>
+        <record_name>Auto Populate Duration</record_name>
+        <reverted_from/>
+        <source>6422b58983a71210b1abe480ceaad3b9</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-02-07 06:14:12</sys_created_on>
+        <sys_id>6fea840683631210b1abe480ceaad300</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>194df0b5fcf0000001</sys_recorded_at>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-02-07 06:14:12</sys_updated_on>
+        <type>Client Script</type>
+        <update_guid>27ea84064f63121040d5e0c1da020c00</update_guid>
+        <update_guid_history>27ea84064f63121040d5e0c1da020c00:171587311,1dda0cc208631210ccfb1113b23fc979:667947429,006ac8c24f63121051706c5076279750:-1637117365,65c884420d6312109e218e5692c40543:-1659241966,82e740021e631210a2237af131908293:-1269194310,16774002366312103911edfbc137348d:1269414674,bee6888ea323121044ada39efcf0a7bb:753891740,9356c40a702312107a80bca2ff59fd98:343818021,a57eb7a14da712104c3acfdd0bfa1059:904747925,83cbf3e159a7121098a35878998b1a38:1520194561,90bbf3a14aa7121065d2b5dc06af5f47:-981209588,460b77a188a71210e5d16fedd4015499:-366475288,a8ea3f6107a71210cec55f2e324afd18:2085965466,2af97f2173a71210e593d935980aab3e:690825466,79d93b21e0a71210317629b52bbe453a:-1953208078,228937ed996712108fc0fca2136d7566:690825466,f8a33be160671210451c4d4250bad955:-1052341636,b383b3659a67121090d438991984e5df:1156196521,01337bad7e271210f20742c71843301a:-1792960555,58a0f76d7a27121008bd1f3c40372629:-1181531371,f70fa7610e67121080336b837b58f23c:-1913015442,e8eeef213d671210aeaf8cc735d8a39f:417230384,997da3212f6712109740d62e91cf92d9:2096149585,342da32117671210818c84dcb46e20d4:1059035575,573ba76ddb2712107c217ce88f8d0ee0:-1393671142,9a2aa3619be3121090cd48dfe5a3a83b:-1249240218,d2e9236d6e271210a8f5f0a38a85b2eb:-1573941703,fb99eb2d972712103c2e1b054c614422:30504220</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-02-07 06:15:08</sys_created_on>
+        <sys_db_object display_value="" name="sys_script_client">sys_script_client</sys_db_object>
+        <sys_id>08e2c940694a4bf88073d2c004c5fe40</sys_id>
+        <sys_metadata>d7e8afe983271210b1abe480ceaad321</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Auto Populate Duration</sys_name>
+        <sys_package display_value="Leave &amp;amp; Expense Tracking Management System" source="x_1583402_lems">7dc441c583231210b1abe480ceaad313</sys_package>
+        <sys_parent display_value="Leave Request">a566c1c183e31210b1abe480ceaad3f9</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_scope_delete display_value="">704e279aae8d45079b49da557a873a19</sys_scope_delete>
+        <sys_update_name>sys_script_client_d7e8afe983271210b1abe480ceaad321</sys_update_name>
+        <sys_update_version display_value="sys_script_client_d7e8afe983271210b1abe480ceaad321">6fea840683631210b1abe480ceaad300</sys_update_version>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-02-07 06:15:08</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

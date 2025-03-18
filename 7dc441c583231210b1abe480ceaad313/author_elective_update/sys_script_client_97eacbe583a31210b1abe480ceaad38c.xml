@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="DELETE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description/>
+        <field>end_date</field>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>Set Duration</name>
+        <order/>
+        <script><![CDATA[function onChange(control, oldValue, newValue, isLoading, isTemplate) {
+    if (isLoading || newValue === '') {
+        return;
+    }
+
+    var start = g_form.getValue('start_date');
+    if (!start) {
+        g_form.clearValue('duration');
+        return;
+    }
+
+    var ga = new GlideAjax('lemsAjax');
+    ga.addParam('sysparam_name', 'getDateDiff');
+    ga.addParam('sysparam_start', start);
+    ga.addParam('sysparam_end', newValue);
+
+    ga.getXMLAnswer(function(answer) {
+        var days = parseInt(answer, 10);
+        if (!isNaN(days)) {
+            g_form.setValue('duration', days);
+        } else {
+            g_form.setValue('duration', '0');
+        }
+    });
+}
+]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-02-06 07:05:15</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>97eacbe583a31210b1abe480ceaad38c</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_name>Set Duration</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Leave &amp;amp; Expense Tracking Management System" source="x_1583402_lems">7dc441c583231210b1abe480ceaad313</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_update_name>sys_script_client_97eacbe583a31210b1abe480ceaad38c</sys_update_name>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-02-06 07:29:49</sys_updated_on>
+        <table>x_1583402_lems_leave_request</table>
+        <type>onChange</type>
+        <ui_type>10</ui_type>
+        <view/>
+    </sys_script_client>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</application>
+        <file_path/>
+        <instance_id>72954f46ebca1a18c040fddacad0cd81</instance_id>
+        <instance_name>dev291464</instance_name>
+        <name>sys_script_client_97eacbe583a31210b1abe480ceaad38c</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sys_script_client"&gt;&lt;sys_script_client action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;applies_extended&gt;false&lt;/applies_extended&gt;&lt;condition/&gt;&lt;description/&gt;&lt;field&gt;end_date&lt;/field&gt;&lt;global&gt;true&lt;/global&gt;&lt;isolate_script&gt;true&lt;/isolate_script&gt;&lt;messages/&gt;&lt;name&gt;Set Duration&lt;/name&gt;&lt;order/&gt;&lt;script&gt;&lt;![CDATA[function onChange(control, oldValue, newValue, isLoading, isTemplate) {
+    if (isLoading || newValue === '') {
+        return;
+    }
+
+    var start = g_form.getValue('start_date');
+    if (!start) {
+        g_form.clearValue('duration');
+        return;
+    }
+
+    var ga = new GlideAjax('lemsAjax');
+    ga.addParam('sysparam_name', 'getDateDiff');
+    ga.addParam('sysparam_start', start);
+    ga.addParam('sysparam_end', newValue);
+
+    ga.getXMLAnswer(function(answer) {
+        var days = parseInt(answer, 10);
+        if (!isNaN(days)) {
+            g_form.setValue('duration', days);
+        } else {
+            g_form.setValue('duration', '0');
+        }
+    });
+}
+]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_client&lt;/sys_class_name&gt;&lt;sys_created_by&gt;ankita.chaurasia&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-02-06 07:05:15&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;97eacbe583a31210b1abe480ceaad38c&lt;/sys_id&gt;&lt;sys_mod_count&gt;6&lt;/sys_mod_count&gt;&lt;sys_name&gt;Set Duration&lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="Leave &amp;amp;amp; Expense Tracking Management System" source="x_1583402_lems"&gt;7dc441c583231210b1abe480ceaad313&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Leave &amp;amp;amp; Expense Tracking Management System"&gt;7dc441c583231210b1abe480ceaad313&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_client_97eacbe583a31210b1abe480ceaad38c&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;ankita.chaurasia&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-02-06 07:29:49&lt;/sys_updated_on&gt;&lt;table&gt;x_1583402_lems_leave_request&lt;/table&gt;&lt;type&gt;onChange&lt;/type&gt;&lt;ui_type&gt;10&lt;/ui_type&gt;&lt;view/&gt;&lt;/sys_script_client&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>1149126270</payload_hash>
+        <record_name>Set Duration</record_name>
+        <reverted_from/>
+        <source>6422b58983a71210b1abe480ceaad3b9</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-02-06 07:29:49</sys_created_on>
+        <sys_id>bda2df6983a31210b1abe480ceaad353</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>194da2a40840000001</sys_recorded_at>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-02-06 07:29:49</sys_updated_on>
+        <type>Client Script</type>
+        <update_guid>75a2df69b9a312100841339a266b5853</update_guid>
+        <update_guid_history>75a2df69b9a312100841339a266b5853:1149126270,a481576d08a31210aaab045dc265125b:-2056605565,331e4be984a31210c161902cb0af4710:1242776126,c3fd8be57ea3121053acd60e30827a4c:-1125265387,d69d43e9eaa31210023b83e56e630d45:1242776126,cd6d47a91ca312108ef28ec14301880c:538491358,860d47a9ffa31210b83ca635f31f9305:1389366586</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-02-06 07:31:39</sys_created_on>
+        <sys_db_object display_value="" name="sys_script_client">sys_script_client</sys_db_object>
+        <sys_id>5630cd4c95ef4878a0f686bc4b4249e4</sys_id>
+        <sys_metadata>97eacbe583a31210b1abe480ceaad38c</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Set Duration</sys_name>
+        <sys_package display_value="Leave &amp;amp; Expense Tracking Management System" source="x_1583402_lems">7dc441c583231210b1abe480ceaad313</sys_package>
+        <sys_parent display_value="Leave Request">a566c1c183e31210b1abe480ceaad3f9</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_scope_delete display_value="">704e279aae8d45079b49da557a873a19</sys_scope_delete>
+        <sys_update_name>sys_script_client_97eacbe583a31210b1abe480ceaad38c</sys_update_name>
+        <sys_update_version display_value="sys_script_client_97eacbe583a31210b1abe480ceaad38c">bda2df6983a31210b1abe480ceaad353</sys_update_version>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-02-06 07:31:39</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

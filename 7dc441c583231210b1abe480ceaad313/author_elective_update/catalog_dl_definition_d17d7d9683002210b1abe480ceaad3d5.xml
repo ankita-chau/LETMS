@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="catalog_dl_definition">
+    <catalog_dl_definition action="DELETE">
+        <active>true</active>
+        <applies_to>item</applies_to>
+        <catalog_item display_value="Leave Request Form">2fcee124838c2210b1abe480ceaad367</catalog_item>
+        <matcher_table>x_1583402_lems_leave_bucket</matcher_table>
+        <name>Autopopulate Balance Leave</name>
+        <run_on_form_change>true</run_on_form_change>
+        <run_on_insert>true</run_on_insert>
+        <run_on_update>false</run_on_update>
+        <source_table/>
+        <sys_class_name>catalog_dl_definition</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-03-05 05:46:26</sys_created_on>
+        <sys_id>d17d7d9683002210b1abe480ceaad3d5</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Autopopulate Balance Leave</sys_name>
+        <sys_package display_value="Leave &amp;amp; Expense Tracking Management System" source="x_1583402_lems">7dc441c583231210b1abe480ceaad313</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_update_name>catalog_dl_definition_d17d7d9683002210b1abe480ceaad3d5</sys_update_name>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-03-05 05:47:55</sys_updated_on>
+        <variable_set/>
+    </catalog_dl_definition>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</application>
+        <file_path/>
+        <instance_id>72954f46ebca1a18c040fddacad0cd81</instance_id>
+        <instance_name>dev291464</instance_name>
+        <name>catalog_dl_definition_d17d7d9683002210b1abe480ceaad3d5</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="catalog_dl_definition"><catalog_dl_definition action="INSERT_OR_UPDATE"><active>true</active><applies_to>item</applies_to><catalog_item display_value="Leave Request Form">2fcee124838c2210b1abe480ceaad367</catalog_item><matcher_table>x_1583402_lems_leave_bucket</matcher_table><name>Autopopulate Balance Leave</name><run_on_form_change>true</run_on_form_change><run_on_insert>true</run_on_insert><run_on_update>false</run_on_update><source_table/><sys_class_name>catalog_dl_definition</sys_class_name><sys_created_by>ankita.chaurasia</sys_created_by><sys_created_on>2025-03-05 05:46:26</sys_created_on><sys_id>d17d7d9683002210b1abe480ceaad3d5</sys_id><sys_mod_count>1</sys_mod_count><sys_name>Autopopulate Balance Leave</sys_name><sys_package display_value="Leave &amp;amp; Expense Tracking Management System" source="x_1583402_lems">7dc441c583231210b1abe480ceaad313</sys_package><sys_policy/><sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope><sys_update_name>catalog_dl_definition_d17d7d9683002210b1abe480ceaad3d5</sys_update_name><sys_updated_by>ankita.chaurasia</sys_updated_by><sys_updated_on>2025-03-05 05:47:55</sys_updated_on><variable_set/></catalog_dl_definition></record_update>]]></payload>
+        <payload_hash>-1933065433</payload_hash>
+        <record_name>Autopopulate Balance Leave</record_name>
+        <reverted_from/>
+        <source>6422b58983a71210b1abe480ceaad3b9</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-03-05 05:47:55</sys_created_on>
+        <sys_id>484e7dd683002210b1abe480ceaad305</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19564d8aa190000001</sys_recorded_at>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-03-05 05:47:55</sys_updated_on>
+        <type>Catalog Data Lookup Definitions</type>
+        <update_guid>004e7dd6240022101a6e7cec62762505</update_guid>
+        <update_guid_history>004e7dd6240022101a6e7cec62762505:-1933065433,56edb5d646002210801a5015637d9f87:1178030823</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Autopopulate Balance Leave">b31f351a83002210b1abe480ceaad320</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-03-05 05:51:44</sys_created_on>
+        <sys_db_object display_value="" name="catalog_dl_definition">catalog_dl_definition</sys_db_object>
+        <sys_id>29e033f301754bd68e1e2e832dbc0119</sys_id>
+        <sys_metadata>d17d7d9683002210b1abe480ceaad3d5</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Autopopulate Balance Leave</sys_name>
+        <sys_package display_value="Leave &amp;amp; Expense Tracking Management System" source="x_1583402_lems">7dc441c583231210b1abe480ceaad313</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_scope_delete display_value="">704e279aae8d45079b49da557a873a19</sys_scope_delete>
+        <sys_update_name>catalog_dl_definition_d17d7d9683002210b1abe480ceaad3d5</sys_update_name>
+        <sys_update_version display_value="catalog_dl_definition_d17d7d9683002210b1abe480ceaad3d5">484e7dd683002210b1abe480ceaad305</sys_update_version>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-03-05 05:51:44</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

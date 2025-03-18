@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="3e665cfe83842210b1abe480ceaad3b8" label="Leave History" max_length="40" name="x_1583402_lems_leave_history" type="collection">
+        <element label="Employee" max_length="32" name="employee" reference="sys_user" type="reference"/>
+        <element label="Duration" max_length="40" name="duration" type="float"/>
+        <element choice="1" choice_field="leave_type" choice_table="x_1583402_lems_leave_request" label="Leave Type" max_length="40" name="leave_type" type="choice">
+            <choice/>
+        </element>
+        <element label="End Date" max_length="40" name="end_date" type="glide_date"/>
+        <element label="Start Date" max_length="40" name="start_date" type="glide_date"/>
+        <index name="index">
+            <element name="employee"/>
+        </index>
+    </element>
+</database>
