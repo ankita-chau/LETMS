@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="DELETE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller = function() {
+    var c = this;
+
+    c.holidays = c.data.holidays;
+};
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>#holiday-calendar {&#13;
+    max-width: 100%;&#13;
+    margin: 0 auto;&#13;
+    background-color: #f0f8ff;&#13;
+    padding: 15px;&#13;
+    border: 2px solid #0078D7;&#13;
+    border-radius: 8px;&#13;
+    box-shadow: 0 4px 8px rgba(0, 120, 215, 0.2);&#13;
+}&#13;
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>holiday_calendar</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element) {
+    scope.$watch('c.holidays', function(holidays) {
+        if (!holidays || holidays.length === 0) return;
+
+        element.find('#holiday-calendar').fullCalendar({
+            header: {
+                left: 'prev,next today',
+                center: 'title',
+                right: 'month,agendaWeek,agendaDay'
+            },
+            events: holidays.map(holiday => ({
+                title: holiday.title,
+                start: holiday.start,
+                description: holiday.description
+            })),
+            eventClick: function(info) {
+                alert(info.title + '\n' + info.description);
+            }
+        });
+    });
+}
+]]></link>
+        <name>Holiday Calendar</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+    data.holidays = [];
+
+    var gr = new GlideRecord('x_1583402_lems_public_holiday');
+    gr.query();
+
+    while (gr.next()) {
+        data.holidays.push({
+            title: gr.getValue('name'),
+            start: gr.getValue('date'),
+            description: gr.getValue('description')
+        });
+    }
+})();
+]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-03-18 05:45:48</sys_created_on>
+        <sys_id>bb19342683502210b1abe480ceaad388</sys_id>
+        <sys_mod_count>9</sys_mod_count>
+        <sys_name>Holiday Calendar</sys_name>
+        <sys_package display_value="Leave &amp;amp; Expense Tracking Management System" source="x_1583402_lems">7dc441c583231210b1abe480ceaad313</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_update_name>sp_widget_bb19342683502210b1abe480ceaad388</sys_update_name>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-03-18 06:34:07</sys_updated_on>
+        <template><![CDATA[<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.js"></script>
+</head>
+
+<div id="holiday-calendar"></div>
+]]></template>
+    </sp_widget>
+    <sys_es_latest_script action="DELETE">
+        <id>bb19342683502210b1abe480ceaad388</id>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-03-18 05:45:47</sys_created_on>
+        <sys_id>ab6ab8a283502210b1abe480ceaad39c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-03-18 05:45:47</sys_updated_on>
+        <table>sp_widget</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</application>
+        <file_path/>
+        <instance_id>72954f46ebca1a18c040fddacad0cd81</instance_id>
+        <instance_name>dev291464</instance_name>
+        <name>sp_widget_bb19342683502210b1abe480ceaad388</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sp_widget"&gt;&lt;sp_widget action="INSERT_OR_UPDATE"&gt;&lt;category&gt;custom&lt;/category&gt;&lt;client_script&gt;&lt;![CDATA[api.controller = function() {
+    var c = this;
+
+    c.holidays = c.data.holidays;
+};
+]]&gt;&lt;/client_script&gt;&lt;controller_as&gt;c&lt;/controller_as&gt;&lt;css&gt;#holiday-calendar {&amp;#13;
+    max-width: 100%;&amp;#13;
+    margin: 0 auto;&amp;#13;
+    background-color: #f0f8ff;&amp;#13;
+    padding: 15px;&amp;#13;
+    border: 2px solid #0078D7;&amp;#13;
+    border-radius: 8px;&amp;#13;
+    box-shadow: 0 4px 8px rgba(0, 120, 215, 0.2);&amp;#13;
+}&amp;#13;
+&lt;/css&gt;&lt;data_table&gt;sp_instance&lt;/data_table&gt;&lt;demo_data/&gt;&lt;description/&gt;&lt;docs/&gt;&lt;field_list/&gt;&lt;has_preview&gt;false&lt;/has_preview&gt;&lt;id&gt;holiday_calendar&lt;/id&gt;&lt;internal&gt;false&lt;/internal&gt;&lt;link&gt;&lt;![CDATA[function link(scope, element) {
+    scope.$watch('c.holidays', function(holidays) {
+        if (!holidays || holidays.length === 0) return;
+
+        element.find('#holiday-calendar').fullCalendar({
+            header: {
+                left: 'prev,next today',
+                center: 'title',
+                right: 'month,agendaWeek,agendaDay'
+            },
+            events: holidays.map(holiday =&gt; ({
+                title: holiday.title,
+                start: holiday.start,
+                description: holiday.description
+            })),
+            eventClick: function(info) {
+                alert(info.title + '\n' + info.description);
+            }
+        });
+    });
+}
+]]&gt;&lt;/link&gt;&lt;name&gt;Holiday Calendar&lt;/name&gt;&lt;option_schema/&gt;&lt;public&gt;false&lt;/public&gt;&lt;roles/&gt;&lt;script&gt;&lt;![CDATA[(function() {
+    data.holidays = [];
+
+    var gr = new GlideRecord('x_1583402_lems_public_holiday');
+    gr.query();
+
+    while (gr.next()) {
+        data.holidays.push({
+            title: gr.getValue('name'),
+            start: gr.getValue('date'),
+            description: gr.getValue('description')
+        });
+    }
+})();
+]]&gt;&lt;/script&gt;&lt;servicenow&gt;false&lt;/servicenow&gt;&lt;sys_class_name&gt;sp_widget&lt;/sys_class_name&gt;&lt;sys_created_by&gt;ankita.chaurasia&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-03-18 05:45:48&lt;/sys_created_on&gt;&lt;sys_id&gt;bb19342683502210b1abe480ceaad388&lt;/sys_id&gt;&lt;sys_mod_count&gt;9&lt;/sys_mod_count&gt;&lt;sys_name&gt;Holiday Calendar&lt;/sys_name&gt;&lt;sys_package display_value="Leave &amp;amp;amp; Expense Tracking Management System" source="x_1583402_lems"&gt;7dc441c583231210b1abe480ceaad313&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Leave &amp;amp;amp; Expense Tracking Management System"&gt;7dc441c583231210b1abe480ceaad313&lt;/sys_scope&gt;&lt;sys_update_name&gt;sp_widget_bb19342683502210b1abe480ceaad388&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;ankita.chaurasia&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-03-18 06:34:07&lt;/sys_updated_on&gt;&lt;template&gt;&lt;![CDATA[&lt;head&gt;
+    &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.css"&gt;
+    &lt;script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+
+&lt;div id="holiday-calendar"&gt;&lt;/div&gt;
+]]&gt;&lt;/template&gt;&lt;/sp_widget&gt;&lt;sys_es_latest_script action="INSERT_OR_UPDATE"&gt;&lt;id&gt;bb19342683502210b1abe480ceaad388&lt;/id&gt;&lt;sys_created_by&gt;ankita.chaurasia&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-03-18 05:45:47&lt;/sys_created_on&gt;&lt;sys_id&gt;ab6ab8a283502210b1abe480ceaad39c&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;ankita.chaurasia&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-03-18 05:45:47&lt;/sys_updated_on&gt;&lt;table&gt;sp_widget&lt;/table&gt;&lt;use_es_latest&gt;true&lt;/use_es_latest&gt;&lt;/sys_es_latest_script&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>1158830602</payload_hash>
+        <record_name>Holiday Calendar</record_name>
+        <reverted_from/>
+        <source>6422b58983a71210b1abe480ceaad3b9</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-03-18 06:34:07</sys_created_on>
+        <sys_id>b375c16283902210b1abe480ceaad3a4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>195a7f5a2350000001</sys_recorded_at>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-03-18 06:34:07</sys_updated_on>
+        <type>Widget</type>
+        <update_guid>3b75c162e59022103c3529641fd802a3</update_guid>
+        <update_guid_history>3b75c162e59022103c3529641fd802a3:1158830602,2db3c162819022108b7d18856d6d9c69:220676756,df5245ee1750221086300875388589cc:-1288410686,8132c1ae7f502210234aaaa1d336a599:-2030874411,80a189aec25022102d0c9a40314fcb44:-1288410686,9531016eaa502210b539840e4f21f218:-337383185,a95f742acd5022106fbca4d4772ea501:-2136355314,ad6cfce6155022102e66a38fc88b09ec:633401543,736b34a6075022101843f03ce081cd8c:-392300856,0c7a38e28750221076b88c8be8d17c16:633401543</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Holiday Calendar">84fa556e83d02210b1abe480ceaad379</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-03-18 08:07:50</sys_created_on>
+        <sys_db_object display_value="" name="sp_widget">sp_widget</sys_db_object>
+        <sys_id>8587b90692734258bebfab7dc85ee0a4</sys_id>
+        <sys_metadata>bb19342683502210b1abe480ceaad388</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Holiday Calendar</sys_name>
+        <sys_package display_value="Leave &amp;amp; Expense Tracking Management System" source="x_1583402_lems">7dc441c583231210b1abe480ceaad313</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_scope_delete display_value="">704e279aae8d45079b49da557a873a19</sys_scope_delete>
+        <sys_update_name>sp_widget_bb19342683502210b1abe480ceaad388</sys_update_name>
+        <sys_update_version display_value="sp_widget_bb19342683502210b1abe480ceaad388">b375c16283902210b1abe480ceaad3a4</sys_update_version>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-03-18 08:07:50</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

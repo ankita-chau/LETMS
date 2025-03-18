@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sys_report_users_groups">
     <sys_report_users_groups action="INSERT_OR_UPDATE">
         <group_id/>
-        <report_id display_value="leave calendar">0999a35483042210b1abe480ceaad3de</report_id>
+        <report_id display_value="Holiday calendar">0999a35483042210b1abe480ceaad3de</report_id>
         <sys_class_name>sys_report_users_groups</sys_class_name>
         <sys_created_by>ankita.chaurasia</sys_created_by>
         <sys_created_on>2025-02-27 08:29:00</sys_created_on>
