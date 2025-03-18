@@ -47,7 +47,7 @@
         <end_time/>
         <exp_report_attrs>true</exp_report_attrs>
         <field/>
-        <field_list>calendar_name,label,parent,time_zone,sys_updated_on</field_list>
+        <field_list>name,date,description</field_list>
         <filter/>
         <formatting_configuration>{"table":"incident","stringFormattingProperties":{},"durationFormattingProperties":{},"dateFormattingProperties":{},"numberFormattingProperties":{}}</formatting_configuration>
         <from/>
@@ -108,20 +108,20 @@
         <sys_created_by>ankita.chaurasia</sys_created_by>
         <sys_created_on>2025-02-27 08:29:00</sys_created_on>
         <sys_id>0999a35483042210b1abe480ceaad3de</sys_id>
-        <sys_mod_count>5</sys_mod_count>
-        <sys_name>leave calendar</sys_name>
+        <sys_mod_count>9</sys_mod_count>
+        <sys_name>Holiday calendar</sys_name>
         <sys_package display_value="Leave &amp;amp; Expense Tracking Management System" source="x_1583402_lems">7dc441c583231210b1abe480ceaad313</sys_package>
         <sys_policy/>
         <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
         <sys_update_name>sys_report_0999a35483042210b1abe480ceaad3de</sys_update_name>
         <sys_updated_by>ankita.chaurasia</sys_updated_by>
-        <sys_updated_on>2025-03-17 07:51:29</sys_updated_on>
-        <table>business_calendar</table>
-        <title>leave calendar</title>
+        <sys_updated_on>2025-03-18 10:18:34</sys_updated_on>
+        <table>x_1583402_lems_public_holiday</table>
+        <title>Holiday calendar</title>
         <title_horizontal_alignment>center</title_horizontal_alignment>
         <title_vertical_alignment>top</title_vertical_alignment>
         <to/>
-        <trend_field>sys_created_on</trend_field>
+        <trend_field>date</trend_field>
         <type>calendar</type>
         <upper_limit/>
         <use_color_heatmap>false</use_color_heatmap>
