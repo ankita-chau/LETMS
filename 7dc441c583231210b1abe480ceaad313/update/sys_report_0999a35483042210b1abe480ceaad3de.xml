@@ -47,8 +47,10 @@
         <end_time/>
         <exp_report_attrs>true</exp_report_attrs>
         <field/>
-        <field_list>name,date,description</field_list>
-        <filter/>
+        <field_list>leave_type,name,employee,duration,end_date,start_date</field_list>
+        <filter table="x_1583402_lems_leave_history">employeeDYNAMIC90d1921e5f510100a9ad2572f2b477fe^ORleave_type=hd<item endquery="false" field="employee" goto="false" newquery="false" operator="DYNAMIC" or="false" value="90d1921e5f510100a9ad2572f2b477fe"/>
+            <item display_value="Holiday" endquery="false" field="leave_type" goto="false" newquery="false" operator="=" or="true" value="hd"/>
+        </filter>
         <formatting_configuration>{"table":"incident","stringFormattingProperties":{},"durationFormattingProperties":{},"dateFormattingProperties":{},"numberFormattingProperties":{}}</formatting_configuration>
         <from/>
         <funnel_neck_percent>30</funnel_neck_percent>
@@ -56,7 +58,7 @@
         <group/>
         <import_table/>
         <interval>year</interval>
-        <is_published>false</is_published>
+        <is_published>true</is_published>
         <is_real_time>false</is_real_time>
         <is_scheduled>false</is_scheduled>
         <legend_align_columns>true</legend_align_columns>
@@ -80,7 +82,7 @@
         <pivot_expanded>true</pivot_expanded>
         <report_drilldown/>
         <report_source/>
-        <roles/>
+        <roles>x_1583402_lems.public_holiday_user</roles>
         <row/>
         <sc_groupby_item_id/>
         <sc_groupby_variable_id/>
@@ -108,20 +110,20 @@
         <sys_created_by>ankita.chaurasia</sys_created_by>
         <sys_created_on>2025-02-27 08:29:00</sys_created_on>
         <sys_id>0999a35483042210b1abe480ceaad3de</sys_id>
-        <sys_mod_count>9</sys_mod_count>
+        <sys_mod_count>14</sys_mod_count>
         <sys_name>Holiday calendar</sys_name>
         <sys_package display_value="Leave &amp;amp; Expense Tracking Management System" source="x_1583402_lems">7dc441c583231210b1abe480ceaad313</sys_package>
         <sys_policy/>
         <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
         <sys_update_name>sys_report_0999a35483042210b1abe480ceaad3de</sys_update_name>
         <sys_updated_by>ankita.chaurasia</sys_updated_by>
-        <sys_updated_on>2025-03-18 10:18:34</sys_updated_on>
-        <table>x_1583402_lems_public_holiday</table>
+        <sys_updated_on>2025-03-19 11:07:08</sys_updated_on>
+        <table>x_1583402_lems_leave_history</table>
         <title>Holiday calendar</title>
         <title_horizontal_alignment>center</title_horizontal_alignment>
         <title_vertical_alignment>top</title_vertical_alignment>
         <to/>
-        <trend_field>date</trend_field>
+        <trend_field>start_date</trend_field>
         <type>calendar</type>
         <upper_limit/>
         <use_color_heatmap>false</use_color_heatmap>

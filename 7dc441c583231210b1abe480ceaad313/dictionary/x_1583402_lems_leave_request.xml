@@ -26,10 +26,11 @@
         <element label="Accrued (total leaves gathered)" max_length="40" name="accrued" type="float"/>
         <element attributes="edge_encryption_enabled=true" choice="1" label="Leave Type" max_length="40" name="leave_type" type="choice">
             <choice>
-                <element inactive_on_update="false" label="Earned Leave" value="el"/>
-                <element inactive_on_update="false" label="Casual Leave" value="cl"/>
-                <element inactive_on_update="false" label="Sick Leave" value="sl"/>
-                <element inactive_on_update="false" label="Work From Home" value="wfh"/>
+                <element inactive_on_update="false" label="Earned Leave" sequence="1" value="el"/>
+                <element inactive_on_update="false" label="Casual Leave" sequence="4" value="cl"/>
+                <element inactive_on_update="false" label="Sick Leave" sequence="3" value="sl"/>
+                <element inactive_on_update="false" label="Holiday" value="hd"/>
+                <element inactive_on_update="false" label="Work From Home" sequence="2" value="wfh"/>
             </choice>
         </element>
         <element attributes="edge_encryption_enabled=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>

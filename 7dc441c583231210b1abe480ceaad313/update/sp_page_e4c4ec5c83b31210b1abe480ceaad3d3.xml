@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sp_page">
     <sp_page action="INSERT_OR_UPDATE">
         <category>custom</category>
-        <css/>
+        <css>.report-widget-wrap .fc-day, /* Targets individual date cells */
+.report-widget-wrap .fc-day-number, /* Targets the numbers inside the dates */
+.report-widget-wrap .fc-event { /* Targets events (if clickable) */
+    pointer-events: none !important;
+    cursor: default !important;
+}
+.report-widget-wrap .fc-time {
+    display: none !important;
+}</css>
         <draft>false</draft>
         <dynamic_title_structure/>
         <human_readable_url_structure/>
@@ -16,14 +24,14 @@
         <sys_created_by>ankita.chaurasia</sys_created_by>
         <sys_created_on>2025-02-14 07:55:28</sys_created_on>
         <sys_id>e4c4ec5c83b31210b1abe480ceaad3d3</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>4</sys_mod_count>
         <sys_name>home_letms</sys_name>
         <sys_package display_value="Leave &amp;amp; Expense Tracking Management System" source="x_1583402_lems">7dc441c583231210b1abe480ceaad313</sys_package>
         <sys_policy/>
         <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
         <sys_update_name>sp_page_e4c4ec5c83b31210b1abe480ceaad3d3</sys_update_name>
         <sys_updated_by>ankita.chaurasia</sys_updated_by>
-        <sys_updated_on>2025-02-14 07:55:28</sys_updated_on>
+        <sys_updated_on>2025-03-19 10:37:03</sys_updated_on>
         <title>Home Page LETMS</title>
         <use_seo_script>false</use_seo_script>
     </sp_page>

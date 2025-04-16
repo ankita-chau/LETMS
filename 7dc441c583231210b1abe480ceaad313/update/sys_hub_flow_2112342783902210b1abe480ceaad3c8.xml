@@ -1,0 +1,1198 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_hub_flow">
+    <sys_hub_flow action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>true</active>
+        <annotation/>
+        <attributes>browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=2109000,viewActivatedIn=naturalLanguage</attributes>
+        <authored_on_release_version>26000</authored_on_release_version>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <copied_from/>
+        <copied_from_name/>
+        <description/>
+        <display_name_after_preview/>
+        <flow_priority>MEDIUM</flow_priority>
+        <generation_source/>
+        <internal_name>request_leave_flow</internal_name>
+        <label_cache>[{"name":"Service Catalog_1.request_item","label":"Trigger - Service Catalog➛Requested Item Record","reference":"sc_req_item","reference_display":"Requested Item","type":"reference","base_type":"reference","usedInstances":{"ded88ab0-a855-4444-a703-c094f065711e":["requested_item"],"93153eaf-f073-4297-b04c-7bc5c77aaa65":["record"],"ba29b88b-c8bb-412b-9ca6-cb52949b89c8":["record"],"d7a94d00-de43-43b6-8397-7d66afd84065":["record"]},"attributes":{"default_search_field":"number"}},{"name":"ded88ab0-a855-4444-a703-c094f065711e.requested_by.manager","label":"1 - Get Catalog Variables➛requested_by➛Manager","reference":"sys_user","reference_display":"User","type":"reference","base_type":"reference","parent_table_name":"sys_user","column_name":"manager","usedInstances":{"ba29b88b-c8bb-412b-9ca6-cb52949b89c8":["approval_conditions"]}},{"name":"ba29b88b-c8bb-412b-9ca6-cb52949b89c8.approval_state","label":"3 - Ask For Approval➛Approval State","reference_display":"Approval State","type":"choice","base_type":"choice","choices":[{"label":"-- None --","value":"","order":0.0},{"label":"Not Yet Requested","value":"not requested","order":1.0},{"label":"Requested","value":"requested","order":2.0},{"label":"Approved","value":"approved","order":3.0},{"label":"Rejected","value":"rejected","order":4.0},{"label":"Cancelled","value":"cancelled","order":5.0},{"label":"No Longer Required","value":"not_required","order":6.0},{"label":"Skipped","value":"skipped","order":7.0}],"usedInstances":{"8c38f632-bd48-4ede-8b65-314cf0057ee1":["condition"]},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"ded88ab0-a855-4444-a703-c094f065711e.requested_by","label":"1 - Get Catalog Variables➛requested_by","reference":"sys_user","reference_display":"requested_by","type":"reference","base_type":"reference","usedInstances":{"a21e11ee-2721-4851-941d-40f03bb04980":["employee"],"7d1f4cb4-9f45-49ad-bf1e-bc102b2a404b":["employee"],"ead858c8-9083-4d58-80b7-8797c0d5afec":["ah_to"],"7e8de871-587b-405b-a572-5d9a813f6c6c":["ah_to"]},"attributes":{"catalogType":"8","catalogTypeLabel":"Reference"}},{"name":"ded88ab0-a855-4444-a703-c094f065711e.leave_type","label":"1 - Get Catalog Variables➛leave_type","reference":"","reference_display":"leave_type","type":"choice","base_type":"choice","choices":[{"label":"--None--","value":"none","order":100.0},{"label":"Casual Leave","value":"cl","order":100.0},{"label":"Sick Leave","value":"sl","order":100.0},{"label":"Earned Leave","value":"el","order":100.0},{"label":"Work From Home","value":"wfh","order":100.0}],"usedInstances":{"a21e11ee-2721-4851-941d-40f03bb04980":["leave_type"],"7d1f4cb4-9f45-49ad-bf1e-bc102b2a404b":["leave_type","name"]},"attributes":{"catalogType":"5","catalogTypeLabel":"Select Box"}},{"name":"ded88ab0-a855-4444-a703-c094f065711e.duration","label":"1 - Get Catalog Variables➛duration","reference":"","reference_display":"duration","type":"string","base_type":"string","usedInstances":{"a21e11ee-2721-4851-941d-40f03bb04980":["requested_days"],"7d1f4cb4-9f45-49ad-bf1e-bc102b2a404b":["duration"],"ead858c8-9083-4d58-80b7-8797c0d5afec":["ah_subject",null],"7e8de871-587b-405b-a572-5d9a813f6c6c":["ah_subject"]},"attributes":{"catalogType":"6","catalogTypeLabel":"Single Line Text"}},{"name":"ded88ab0-a855-4444-a703-c094f065711e.start_date","label":"1 - Get Catalog Variables➛start_date","reference":"","reference_display":"start_date","type":"glide_date","base_type":"glide_date","usedInstances":{"a21e11ee-2721-4851-941d-40f03bb04980":["start_date"],"7d1f4cb4-9f45-49ad-bf1e-bc102b2a404b":["start_date"],"ead858c8-9083-4d58-80b7-8797c0d5afec":[null]},"attributes":{"catalogType":"9","catalogTypeLabel":"Date"}},{"name":"ded88ab0-a855-4444-a703-c094f065711e.end_date","label":"1 - Get Catalog Variables➛end_date","reference":"","reference_display":"end_date","type":"glide_date","base_type":"glide_date","usedInstances":{"a21e11ee-2721-4851-941d-40f03bb04980":["end_date"],"7d1f4cb4-9f45-49ad-bf1e-bc102b2a404b":["end_date"],"ead858c8-9083-4d58-80b7-8797c0d5afec":[null]},"attributes":{"catalogType":"9","catalogTypeLabel":"Date"}},{"name":"ded88ab0-a855-4444-a703-c094f065711e.requested_by.name","label":"1 - Get Catalog Variables➛requested_by➛Name","reference":"","reference_display":"Name","type":"string","base_type":"string","parent_table_name":"sys_user","column_name":"name","usedInstances":{"ead858c8-9083-4d58-80b7-8797c0d5afec":[null]}}]</label_cache>
+        <master_snapshot>e435b46f83902210b1abe480ceaad3b8</master_snapshot>
+        <master_snapshot_digest/>
+        <name>Request Leave Flow</name>
+        <natlang/>
+        <outputs/>
+        <pre_compiled>false</pre_compiled>
+        <remote_trigger_id>2135f46f83902210b1abe480ceaad319</remote_trigger_id>
+        <run_as>user</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <show_draft_actions>false</show_draft_actions>
+        <show_triggered_flows>false</show_triggered_flows>
+        <status>draft</status>
+        <substatus/>
+        <sys_class_name>sys_hub_flow</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-03-21 07:43:15</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>2112342783902210b1abe480ceaad3c8</sys_id>
+        <sys_mod_count>10</sys_mod_count>
+        <sys_name>Request Leave Flow</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Leave &amp;amp; Expense Tracking Management System" source="x_1583402_lems">7dc441c583231210b1abe480ceaad313</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_update_name>sys_hub_flow_2112342783902210b1abe480ceaad3c8</sys_update_name>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-03-21 09:37:01</sys_updated_on>
+        <type>flow</type>
+        <version>2</version>
+    </sys_hub_flow>
+    <sys_translated_text action="delete_multiple" query="documentkey=2112342783902210b1abe480ceaad3c8"/>
+    <sys_variable_value action="delete_multiple" query="document_key=2112342783902210b1abe480ceaad3c8"/>
+    <sys_flow_catalog_trigger action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <catalog_item/>
+        <name/>
+        <run_flow_in/>
+        <sys_class_name>sys_flow_catalog_trigger</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-03-21 07:56:54</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>2135f46f83902210b1abe480ceaad319</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_overrides/>
+        <sys_scope/>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-03-21 08:10:11</sys_updated_on>
+    </sys_flow_catalog_trigger>
+    <sys_trigger_runner_mapping action="delete_multiple" query="identifier=2112342783902210b1abe480ceaad3c8"/>
+    <sys_hub_flow_stage action="delete_multiple" query="flow=2112342783902210b1abe480ceaad3c8"/>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=2112342783902210b1abe480ceaad3c8^sys_idNOT INa912342783902210b1abe480ceaad3c8"/>
+    <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
+        <id>2112342783902210b1abe480ceaad3c8</id>
+        <name>Request Leave Flow</name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-03-21 07:43:15</sys_created_on>
+        <sys_id>a912342783902210b1abe480ceaad3c8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-03-21 07:43:15</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_flow_cat_variable action="delete_multiple" query="flow_catalog_model=a912342783902210b1abe480ceaad3c8"/>
+    <sys_hub_flow_input action="delete_multiple" query="model=2112342783902210b1abe480ceaad3c8^sys_idNOT IN3425fc2f83902210b1abe480ceaad315,cd25346f83902210b1abe480ceaad3a2"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>default_search_field=number,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=reference,uiTypeLabel=Reference</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>request_item</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="Reference">reference</internal_type>
+        <label>Request Item</label>
+        <mandatory>true</mandatory>
+        <max_length>32</max_length>
+        <model display_value="Request Leave Flow">2112342783902210b1abe480ceaad3c8</model>
+        <model_id>2112342783902210b1abe480ceaad3c8</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_2112342783902210b1abe480ceaad3c8</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference display_value="" name="sc_req_item">sc_req_item</reference>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-03-21 07:56:35</sys_created_on>
+        <sys_id>3425fc2f83902210b1abe480ceaad315</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-03-21 07:56:35</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=3425fc2f83902210b1abe480ceaad315"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,test_input_hidden=true,uiType=table_name,uiTypeLabel=Table Name</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value>sc_req_item</default_value>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>table_name</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">table_name</internal_type>
+        <label>Table Name</label>
+        <mandatory>false</mandatory>
+        <max_length>40</max_length>
+        <model display_value="Request Leave Flow">2112342783902210b1abe480ceaad3c8</model>
+        <model_id>2112342783902210b1abe480ceaad3c8</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_2112342783902210b1abe480ceaad3c8</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-03-21 07:56:35</sys_created_on>
+        <sys_id>cd25346f83902210b1abe480ceaad3a2</sys_id>
+        <sys_mod_count>13</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-03-21 09:36:57</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=cd25346f83902210b1abe480ceaad3a2"/>
+    <sys_hub_flow_output action="delete_multiple" query="model=2112342783902210b1abe480ceaad3c8"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=2112342783902210b1abe480ceaad3c8"/>
+    <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=2112342783902210b1abe480ceaad3c8^sys_idNOT IN8925346f83902210b1abe480ceaad3cc"/>
+    <sys_hub_trigger_instance_v2 action="INSERT_OR_UPDATE">
+        <comment/>
+        <display_text/>
+        <flow display_value="Request Leave Flow">2112342783902210b1abe480ceaad3c8</flow>
+        <name>Service Catalog</name>
+        <remote_sys_id/>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-03-21 07:56:36</sys_created_on>
+        <sys_id>8925346f83902210b1abe480ceaad3cc</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-03-21 07:56:48</sys_updated_on>
+        <trigger_definition display_value="Service Catalog">c43a1011c36813002841b63b12d3ae15</trigger_definition>
+        <trigger_inputs>H4sIAAAAAAAA/81T0WrbMBT9FaOnDRJwkrVZ/DYGhUDXjmbbSyhGlq4cMVnyJNltFvLvu7Kd2OlMGeylb9LV1T3nSOdsD0TRDBRJyEOloxtlnqK1JhMitQerqfq2LwEP2c5IBlhvF7fSeZJsD0T8oKoKDXgkbrtJ02l0ZzRE02morguanzo2oIB54CQRVDnAync33H2Rzkmdd4XjZACQUfYzt6bSfAgVSItAWuqo74jecRC0Uv79SwJfqaUFoDRHkgPRuMYDt3dpGJJaYMby1FuZ52Cxn0MJmoP2aR1o4KUtIY/H/1MijIXXlVx2vAX+jxNSUM2pN3Z/bkIsRElmcTwhzfzN3q15y7SjZivdUpPBVHVvFi5dqeh+YJ/yJC0oYzupuAWNhBFahqHX8Spmy/lquZzHi0Uci6tMMMHY8uMsvp5drXDEuJVHqfgXvh5qgWcfXq1/jb+lW6D8Xqu+sMPAtDoK+uzkbxz+IQ59AlAG6zS2cK6Jjvp3C9djGTgxDt4am3VhonrMe92EefjdDu3zmyXYPt196aVBV5BF+EOaqdf9z4yqCn03ZoCO/cCAlYP0HJg+CZudeXo4feON1A2l7lAZRtV5Rz0iZ5WHJpyU1xRvBOt6ixjHxg3pryrcIBfhbBSFBsesLP0n5mUN5+j9AY92AAukBQAA</trigger_inputs>
+        <trigger_outputs/>
+        <trigger_type>service_catalog</trigger_type>
+    </sys_hub_trigger_instance_v2>
+    <sys_hub_action_instance_v2 action="delete_multiple" query="flow=2112342783902210b1abe480ceaad3c8^sys_idNOT IN0125346f83902210b1abe480ceaad3e2,291afce383d02210b1abe480ceaad302,4525346f83902210b1abe480ceaad3d0,5d1afce383d02210b1abe480ceaad300,8525346f83902210b1abe480ceaad3d1,c125346f83902210b1abe480ceaad3e1,c925346f83902210b1abe480ceaad3ce,c925346f83902210b1abe480ceaad3e0"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Create Record">2de05916c31332002841b63b12d3aee1</action_type>
+        <action_type_parent display_value="Create Record">02f0b88cc3c632002841b63b12d3aeff</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="Request Leave Flow">2112342783902210b1abe480ceaad3c8</flow>
+        <generation_source/>
+        <order>7</order>
+        <parent_ui_id>8c38f632-bd48-4ede-8b65-314cf0057ee1</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-03-21 07:56:36</sys_created_on>
+        <sys_id>0125346f83902210b1abe480ceaad3e2</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-03-21 09:37:00</sys_updated_on>
+        <ui_id>7d1f4cb4-9f45-49ad-bf1e-bc102b2a404b</ui_id>
+        <values>H4sIAAAAAAAA/+1W3U/bSBD/V0Z+AhqMTfgI4Qmp5apTD3QF9aXpWWt7nOxpsza760Auyv9+M7s2pEArqNqHk84Php2d+c1vPuPPq0iW0Tg6SjE5PEmPimE6HO4nyf7oIM2Phnm6Xw4F4kE0iLSYI2k6kSvM/GEQLYRqWXiXpYej4UGynymcW3qJBWYzaV1tlqRWStsosfzUaX/ga3h/f13MpCoN6mj8+csgaoQhcIcmGq8eXbllg5kSOSpCuWYicBGIvDSIr4y/ERR7eSyrTcmEkkGEdw51ieSvEsriIJoLXQofydiZlgQGRXmp1fJeYya1I8CIde+s/IfQRwnrVUihFRjuilktC7xsnKx1kHgG3WWt2rm+CGw5o1iJVrk+oyRpLWYlNsyNvXWuq6tZffuxd3QutQ+ju1R1IdT9SThnZN46tJx4pEISUDYXTSP1NGtMvZDemLjM46miQ1yp+pacWjnVsSiYeEypEPE5yd968SdhJEfxB8GQ8dpHnd207DfE0THOQtCkYAsjG3dGcAvsyK0HfZuWmJx8s8Jp/lBR35l2o0Vx3qh6iThpk2RYrlZUwtFI5MmuGB0e7h7QsyuOk+FukZwcVMnR4XGaYmzwhlAcllm+XK//Cn3N/fEqlAczwihbIzhTr0LojcjeOmFcRml+HYcHM8KglL8eoTcie85xsK3K3VAvGognc/5/yn99yn9wd3JpCBhCqQYvnq4e4FyiKu0z49Yvz85BtugcdAs0/VkLND1K/POL12gg9B/bohu/XE/2aQgoyJhhqN/qu1rR3s5E7+ycFQVaC0xr78zzBOYJraXQwM0QKt+uAur8byxcDFceAOatdWDQtUaDAN8RMTDiJTcF6Hae0x9poa4qiw7yJbxJQWp4Z0xt4D31h2IXVxiy48kshFT+C6D2pbbQLR9oGyLWGKLKNpMonkQgKpqJnh6b452gBsUxsTFgZ7VxlOkCwoT1ijGVcjpFExetocq72CtyqXxc5PWUsbrI7lFYuDfRjOxjfYyapVk2RZcVdFD1lEYkVNdubC3CmNpY6qreYuv94/DNdE1XYWbHEOTwJjjZPoW9PXiLeTudcty0QZuJDiympqeg8RZ+46b7iAVNZIftFy5Fk4XZCcJtpmBiUZZ/tmiWnar3Ff4d9I693o1X4sNEywq2SDQT9oKGfWt7G1YTDfR8HVLgAFXdan532Xoa2ESvAWm4nke5qKm1GMi+CKnPyTUx67MS1ML7FDYi0D19eM6z34HwgT5jNzz9fnV5QZvfUA1ktSSQ7VAZ3iAglILKb07ubp6YQD2gb1Ii59QivtKdN0e3fWUY8J22rUF4fMljxMAES9guuHs++0QSF1h6vxsR8PE+VV1vs4wzQ7vGUh+W/cL8gV/jaL1ef/kXbt+MX3cMAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Send Email">c1806bf4a70323008299b39f087901cb</action_type>
+        <action_type_parent display_value="Send Email">98c181d20b100300d97d8bf637673ab5</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="Request Leave Flow">2112342783902210b1abe480ceaad3c8</flow>
+        <generation_source/>
+        <order>9</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-03-21 08:18:12</sys_created_on>
+        <sys_id>291afce383d02210b1abe480ceaad302</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-03-21 08:18:12</sys_updated_on>
+        <ui_id>7e8de871-587b-405b-a572-5d9a813f6c6c</ui_id>
+        <values>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</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="Request Leave Flow">2112342783902210b1abe480ceaad3c8</flow>
+        <generation_source/>
+        <order>2</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-03-21 07:56:36</sys_created_on>
+        <sys_id>4525346f83902210b1abe480ceaad3d0</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-03-21 07:56:36</sys_updated_on>
+        <ui_id>93153eaf-f073-4297-b04c-7bc5c77aaa65</ui_id>
+        <values>H4sIAAAAAAAA/+1Uz2vbMBT+V4LOxthxGtrcRkOgh7WQjl66YmTpJRHIkivJabOQ/31Pspym7daF0B0G001Pet+Ppw/db4ngZEJGwLP8Ih+zIi+KYZYNz0d5NS6qfMgLCpCThChaA940wLThuF9T2frCdnsLZi0YDC6po1Ivyzw18NiCdaVwUO92eJkL20i6uYs9WGErIbkBRSb3DwlpqEF4B4ZMtm+O3KaBUtIKJDZONWtrUG5wNUWMY6X33fNe+1svngP3PKKXwhfxyOvJs4TAswPFAekWVFpISE0Vp06bDZk402LBAOU3Sm72N1ZCuc5pTZ+t+IH4o8zfWwBaY/spaJzcTeOEVl3F0Ur2h1q2tbrutPohwoK20h0MsbVQcmi8Ns/WSVncrvTTvOeZCRVsRFlSMyr3O+qcEVXrwPq5g4TgvqZNI9SybIxei9CMUup0KXGTLqR+Qk4rliqlzOtOcRI0nWF9Gsp31Ahv4ivCYPMumC4fW8/b2YiCy+A5GC7Di+BVy4xo3BcEXkOUuUtiSKuzj16aXbw87AHmS1AtKzGXIZPvEznvEgt8cNWdn5bPb554cN0RHyv6VfNvTMSEvqrFgJ59WkDP/3ZAI/U/ltA/5TIbfvgDHTxpiKI9yOT3NssK/j6O+/qJMYQa0RwMOrzkaJ09wEyA5PYXwvscRoJyHQn2n+WnhTEfZ2H9/zNP+TMffgJaF6Gx2gcAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Send Email">c1806bf4a70323008299b39f087901cb</action_type>
+        <action_type_parent display_value="Send Email">98c181d20b100300d97d8bf637673ab5</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="Request Leave Flow">2112342783902210b1abe480ceaad3c8</flow>
+        <generation_source/>
+        <order>8</order>
+        <parent_ui_id>8c38f632-bd48-4ede-8b65-314cf0057ee1</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-03-21 08:18:11</sys_created_on>
+        <sys_id>5d1afce383d02210b1abe480ceaad300</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-03-21 08:18:11</sys_updated_on>
+        <ui_id>ead858c8-9083-4d58-80b7-8797c0d5afec</ui_id>
+        <values>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</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Ask For Approval">f8f2e9920b10030085c083eb37673abd</action_type>
+        <action_type_parent display_value="Ask For Approval">bae0a1120b10030085c083eb37673a92</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="Request Leave Flow">2112342783902210b1abe480ceaad3c8</flow>
+        <generation_source/>
+        <order>3</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-03-21 07:56:36</sys_created_on>
+        <sys_id>8525346f83902210b1abe480ceaad3d1</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-03-21 07:56:48</sys_updated_on>
+        <ui_id>ba29b88b-c8bb-412b-9ca6-cb52949b89c8</ui_id>
+        <values>H4sIAAAAAAAA/+1XW2/aMBT+KyjPwMKtXN6qoUqdtFWiXV9KFRnnBDwZJ3UcWhbx33ccOyGFNkWITls33nyu3znnO465Sx3mOyOnPwjaMBy23VnLdTuuO+hRd9CBWad/1u8Q6jp1R5AloKUEGkofzyvCEy1I02uQK0ah9pkowsO512pKeEggVh5TsNxs0NhnccTJ+tb6oIQuGPclCGd0d193IiIxvALpjNIdlVpH4HEyA46O45AmSxCqdjnGGIdCz70nOfbdWnQOPPs2use0EFUaj1t34EmB8AGzBYTHUHeWRPhEhXLtjJRMUCCB+FeCrwuLBRPKFLokTzH7ieE7bW0XAFZGiyaE2LirSLFQGIkiM54rQ54sxTcDVfcQApJwVephEoPnQ6Sx6WwGSnC9CB8neZ4LJrIqLCweUsKLE1FKslmiINZtBw5Z8UsSRUzMvUiGK5Y5I5Rlc87x0Ax4+Ig5YzYXTUI17iZ2gjQvUD7OxLdEMl3EVwyDzpusaO8h0XlNGRawl9VsCkarmEoWqXOMuQKLcFO39JzRyhnT7UhNuC07Y+ohGTMi7tNwYmgKfu3S6I8j5Y3OWcsGVT8Y7zPnffyWkdnREya0JWSrmpBWcggjB+47M9Km/sso+RYb3VbVdP3BdpqYDxET7gUMePnSzBX7nCxpjmPjhU71jI0H4M2dz2322oUF/Fohlp/ZcYef7RPy031vhn7cO5NWTh062+H+CBMpKkjqLVicze5VspYsTkXaA+Dnzl8M/l3O7pZVQdnOf8r+CZTt9ipnDi/cRzQUPtP44hJxzS0G8blYf79LU5zqYEBmboMMer1GF38N0nc7DeoOu4F71uu3WpA/WcH3Zusmzp7MQW429/ucP23w49aluKYnCYc4X5kD2le8hK1fZTvtwhRKaZ3s0nRP9TD+DTvzMR8itHLgwXA7YD/BdhBVfhmnU8eAnDqjqSNCAVOnPnW0lacnn4nRAsEVikyWppuNkSSS2ACt0nHr7ZN1nFnGdAE+sieTPpMYSlv5Kf8pXtsEtTHi/nTDSl+Wt7tW/N1MjP+LjbTrUVRiOsfK35Xeyb4r3X9zQxAm84onMX5G8FI5em3ufwGY2Ivx7hAAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="Request Leave Flow">2112342783902210b1abe480ceaad3c8</flow>
+        <generation_source/>
+        <order>6</order>
+        <parent_ui_id>8c38f632-bd48-4ede-8b65-314cf0057ee1</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-03-21 07:56:36</sys_created_on>
+        <sys_id>c125346f83902210b1abe480ceaad3e1</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-03-21 07:56:36</sys_updated_on>
+        <ui_id>d7a94d00-de43-43b6-8397-7d66afd84065</ui_id>
+        <values>H4sIAAAAAAAA/+1UXWvbMBT9K0HPxthxGtq8jYZCH9ZCOvrSFSFLN4lAllxJTpuF/Pdd2XKaplsXQvcwmN50v845Vwc9bIgUZEJGILL8Ih/zIi+KYZYNz0d5OS7KfCgKBpCThGhWAVZa4MYKvK+YakJgs7kDu5IcBpfMM2UWNE8tPDXgPJUequ0Wi4V0tWLr+9iDEb6USljQZPLwmJCaWRzvwZLJ5iDl1zVQxUpQ2Dg1vKlA+8H1FGccS73vnvXcD7UEDLyLOJ3KEMRU4JNnCYEXD1oAws2ZcpCQimnBvLFrMvG2wYAFJm61Wu8qllL7TmnFXpz8gfNHWaibA0rjuy0Y3Nxt7aXRXcSzUvVJo5pK33RcwxJhzhrl95bYOKAC6sAtoHVU5ndL8zzrca6kbmVEWspwpnY35r2VZePBhb2DglZ9xepa6gWtrVnJthmpVOlC4SWdK/OMmE4udMp44J3iJlh6hfFpG75nVgYRX3EMNm9b0fSpCbidjEiYtppbwbR9ESx13Mraf8HBK4g0t0k0aXn20Uvzi9eH3Zv5alTHKfqy9eR7R846x4IYXHf50/z5LQAPbjrgY0m/af6NiOjQN7Fo0LNPM+j53zZohP7HHPonX2bDD3+gvSdtrej2PemZh+9NlhVi9N6UB9kTLQkVzvQw6KYmR3PuB1xJUML9QkTvyQhAVxFg93F+mjHzcdae///nKf/n409CocSM5gcAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Get Catalog Variables">330ba3abc31013002841b63b12d3aee8</action_type>
+        <action_type_parent display_value="Get Catalog Variables">22f0b88cc3c632002841b63b12d3aeff</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="Request Leave Flow">2112342783902210b1abe480ceaad3c8</flow>
+        <generation_source/>
+        <order>1</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-03-21 07:56:36</sys_created_on>
+        <sys_id>c925346f83902210b1abe480ceaad3ce</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-03-21 07:56:48</sys_updated_on>
+        <ui_id>ded88ab0-a855-4444-a703-c094f065711e</ui_id>
+        <values>H4sIAAAAAAAA/+1V22obMRD9FbPPxuzVXvutFwKFtoG45CUEIWlnbVHtJZLWjmv87x3txXayiWNCAoH2cbVzNOecmdHcbB2RODOHpS6jAWU88FwvcF0/Dj02DpjnJwEFoM7QyWkGGKngrgJtICHCQIbnKyor+2O7nYNaCQ6DL9RQWSyIN2qD69DdDoMToUtJN9ctBk/4UshEQe7Mbm6HTkkVpjGgnNn20S+zKYFIykAi8ApSwD8c8IZzBXTYecUyYVDB4Kqhd0KcTVqfH9IVKrH03KED9wbyBDB9SqWGoZPRPKGmUBtnZlSFBwpocpnLzT5iKXLT6M7ovRZ/8PLAHx7dP3M0J0ijI8CXBVp6WRpR5A3QUCY77wpZZfnPhrt1F1JaSXPkbqWBJFBamjZxyyKdL4v13sILkdeK2p+y4FTuv6gxSrDKgLYVAQkZXkQyWpYiX5BSFStRg5FLNlpI/BilslhjUi0W+YhyS3yErtDRBZ5/rY+vqRJWxQ+8BsHoKXpEElWUZSvO2ufsamPIXWX5NPpaJaQxAwM0V6I0nzDNClrSu2HX1OxUT6Teoe7oNbalAcLb1n3U237KATw/jIOY+77nMg97KYxdDpQmwXjS7+zvQFfQNdjgolDZG/b6y7o67K9WWDeTg28oTA+wTwddEQZzMPplK56fBO/dJsEQvdEPiGiCF5NVS53ohvq/MSRC48OQFViaWh05tqqeF5wGpIymUMWXh8Ml5iOqyo3IgNQdTUROilKvBKzfatYmp3tycmiwrpxdEfXRnAXjZMpSinPmxuPenE3dme0BpG79Ijmsh54bJRAyC+B9gDfuAeg4TPyI0zgIw/4kM9bPwKYpRsdPZ5jyHiCapF4cTZ4B+FEPEITM51HKkdJ5GliaBGnIIgQ84VI07QHcCPx4+lyGSc/W/nP2vzAfpTCv2yFzWenl4HPFf4Pp1sgZI9vBu+1xfTSzJ8a53RXaJmVdznZb+Ke3RXtyzrrwfNd1H26MD7cL8M1OcZui3oNBWEio1Ts1BJO+18Y46+XHbsi5rDAyQyuEwix7qna97sOsNUckQJG1ajLtQ0qFGLWyi1kCN7XIbjUVleLt6sLTx4392v1z+xfXOPa0wgwAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Leave Bucket">76bd1b2a83802210b1abe480ceaad3a2</action_type>
+        <action_type_parent display_value="Update Leave Bucket">51df3c4683802210b1abe480ceaad326</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="Request Leave Flow">2112342783902210b1abe480ceaad3c8</flow>
+        <generation_source/>
+        <order>5</order>
+        <parent_ui_id>8c38f632-bd48-4ede-8b65-314cf0057ee1</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-03-21 07:56:36</sys_created_on>
+        <sys_id>c925346f83902210b1abe480ceaad3e0</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-03-21 07:56:48</sys_updated_on>
+        <ui_id>a21e11ee-2721-4851-941d-40f03bb04980</ui_id>
+        <values>H4sIAAAAAAAA/+1XTW/bRhD9KwTPWmFJLsmlbkUcowVSp2jS9GAYwuzurE2EX+GHHdXQf8+Sokjakl1LduxDqxuHMzvz3swbrs5v7VjZCxt89CPONPcodV2HCgcEMk4lAijP8eyZnUGKxhPTIslXiMZyDUnTmm5vFSrOQVAC3PcJMz8CIfWIpBHTNPBDx8F5id8arGpUS7Far028iqsigdWX/hhjkVdxokrM7MX5xcwuoDQ5ayztxe29V/WqwGViakxM4J+o0byRbU1PRbONfT/C2QXYZjGWcnJ+Xqq2Hmdm4/caMwPcXmhIKpzZKWQK6rxcDZYSQX3MktFwFWf1BmkK36v4H3O6584mCRZ2taqWTWVytGzkscSPRR3n2SaqBpHcd8qTJs3ONrW3pKKGJqknpBrHpcKiLbbN3peiP13lNwNzp3HW4epfJrmEZHiCui5j0dRYtY1o4s+7tGyMH/Y0BBNMTd5lCkURZ5fLosyv4y6XKT2dXybmYa6T/MbUWMWX2Rxki3duqIT5qbGfdOYvUMYt+N/NMR3uJv4ri81A/dY2XFEReCA48cELCZNCEVMKEk6pYG5EIxDCXndEL781LbQNVT0pyw2/xqGSZVzUv5gSrrHHv571GhGuUI5wgXt8z1SBGEcoQbjGZTc9B6tkjN2nkeMOOU5W77rx22rqCei3gR/a7NbnDfx9lPS6ktsEvajcnyaqQUxmgs9vh0IJsc7yDC1CJn0a66Ft6wc2oDKDY3XYJt4ymSyFqf+nWH7d8a4m3u7U+z2UGaodf5z4e1P/v/Pyq3Va5qn1a55OI2701RjC1hfDQnh3OH7nQPzuQfi9A/Gzw/H7Lf57W9SZrNE3XZ/D9N/dnYPqXmVxOhFl0o8EEZpJwrh2CSiXE0AQUnohejp69uLUj64O4YxbYrwiKFhVhy9P1ZTQkvCi1wvDpTk0u7T+yM2msc6aVHREPhXbeE3pwVknG3APge7Xo27zTvTyYtuR0Qe2476rxptqZEvBXYk81JBXUUzkSIcyxQgPKRKGriTgcUUw0oJFSgfUDZ6tGMZcN1DCTBWVu1PlThRT1VDWZnDqI64aY+yL6uVkU8xTgQwfjLYaqw/eh66XRdfGrW37bfgPauMOD3cF0pP4KnpAYNwNwoA4EeeE+dIlArQm2gPPD7j0Ih4+Xw/00THyJ//eMnWkGraRP08L/w5iuA5l6p4SJrge0YH/vw7eSgc+Cz0jAYcESB0zY6FPOFBBIhpqZvobqIgfrYOLH50leRKoEQAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=2112342783902210b1abe480ceaad3c8"/>
+    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=2112342783902210b1abe480ceaad3c8^sys_idNOT IN4525346f83902210b1abe480ceaad3d2"/>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">4d25346f83902210b1abe480ceaad3d1</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Request Leave Flow">2112342783902210b1abe480ceaad3c8</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>4</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-03-21 07:56:36</sys_created_on>
+        <sys_id>4525346f83902210b1abe480ceaad3d2</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-03-21 09:37:00</sys_updated_on>
+        <ui_id>8c38f632-bd48-4ede-8b65-314cf0057ee1</ui_id>
+        <values>H4sIAAAAAAAA/+VVXWvbMBT9K0PPSZBlO9h5CxuFQrfCUvqyFXP14URMkTxLbpqF/Pdd2XFTtpSN0be9xedK95xzdS45ENeFpgv+zi2912tLFl8eJkTbiOHvA6mN2924tRbX1gewQq32/lqSBclylqfZvC7SkjKWUJ4AV1lBhQKQqWRkQixsFZ4UzkodtLNVD0zII5guFpZN07pHJRGS2jcG9ve/V8RGG9mqk7IGWuwRVEsWh19KYd+oyqAIgw1WodV2jdd11FpTqJNSJCJl85RRyoos4fOUJ0ymoCDFc+PF96PYdzc98rqLyIe4H5lcK6OshE6IegrKSpS/qMF4NSFbsBKCa/fPSKtA3lpzBjbaBmxH4uEnr39gb5bn8WCt0KNQQ1FsnBbqtolKBiQAN2PRmW5rPw2C41RVDZ0J41QR6byqpGqiukh34q5XG7f7PBJdads7ORWNE2CevyCgX94F5eMLKKO22KjaQtPgFKr4arq/jFq2s7XBj1mMEJLGeM1AROEzHAbMrhD/0MP30Oro4iO2wcuDTA5ei6qPIrYLLVo49uOovndR0GDwZKUapoEHvGh1E5bI86hOqo+Tt83xiwgfDhxYyYuCT0XB+TRLGJ+WAuZTwXNWZlgqRTGDPs9gKuQO6nj82lGaSng1/2/V9i2Wp4S8zhOaX16ebH5peS4P7ZWNYX/YmPj0f7kwlNL/dGO0r4bkn7z15P+8MA8x4QODHwIildAehdxF7Hr8f4iFPb50XKsztHPtt2jhjB1/AnixiYlpBgAA</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=2112342783902210b1abe480ceaad3c8^sys_idNOT IN651afce383d02210b1abe480ceaad305,a11afce383d02210b1abe480ceaad305,e51afce383d02210b1abe480ceaad304,ed1afce383d02210b1abe480ceaad304"/>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>2112342783902210b1abe480ceaad3c8</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{ded88ab0-a855-4444-a703-c094f065711e.end_date}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-03-21 08:18:12</sys_created_on>
+        <sys_id>651afce383d02210b1abe480ceaad305</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-03-21 08:18:12</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>a396741d-552d-4329-8a2f-398ffffe9300</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>2112342783902210b1abe480ceaad3c8</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{ded88ab0-a855-4444-a703-c094f065711e.start_date}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-03-21 08:18:12</sys_created_on>
+        <sys_id>a11afce383d02210b1abe480ceaad305</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-03-21 08:18:12</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>e0438893-6a6c-4965-b232-43f77f2318db</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>2112342783902210b1abe480ceaad3c8</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{ded88ab0-a855-4444-a703-c094f065711e.requested_by.name}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-03-21 08:18:12</sys_created_on>
+        <sys_id>e51afce383d02210b1abe480ceaad304</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-03-21 08:18:12</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>cd11e836-0db3-4973-9559-532ea4591327</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>2112342783902210b1abe480ceaad3c8</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{ded88ab0-a855-4444-a703-c094f065711e.duration}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-03-21 08:18:12</sys_created_on>
+        <sys_id>ed1afce383d02210b1abe480ceaad304</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-03-21 08:18:12</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>87e286ba-5bef-4d77-839e-3cf21bde52fe</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_flow_variable action="delete_multiple" query="model=2112342783902210b1abe480ceaad3c8"/>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_input_2112342783902210b1abe480ceaad3c8^sys_idNOT IN0525346f83902210b1abe480ceaad3a2,8d25346f83902210b1abe480ceaad3a6"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>request_item</element>
+        <help/>
+        <hint/>
+        <label>Request Item</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_2112342783902210b1abe480ceaad3c8</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-03-21 07:56:35</sys_created_on>
+        <sys_id>0525346f83902210b1abe480ceaad3a2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Leave &amp;amp; Expense Tracking Management System" source="x_1583402_lems">7dc441c583231210b1abe480ceaad313</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-03-21 07:56:35</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>table_name</element>
+        <help/>
+        <hint/>
+        <label>Table Name</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_2112342783902210b1abe480ceaad3c8</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-03-21 07:56:35</sys_created_on>
+        <sys_id>8d25346f83902210b1abe480ceaad3a6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Leave &amp;amp; Expense Tracking Management System" source="x_1583402_lems">7dc441c583231210b1abe480ceaad313</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-03-21 07:56:35</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_2112342783902210b1abe480ceaad3c8"/>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_output_2112342783902210b1abe480ceaad3c8"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_2112342783902210b1abe480ceaad3c8"/>
+    <sys_hub_flow_snapshot action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>true</active>
+        <annotation/>
+        <attributes>browserActivatedIn=chrome,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,viewActivatedIn=naturalLanguage</attributes>
+        <authored_on_release_version>26000</authored_on_release_version>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <copied_from/>
+        <copied_from_name/>
+        <description/>
+        <flow_priority>MEDIUM</flow_priority>
+        <internal_name>request_leave_flow</internal_name>
+        <label_cache>[{"name":"ded88ab0-a855-4444-a703-c094f065711e.requested_by.name","label":"1 - Get Catalog Variables➛requested_by➛Name","reference":"","reference_display":"Name","type":"string","base_type":"string","parent_table_name":"sys_user","column_name":"name","usedInstances":{"ead858c8-9083-4d58-80b7-8797c0d5afec":[null]}},{"name":"ded88ab0-a855-4444-a703-c094f065711e.end_date","label":"1 - Get Catalog Variables➛end_date","reference":"","reference_display":"end_date","type":"glide_date","base_type":"glide_date","usedInstances":{"a21e11ee-2721-4851-941d-40f03bb04980":["end_date"],"7d1f4cb4-9f45-49ad-bf1e-bc102b2a404b":["end_date"],"ead858c8-9083-4d58-80b7-8797c0d5afec":[null]},"attributes":{"catalogType":"9","catalogTypeLabel":"Date"}},{"name":"ded88ab0-a855-4444-a703-c094f065711e.start_date","label":"1 - Get Catalog Variables➛start_date","reference":"","reference_display":"start_date","type":"glide_date","base_type":"glide_date","usedInstances":{"a21e11ee-2721-4851-941d-40f03bb04980":["start_date"],"7d1f4cb4-9f45-49ad-bf1e-bc102b2a404b":["start_date"],"ead858c8-9083-4d58-80b7-8797c0d5afec":[null]},"attributes":{"catalogType":"9","catalogTypeLabel":"Date"}},{"name":"ded88ab0-a855-4444-a703-c094f065711e.duration","label":"1 - Get Catalog Variables➛duration","reference":"","reference_display":"duration","type":"string","base_type":"string","usedInstances":{"a21e11ee-2721-4851-941d-40f03bb04980":["requested_days"],"7d1f4cb4-9f45-49ad-bf1e-bc102b2a404b":["duration"],"ead858c8-9083-4d58-80b7-8797c0d5afec":["ah_subject",null],"7e8de871-587b-405b-a572-5d9a813f6c6c":["ah_subject"]},"attributes":{"catalogType":"6","catalogTypeLabel":"Single Line Text"}},{"name":"ded88ab0-a855-4444-a703-c094f065711e.leave_type","label":"1 - Get Catalog Variables➛leave_type","reference":"","reference_display":"leave_type","type":"choice","base_type":"choice","choices":[{"label":"--None--","value":"none","order":100.0},{"label":"Casual Leave","value":"cl","order":100.0},{"label":"Sick Leave","value":"sl","order":100.0},{"label":"Earned Leave","value":"el","order":100.0},{"label":"Work From Home","value":"wfh","order":100.0}],"usedInstances":{"a21e11ee-2721-4851-941d-40f03bb04980":["leave_type"],"7d1f4cb4-9f45-49ad-bf1e-bc102b2a404b":["leave_type","name"]},"attributes":{"catalogType":"5","catalogTypeLabel":"Select Box"}},{"name":"ded88ab0-a855-4444-a703-c094f065711e.requested_by","label":"1 - Get Catalog Variables➛requested_by","reference":"sys_user","reference_display":"User","type":"reference","base_type":"reference","usedInstances":{"a21e11ee-2721-4851-941d-40f03bb04980":["employee"],"7d1f4cb4-9f45-49ad-bf1e-bc102b2a404b":["employee"],"ead858c8-9083-4d58-80b7-8797c0d5afec":["ah_to"],"7e8de871-587b-405b-a572-5d9a813f6c6c":["ah_to"]},"attributes":{"catalogType":"8","catalogTypeLabel":"Reference"}},{"name":"ba29b88b-c8bb-412b-9ca6-cb52949b89c8.approval_state","label":"3 - Ask For Approval➛Approval State","reference_display":"Approval State","type":"choice","base_type":"choice","choices":[{"label":"-- None --","value":"","order":0.0},{"label":"Not Yet Requested","value":"not requested","order":1.0},{"label":"Requested","value":"requested","order":2.0},{"label":"Approved","value":"approved","order":3.0},{"label":"Rejected","value":"rejected","order":4.0},{"label":"Cancelled","value":"cancelled","order":5.0},{"label":"No Longer Required","value":"not_required","order":6.0},{"label":"Skipped","value":"skipped","order":7.0}],"usedInstances":{"8c38f632-bd48-4ede-8b65-314cf0057ee1":["condition"]},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"ded88ab0-a855-4444-a703-c094f065711e.requested_by.manager","label":"1 - Get Catalog Variables➛requested_by➛Manager","reference":"sys_user","reference_display":"User","type":"reference","base_type":"reference","parent_table_name":"sys_user","column_name":"manager","usedInstances":{"ba29b88b-c8bb-412b-9ca6-cb52949b89c8":["approval_conditions"]}},{"name":"Service Catalog_1.request_item","label":"Trigger - Service Catalog➛Requested Item Record","reference":"sc_req_item","reference_display":"Requested Item","type":"reference","base_type":"reference","usedInstances":{"ded88ab0-a855-4444-a703-c094f065711e":["requested_item"],"93153eaf-f073-4297-b04c-7bc5c77aaa65":["record"],"ba29b88b-c8bb-412b-9ca6-cb52949b89c8":["record"],"d7a94d00-de43-43b6-8397-7d66afd84065":["record"]},"attributes":{"default_search_field":"number"}}]</label_cache>
+        <master>true</master>
+        <name>Request Leave Flow</name>
+        <natlang/>
+        <outputs/>
+        <parent_flow display_value="Request Leave Flow">2112342783902210b1abe480ceaad3c8</parent_flow>
+        <remote_trigger_id/>
+        <run_as>user</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <status>published</status>
+        <sys_class_name>sys_hub_flow_snapshot</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-03-21 07:56:50</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>e435b46f83902210b1abe480ceaad3b8</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-03-21 08:18:29</sys_updated_on>
+        <type>flow</type>
+        <version>2</version>
+    </sys_hub_flow_snapshot>
+    <sys_translated_text action="delete_multiple" query="documentkey=e435b46f83902210b1abe480ceaad3b8"/>
+    <sys_variable_value action="delete_multiple" query="document_key=e435b46f83902210b1abe480ceaad3b8"/>
+    <sys_hub_flow_stage action="delete_multiple" query="flow=e435b46f83902210b1abe480ceaad3b8"/>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=e435b46f83902210b1abe480ceaad3b8^sys_idNOT IN6435b46f83902210b1abe480ceaad3b9"/>
+    <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
+        <id>e435b46f83902210b1abe480ceaad3b8</id>
+        <name>Request Leave Flow</name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-03-21 07:56:50</sys_created_on>
+        <sys_id>6435b46f83902210b1abe480ceaad3b9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-03-21 07:56:50</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_flow_cat_variable action="delete_multiple" query="flow_catalog_model=6435b46f83902210b1abe480ceaad3b9"/>
+    <sys_hub_flow_input action="delete_multiple" query="model=e435b46f83902210b1abe480ceaad3b8^sys_idNOT IN2835b46f83902210b1abe480ceaad3ba,b035b46f83902210b1abe480ceaad3cd"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,test_input_hidden=true,uiType=table_name</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value>sc_req_item</default_value>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>table_name</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">table_name</internal_type>
+        <label>Table Name</label>
+        <mandatory>false</mandatory>
+        <max_length>40</max_length>
+        <model display_value="Request Leave Flow">e435b46f83902210b1abe480ceaad3b8</model>
+        <model_id>e435b46f83902210b1abe480ceaad3b8</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_e435b46f83902210b1abe480ceaad3b8</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>true</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-03-21 07:56:50</sys_created_on>
+        <sys_id>2835b46f83902210b1abe480ceaad3ba</sys_id>
+        <sys_mod_count>9</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-03-21 08:18:28</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=2835b46f83902210b1abe480ceaad3ba"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>default_search_field=number,element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=reference</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>request_item</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="Reference">reference</internal_type>
+        <label>Request Item</label>
+        <mandatory>true</mandatory>
+        <max_length>32</max_length>
+        <model display_value="Request Leave Flow">e435b46f83902210b1abe480ceaad3b8</model>
+        <model_id>e435b46f83902210b1abe480ceaad3b8</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_e435b46f83902210b1abe480ceaad3b8</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference display_value="" name="sc_req_item">sc_req_item</reference>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-03-21 07:56:51</sys_created_on>
+        <sys_id>b035b46f83902210b1abe480ceaad3cd</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-03-21 08:18:28</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=b035b46f83902210b1abe480ceaad3cd"/>
+    <sys_hub_flow_output action="delete_multiple" query="model=e435b46f83902210b1abe480ceaad3b8"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=e435b46f83902210b1abe480ceaad3b8"/>
+    <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=e435b46f83902210b1abe480ceaad3b8^sys_idNOT IN4535b46f83902210b1abe480ceaad3f7"/>
+    <sys_hub_trigger_instance_v2 action="INSERT_OR_UPDATE">
+        <comment/>
+        <display_text/>
+        <flow display_value="Request Leave Flow">e435b46f83902210b1abe480ceaad3b8</flow>
+        <name>Service Catalog</name>
+        <remote_sys_id/>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-03-21 07:56:52</sys_created_on>
+        <sys_id>4535b46f83902210b1abe480ceaad3f7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-03-21 07:56:52</sys_updated_on>
+        <trigger_definition display_value="Service Catalog">c43a1011c36813002841b63b12d3ae15</trigger_definition>
+        <trigger_inputs>H4sIAAAAAAAA/81T0WrbMBT9FaOnDRJwkrVZ/DYGhUDXjmbbSyhGlq4cMVnyJNltFvLvu7Kd2OlMGeylb9LV1T3nSOdsD0TRDBRJyEOloxtlnqK1JhMitQerqfq2LwEP2c5IBlhvF7fSeZJsD0T8oKoKDXgkbrtJ02l0ZzRE02morguanzo2oIB54CQRVDnAync33H2Rzkmdd4XjZACQUfYzt6bSfAgVSItAWuqo74jecRC0Uv79SwJfqaUFoDRHkgPRuMYDt3dpGJJaYMby1FuZ52Cxn0MJmoP2aR1o4KUtIY/H/1MijIXXlVx2vAX+jxNSUM2pN3Z/bkIsRElmcTwhzfzN3q15y7SjZivdUpPBVHVvFi5dqeh+YJ/yJC0oYzupuAWNhBFahqHX8Spmy/lquZzHi0Uci6tMMMHY8uMsvp5drXDEuJVHqfgXvh5qgWcfXq1/jb+lW6D8Xqu+sMPAtDoK+uzkbxz+IQ59AlAG6zS2cK6Jjvp3C9djGTgxDt4am3VhonrMe92EefjdDu3zmyXYPt196aVBV5BF+EOaqdf9z4yqCn03ZoCO/cCAlYP0HJg+CZudeXo4feON1A2l7lAZRtV5Rz0iZ5WHJpyU1xRvBOt6ixjHxg3pryrcIBfhbBSFBsesLP0n5mUN5+j9AY92AAukBQAA</trigger_inputs>
+        <trigger_outputs/>
+        <trigger_type>service_catalog</trigger_type>
+    </sys_hub_trigger_instance_v2>
+    <sys_hub_action_instance_v2 action="delete_multiple" query="flow=e435b46f83902210b1abe480ceaad3b8^sys_idNOT IN0535b46f83902210b1abe480ceaad3f3,212a302783d02210b1abe480ceaad3fc,4135b46f83902210b1abe480ceaad3f6,4535b46f83902210b1abe480ceaad3f2,4535b46f83902210b1abe480ceaad3f4,4935b46f83902210b1abe480ceaad3f5,8d35b46f83902210b1abe480ceaad3f6,a52a302783d02210b1abe480ceaad3fd"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Request Leave Flow">e435b46f83902210b1abe480ceaad3b8</flow>
+        <generation_source/>
+        <order>2</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-03-21 07:56:52</sys_created_on>
+        <sys_id>0535b46f83902210b1abe480ceaad3f3</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-03-21 07:56:52</sys_updated_on>
+        <ui_id>93153eaf-f073-4297-b04c-7bc5c77aaa65</ui_id>
+        <values>H4sIAAAAAAAA/+VUXWvbMBT9K0HPxthxGtq8jYRAoWshGXnpipGt60Qgy64kp81C/vuuLdkxydal0Jcwv+l+6Zzjc/W8J5yRCRkBC8K7cJxGYRQNg2B4OwqTcZSEQxZRgJB4RNIcsFJBWiiG5y0VVR3Y75egtjyFwZQaKop1HPoKXivQJuYG8sMBixnXpaC7levBSLrhgimQZPL84pGSKhxvQJHJ/iR1KT5BExBYumgBngI2u7I+syKtcpAIrg0+uM6ZywzuZ5jBphpOGHgE3g1IBggko0KDR3IqGTWF2pGJURUGFFD2JMWuq9hwaSzRnL5r/gtvHgV1XQbILHUidMcfNBEwsyLZVDZDNZc4PTWV6jQrUGdtdWGQ0UqYaT9mC55KwwtpW0w92HUXosrlo1WFdAN6/6TSEDMoa641ekstW26Kt0ULdM5lI4ujKYqUiu5EjVE8qUwNZ09AQKNzTsuSy3VcqmLLm2aEkvtrgQc/E8Ub3qn5Wvo0rXH7qCz15xifNeEVVbwm8R3HYPPBI3qnp4JqfaSCOsavVY3EEnMU4kaFRoK4cUPdnCpemm941RYc8IPntiC5+chl6d3RVL2Zx03QaYzGb0x/bvmFXQlgg3ub/9wCXACtXYDGS3+B6nbgLPbQ7x082oTbgJsv24Dba9sAR+XqV+Bfxg+GHz6vPTc1Xtc90/+sgiBi537v4p/z+QVIWp/POQim/wCtNTnkCMhAbKGeGN0lByuX7J77L3N7OA6a78o8/9+8+i+/AZTXPVX9CAAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Send Email">c1806bf4a70323008299b39f087901cb</action_type>
+        <action_type_parent display_value="Send Email">98c181d20b100300d97d8bf637673ab5</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>c1806bf4a70323008299b39f087901cb</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Request Leave Flow">e435b46f83902210b1abe480ceaad3b8</flow>
+        <generation_source/>
+        <order>8</order>
+        <parent_ui_id>8c38f632-bd48-4ede-8b65-314cf0057ee1</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-03-21 08:18:28</sys_created_on>
+        <sys_id>212a302783d02210b1abe480ceaad3fc</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-03-21 08:18:28</sys_updated_on>
+        <ui_id>ead858c8-9083-4d58-80b7-8797c0d5afec</ui_id>
+        <values>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</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Request Leave Flow">e435b46f83902210b1abe480ceaad3b8</flow>
+        <generation_source/>
+        <order>6</order>
+        <parent_ui_id>8c38f632-bd48-4ede-8b65-314cf0057ee1</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-03-21 07:56:52</sys_created_on>
+        <sys_id>4135b46f83902210b1abe480ceaad3f6</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-03-21 07:56:52</sys_updated_on>
+        <ui_id>d7a94d00-de43-43b6-8397-7d66afd84065</ui_id>
+        <values>H4sIAAAAAAAA/+VVXWvbMBT9K0HPxthxGtq8jYRAoWshGXnpipGt60Qgf1SS02Yh/31XluyYZOtS6EuY33S/dO7xOfbznnBGJmQELAjvwnEahVE0DILh7ShMxlESDllEAULikYLmgJUS0lIyPG+pqE1gv1+C3PIUBlOqqSjXcehLeK1B6ZhryA8HLGZcVYLuVq4HI+mGCyahIJPnF49UVOJ4DZJM9iepS/EJmoDA0kUL8BSw3lXmzMq0zqFAcG3wwXXOXGZwP8MMNhk4YeAReNdQMEAgGRUKPJLTglFdyh2ZaFljQAJlT4XYdRUbXmi7aE7fFf+FN48CU5cBbpY6ErrjD5oImFmSbCqbIZtLnJ7qWnaclcizsrwwyGgt9LQfswVPleZlYVu0Gey6S1HnxaNlhXQDeu+kVhAzqMyuBr1dLVtuyrdFC3TOi4YWt6YoUyq6E9Va8qTWBs6egICG55xWFS/WcSXLLW+aEUrurwUe/EyUb3in4uvCp6nB7SOz1J9jfNaEV1Rys8R3HIPNB4+onZoKqtRxFeQxfq0NEruYWyFuWGgoiBs1mOZU8kp/w6u24IAfPOeC5OYjlaV3R1H1Zh6doNIYhd+I/lzyC2sJYIN7m/+cAS6A1hqg0dJfoDoPnMUe+r2DR5twDrj5MgfcXpsD3CpXb4F/CT8Yfvh57amp0brqi15TDT/rIIjY6Fz1J9nPaf4CVK3m5xwEU3+A2QoecoSlIbawT0TvkoOVS3af/i9TfjgOmufK9P/f/AFefgPSrpabCQkAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Get Catalog Variables">330ba3abc31013002841b63b12d3aee8</action_type>
+        <action_type_parent display_value="Get Catalog Variables">22f0b88cc3c632002841b63b12d3aeff</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>330ba3abc31013002841b63b12d3aee8</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Request Leave Flow">e435b46f83902210b1abe480ceaad3b8</flow>
+        <generation_source/>
+        <order>1</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-03-21 07:56:52</sys_created_on>
+        <sys_id>4535b46f83902210b1abe480ceaad3f2</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-03-21 07:56:52</sys_updated_on>
+        <ui_id>ded88ab0-a855-4444-a703-c094f065711e</ui_id>
+        <values>H4sIAAAAAAAA/+1W227jNhD9FUPPgqGrLfutTRCgwLYLrBd5WSwIkhrFRKnLkpS9rpF/71CibCXaOA7QFG3RRw1nOOfMzOHoy9ETubf2WBEwGlPG4zAI4yCIsiRki5iFUR5TAOr5XkVLQE8F31rQBnIiDJRo31HZ2oPjcQNqJzjMbqihsn4g4dw5d66Pj+icC91Ierh3MWjhWyFzBZW3/vLV9xqqMI0B5a2Pz46uxSkpA4mum5aVwiDQ2acexQUO5tD09gIwHwdn+uCu+jSy1yq36ALfg+8GqhwQVkGlBt8raZVTU6uDtzaqRYMCmn+s5OHksRWV6WmX9LsWf2DSOPJHedee5gThDcBOJ58pk3DbV69D5BjMfukdi1ss+gbTctOqU2lrbIfuy5dDQVtpbsa23uFjY0Rd9SHGpnHRtWzL6re+Yt7pglHrWg0kh8YWwdJyHIvNtt6fKnYnqq5e7lDWnMqRK1DFt3cCpG1u1ZYMfX2PGqMEa43FefRAQokJSEmbRlQPpFH1TnSXIsZy/iDxY17Ieo9gtHio5pRbQnPsBZ3fof22M99TJSy7X/GaLkuNnSG5qpvGkbZN8x59Tx/0jaRan7ljG8i31iLvK+E4k75sNoQr0ZifMPEOHL1Hf9AWuzSzRXieS2wl9tcA4U5BzyQWFRwgjJIszngUhQELcUCTLOBAaR4vllOBfQC6g0EAs7talW+X3OvwB8l9dviHF6AbTj1DWcyG6s82YPTrjN8uyPDdBGkIDsQTgJrgxWTnKBHdU3pJq68X4z8hXpvr75Ku0PhIljXOTceZjPvVqRgViUSwMxbi2bjFfES1lRElkE5VRFSkbvROwP79XoDlZQktz3oYpmyYLT1Sf7zIV6ygqP4gW0zUvwrWdjSRjK0gqWDvh0GaQ8JsAJ8GhItJAF0keZRymsVJMn1fGJtmYKsCvbMfZ1jxSUC6LMIsXb4QEKWTgDhhEU8LjpCu48CKPC4SlmLAD6qUriYBQQpRtnopw3JS1ukj+39j/imNedtmu0KWw2Yb3vD7kS4vSNatLy1bvWUt/x3MswW2sSezn4cjt8OiyzvMWa5ZYmEUBMHTPXZhQ/1bV9DTZYNLocB/CazfuRc4F9BV0+tCMOl7raSrVgsOXsVli54llkIozHKCan8FTm62NCMQoMhe9ZlOLo3CGLWzvx8SuOlIDruvbhV3uxGtz3Xy1y24r38C6HTFOEAOAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Ask For Approval">f8f2e9920b10030085c083eb37673abd</action_type>
+        <action_type_parent display_value="Ask For Approval">bae0a1120b10030085c083eb37673a92</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f8f2e9920b10030085c083eb37673abd</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Request Leave Flow">e435b46f83902210b1abe480ceaad3b8</flow>
+        <generation_source/>
+        <order>3</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-03-21 07:56:52</sys_created_on>
+        <sys_id>4535b46f83902210b1abe480ceaad3f4</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-03-21 07:56:52</sys_updated_on>
+        <ui_id>ba29b88b-c8bb-412b-9ca6-cb52949b89c8</ui_id>
+        <values>H4sIAAAAAAAA/+1Y32/aOhj9V5CfKTcUGClvVVGlXd27SW3vXkoVGfsLeDJOZjvduBH/+77YTshgZTDxUnW8+fvhnO9wTox5LIngZELGcXoJV1eX0bwfRYMoikcsigcwH4zfjQeURaRLFF0BVmpgmea4fqayqAJleQ/6WTDo3FBLZbZI+j0NXwowNhEWVpsNFnNhcknXn0IPRthSSK5BkcnjU5fkVOP2FjSZlDupY/FJOgeJpXc1wF3Adp1Xa56xYgUKwdXBf0LnNGQ676eYwaYKTtQl8M2C4oA4UioNdMmKKk5tptdkYnWBAQ2Uf1Ry3VQshbJ+zhX9ZsT/+ODBZVWXAg7GAgfN8oHOJUw9Rz6VTpHMe9yd2UI3lGVIs/G0cEhpIe1NO+YLPuZWZMq32Grj0J3JYqU+eFJIs0HrKykMJBzyatYKvR8tvV9mX+9qoLdCOVbCmDJjVDYraq0W88JWcEoCEhzNK5rnQi2SXGfPwjUjlFVvIXHRS2X2FZ9pxEL1KKtw95BZ2rvF+NSFP1EtqiH+xW2wedMlZm1uJDVmOwrymHwpKiR+sDBC4ljwFFR9TIvcXuNTniFg3nSD/ufsoL7YVk5+u638DUtQ7U7p+zq/8z4A3nnv86ep/ghUteofAqwdlEHzbpm43I+Sd22dDz4RFN8/rPgQ2Ure6+Qnio+jV6b4MNqrl/yv1B71D+mKx1sdIQKcgcokFSDbb/06sa/5VuY0tR+Bqlb7dXhG5zbAeglu0L9b/kz/rn9H/5cn6v/lV34cRa/NAm/ppc8OCg4GW119zgqtDrggWQrj1PGiG1oVp7niCJC1K/72KHdNsQv+dzwx+OOJt+GJ4eig3Fo/MRpls0xxUSE2LWf4NzSYa7X+77EsUTdxTOfRBY1Ho4shfi7oOBpcsOhqmEbvRuN+H+pbA/Bkvu6huugC9GbztG+q825+mh+PIKi5iRQSzK8IC25skjo0tR3ZHHf1jsGVw3PdTV6hKd/KbzV2UG/p1VZfvECCqG1fTsoZ8bBnZDIjKlMwI90ZqaqSSmAujBUIrkm4WFluNj5SaBo26LeW225O18ZVGrYEjvp00R8iiTNEiJ/j34AjOKk9OC2gM/Wk7NMUvNfg9LyIvRPxPhS4nf56EO2TcXS2k3H4x4LnsCDCFElzCcFjD9+CZ/Tl03eoP+R9MxMAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Leave Bucket">76bd1b2a83802210b1abe480ceaad3a2</action_type>
+        <action_type_parent display_value="Update Leave Bucket">51df3c4683802210b1abe480ceaad326</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>76bd1b2a83802210b1abe480ceaad3a2</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Request Leave Flow">e435b46f83902210b1abe480ceaad3b8</flow>
+        <generation_source/>
+        <order>5</order>
+        <parent_ui_id>8c38f632-bd48-4ede-8b65-314cf0057ee1</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-03-21 07:56:52</sys_created_on>
+        <sys_id>4935b46f83902210b1abe480ceaad3f5</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-03-21 07:56:52</sys_updated_on>
+        <ui_id>a21e11ee-2721-4851-941d-40f03bb04980</ui_id>
+        <values>H4sIAAAAAAAA/+1XUW/bNhD+K4aeTYOSKJvy25DU2IAuHZa0eygK40ieEqGU5EpUUs/wfx9lyZIcO6mdORkwNG853Yn3fXffJ/rzyomVM3UgwCDkLOI+pZ7nUuGCQMapRADlu74zdFJI0GZistDZEtFG7kGXVWi1Uqg4B0EJ8CAgzP4RmFCfSBqyiI6DieviKMdvJRYG1Vws12tbr+JioWH5qXmNjci7WKscU2f6+cvQWUBuzzSYO9PVo0fHNq1tRNvUd13X+zjMclFFcozQHiC3ofdN7Z+9eJarqh136OB3g6nF7Uwj0AUOnQRSBSbLl20kR1AfUt0F7uLU1EAT+F7Ef9tTfW/YO3jqFMtiXhb2jF74BoTGy5osm/KxfhxdgoFrk5fSlHnLXxZLLGqOFEZQanPRj9UJHxYmztK6xFQv3z1YZrpM0quaJ6d9UW9ONnGucFERUCFq4EXXd9lDy9YsTjdcNQ91JkH3UhFyeTeLUVeT3Mxk6IAxeSxKU3W7csr4Zn8wdfDQaFBjYruZJ7BYxOntfJFn9/GmAwsoGd1q+88o0tmD7byIb9MRyIqFkR0ajGY2frkJf4I8rij53b5mw0YZf0xju7m/VY0qKsY+CE4C8CeESaGIbQUJp1QwL6QhCOGshxWbFxqKoiPRgph/KysKakob8ub1HKoSmccL84tt6h4bntbDRp7CE8oVHnCfH9h0EN1aa4R7nG82+mSBdrWH5Pmyl5ym6CNwbhX9vjpncFMDPQS+UXW98Y8kfbENNnr2Xk3Pz+j4hxpetWAJGVxlKQ4I6U21a59Wi7LNvYDCrtlgw08vW+qeffXzr2P5dS+76GV7/ex3kKeo9vKxl+/38//K8q+DWZ4lg1+zpF/xEN11JWx9yK+Oxu+eiN87Cb9/In52Ov5gve/Nbs+c38aUn7DfVkG73ttq6E2M1w0pk0EoiIiYJIxHHgHlcQIIQkp/gn4UvoLxRs8aknA77+luNwqWxenmq8ocKlrOcjM6om3dfkKbvgeXdd9P4Wn81A4SzCM7nVUxO/rBH5l1xMFVmYjNBLcCOpu7Mno+dz35hvSfinBL+64GnyL+TSQZutKlTDHCJxQJQ08S8LkiGEaChSoaU2/8CpJkzPPGStjdpnJ/t72eJAsDubHra15wF+pqzyLII5puv0fVyVaMBp9A0ghxM8R+bLsUTen2a/RTfP9afDtU7yqwIftNBIfAuDeejIkbck5YID0iIIpI5IMfjLn0Qz55DcHRZ3c36P2mTtUL5batPI/Yftxwe51L1SOp9TCcJrTgp9D+L0IL2MS3GnPJGKlrV3YSEA5UkJBOImZXaKxCfkahffkHFEJCWIYTAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Create Record">2de05916c31332002841b63b12d3aee1</action_type>
+        <action_type_parent display_value="Create Record">02f0b88cc3c632002841b63b12d3aeff</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>2de05916c31332002841b63b12d3aee1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Request Leave Flow">e435b46f83902210b1abe480ceaad3b8</flow>
+        <generation_source/>
+        <order>7</order>
+        <parent_ui_id>8c38f632-bd48-4ede-8b65-314cf0057ee1</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-03-21 07:56:52</sys_created_on>
+        <sys_id>8d35b46f83902210b1abe480ceaad3f6</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-03-21 08:18:29</sys_updated_on>
+        <ui_id>7d1f4cb4-9f45-49ad-bf1e-bc102b2a404b</ui_id>
+        <values>H4sIAAAAAAAA/+1VTW/bMAz9K4XOTiDHSZrmNjQIduhaYB166TqDtuhGgPxRSU7rBfnvoyw7CboUW4YdVmA+GBDJ9/RIk/T9hknB5mwaIp9chNM0CqNoxPloNg6TaZSEIxEB4pgFrIAcKdJCojBuDwFbg6qd8SUOJ7NozEexwtzQC9YYr6SxpW4oTEhTKWjuuugr5z77uHOnK6mExoLN7x8CVoEmcouazTevXL8rVUGCikK/OK1vSLdNddR2dYg9u/aOUgunhwcMXywWAklIBspgwHIoBLSJzK2uyaARxE2hml3EShaWCJmLfTHyO1074y4uQ8osRe/bHduLF75i3pUtwMItsae21l14uiplisbXRWAGtbKXhzYfcFNZWRYe0qbaoUtV58W1LwvbEfQfiCy1wVhg5XJ16rtUsttV+fy5V7qURVuWzqnKFNTuBNZqmdTW6dkwpL4gojiHqpLFY1zpci1bMGnJh4+KDsNMlc90qZGPxRBSJ3xIpYXhkuyL1nwHWrosPhENgbcBM425VGDMPhcqZPxUOyU+sy6H2JfBQVItK/uBLlhjJ3cb9HMgkF+82Vxhsm+mtvXNwQxgXqmyQfxacx6JzYaaZDaDhA9gNpkMxvQM4JxHg5RfjDM+nZyHIQ41PhGLRREnzXb7zQ+Oa8OTWPYw4hC1Ble7kxh6EOGNBW1jKvxpGvYw4qCSn87QgwjvavzHFfh54fz/NP/Opzlx2f96Hvtlv5SohDkyoP2md11AOcR+YF9t+855dtc5u40f/q2NH055+7yzve8TfPdr/+Avf/wH0BtJ9Hb78AMON6EsFgkAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Send Email">c1806bf4a70323008299b39f087901cb</action_type>
+        <action_type_parent display_value="Send Email">98c181d20b100300d97d8bf637673ab5</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>c1806bf4a70323008299b39f087901cb</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Request Leave Flow">e435b46f83902210b1abe480ceaad3b8</flow>
+        <generation_source/>
+        <order>9</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-03-21 08:18:28</sys_created_on>
+        <sys_id>a52a302783d02210b1abe480ceaad3fd</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-03-21 08:18:28</sys_updated_on>
+        <ui_id>7e8de871-587b-405b-a572-5d9a813f6c6c</ui_id>
+        <values>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</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=e435b46f83902210b1abe480ceaad3b8"/>
+    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=e435b46f83902210b1abe480ceaad3b8^sys_idNOT IN4d35b46f83902210b1abe480ceaad3f0"/>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">4d25346f83902210b1abe480ceaad3d1</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Request Leave Flow">e435b46f83902210b1abe480ceaad3b8</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>4</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-03-21 07:56:52</sys_created_on>
+        <sys_id>4d35b46f83902210b1abe480ceaad3f0</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-03-21 08:18:29</sys_updated_on>
+        <ui_id>8c38f632-bd48-4ede-8b65-314cf0057ee1</ui_id>
+        <values>H4sIAAAAAAAA/+1VXWvbMBT9K0PPTpC/gp230lIIZCuspS9bMVcfTsQUybPktlnIf9+V7SSla9kKedxbdO7Xucf3kB2xnW867+7shXNqZcj820NElAkY/t6RWtunpV0pvjDOg+HydusWgsxJlid5ms3qIi1pksSUxcBkVlAuAUQqEhIRAxuJmdwaobyypuqBiDyC7kLgomla+ygFQkK5RsP2/s8IXystWjkya6DFHl62ZL57FVKBVU2hjkse8zSZpQmlSZHFbJayOBEpSEixoUaeGlMvD7Q+LXvkfb5+2wTc+VaZ1fhejl1uD6BtRWAV04jIZy+NQPbzGrSTEdmAEeBtuz0irQRxY/QJWCvjsR0Jyc9O/cKBSZ6HxFriilwOwePzDpiWV4NqQ6i+Ag9Ip+O+a8d0vraKSzcIJGQNnfaXL7Eh4aYJ6w4lPjQeq63uNubLoAo5Njh8JEQ6Jyshm7BtoD/uUt+u7dPXA9NrZXplxqC2HPTxBR71Y50PfHZEarnBRtUGmgZVrcIRqL4YuWymK42PabhIHBqudQo8EJ+iuDC9Rvyqh++hVWGLz9gGiweaDJziVX/Z2A5lkmQfEbd1lxqcOy2JClc/u0BxWHlcrhr0CSW8VY2/wMmPctxjH53XKC88stsxSEpWFGzCC8YmWZywSclhNuEsT8oMQyUvptAbBnSFs73c7793lKYC3jXYudp+zJ0l5HUe0/xtd2azt9z5tjwfsWTyF0uGW/hHR1JK/1vyLJZUrhqMNO7WDz+jIx+ChYaZR625ckit/0yLwz9cCGzxwIJvT9CTbX+EpU7Y/jfJm23iKwcAAA==</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=e435b46f83902210b1abe480ceaad3b8^sys_idNOT IN392a702783d02210b1abe480ceaad327,752a702783d02210b1abe480ceaad327,b12a702783d02210b1abe480ceaad327,f92a702783d02210b1abe480ceaad327"/>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>e435b46f83902210b1abe480ceaad3b8</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{ded88ab0-a855-4444-a703-c094f065711e.start_date}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-03-21 08:18:29</sys_created_on>
+        <sys_id>392a702783d02210b1abe480ceaad327</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-03-21 08:18:29</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>e0438893-6a6c-4965-b232-43f77f2318db</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>e435b46f83902210b1abe480ceaad3b8</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{ded88ab0-a855-4444-a703-c094f065711e.end_date}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-03-21 08:18:29</sys_created_on>
+        <sys_id>752a702783d02210b1abe480ceaad327</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-03-21 08:18:29</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>a396741d-552d-4329-8a2f-398ffffe9300</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>e435b46f83902210b1abe480ceaad3b8</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{ded88ab0-a855-4444-a703-c094f065711e.duration}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-03-21 08:18:29</sys_created_on>
+        <sys_id>b12a702783d02210b1abe480ceaad327</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-03-21 08:18:29</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>87e286ba-5bef-4d77-839e-3cf21bde52fe</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_pill_compound action="INSERT_OR_UPDATE">
+        <attached_to>e435b46f83902210b1abe480ceaad3b8</attached_to>
+        <extra_info/>
+        <order>0</order>
+        <prescription>{{ded88ab0-a855-4444-a703-c094f065711e.requested_by.name}}</prescription>
+        <source_ui_id/>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-03-21 08:18:29</sys_created_on>
+        <sys_id>f92a702783d02210b1abe480ceaad327</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-03-21 08:18:29</sys_updated_on>
+        <transform_compositions>[]</transform_compositions>
+        <transform_definition_id/>
+        <ui_id>cd11e836-0db3-4973-9559-532ea4591327</ui_id>
+    </sys_hub_pill_compound>
+    <sys_hub_flow_variable action="delete_multiple" query="model=e435b46f83902210b1abe480ceaad3b8"/>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_input_e435b46f83902210b1abe480ceaad3b8^sys_idNOT IN3035b46f83902210b1abe480ceaad3ea,7c35b46f83902210b1abe480ceaad3ca"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>request_item</element>
+        <help/>
+        <hint/>
+        <label>Request Item</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_e435b46f83902210b1abe480ceaad3b8</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-03-21 07:56:51</sys_created_on>
+        <sys_id>3035b46f83902210b1abe480ceaad3ea</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Leave &amp;amp; Expense Tracking Management System" source="x_1583402_lems">7dc441c583231210b1abe480ceaad313</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-03-21 07:56:51</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>table_name</element>
+        <help/>
+        <hint/>
+        <label>Table Name</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_e435b46f83902210b1abe480ceaad3b8</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-03-21 07:56:51</sys_created_on>
+        <sys_id>7c35b46f83902210b1abe480ceaad3ca</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Leave &amp;amp; Expense Tracking Management System" source="x_1583402_lems">7dc441c583231210b1abe480ceaad313</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Leave &amp;amp; Expense Tracking Management System">7dc441c583231210b1abe480ceaad313</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-03-21 07:56:51</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_e435b46f83902210b1abe480ceaad3b8"/>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_output_e435b46f83902210b1abe480ceaad3b8"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_e435b46f83902210b1abe480ceaad3b8"/>
+    <sys_hub_flow action="UPDATE">
+        <sys_id>2112342783902210b1abe480ceaad3c8</sys_id>
+        <latest_snapshot>e435b46f83902210b1abe480ceaad3b8</latest_snapshot>
+        <compiler_build/>
+    </sys_hub_flow>
+    <sys_flow_trigger_plan action="delete_multiple" query="plan_id=2112342783902210b1abe480ceaad3c8^sys_idNOT IN2935f46f83902210b1abe480ceaad319"/>
+    <sys_flow_trigger_plan action="INSERT_OR_UPDATE">
+        <binding_strategy>com.snc.process_flow.engine.binding.RunAlways</binding_strategy>
+        <plan/>
+        <plan_id>2112342783902210b1abe480ceaad3c8</plan_id>
+        <snapshot>e435b46f83902210b1abe480ceaad3b8</snapshot>
+        <sys_created_by>ankita.chaurasia</sys_created_by>
+        <sys_created_on>2025-03-21 07:56:54</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>2935f46f83902210b1abe480ceaad319</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_overrides/>
+        <sys_scope/>
+        <sys_updated_by>ankita.chaurasia</sys_updated_by>
+        <sys_updated_on>2025-03-21 07:56:54</sys_updated_on>
+        <trigger display_value="">2135f46f83902210b1abe480ceaad319</trigger>
+    </sys_flow_trigger_plan>
+    <sys_flow_subflow_plan action="delete_multiple" query="plan_id=2112342783902210b1abe480ceaad3c8"/>
+</record_update>
